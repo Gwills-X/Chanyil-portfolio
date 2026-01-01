@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+/* html,
+body {
+	width: 100%;
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+} */
+
+/* * {
+	box-sizing: border-box;
+	max-width: 100%;
+} */
+
+.about,
+.missions,
+.daughter {
+	background: linear-gradient(rgba(0, 0, 0, 0.6));
+	color: white;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 1rem;
+	height: 100vh;
+	z-index: 10;
+}
+
+/* keep your background image logic */
+.about::before,
+.missions::before,
+.daughter::before {
+	position: absolute;
+	content: "";
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	z-index: -10;
+	/* translate: scale(1.7); */
+
+	/* background-size: contain; */
+	/* object-fit: cover; */
+	background-size: cover;
+	background-position: center center;
+}
+
+.about::before {
+	background-image: url("/src/images/pastel-fabric-texture-background.jpg");
+}
+
+.missions::before {
+	background-image: url("/src/images/photo-1756806983832-1f056cf24182.jpg");
+}
+
+.daughter::before {
+	background-image: url("/src/images/47b226c1-abcb-450d-983b-f1bfa8d36526.jpg");
+}
+.daughter::after,
+.missions::after,
+.about::after {
+	background-color: rgba(0, 0, 0, 0.4);
+	position: absolute;
+	content: "";
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+
+	width: 100%;
+	height: 100%;
+	background-repeat: no-repeat;
+	z-index: 5;
+	/* translate: scale(1.7); */
+
+	/* background-size: contain; */
+	object-fit: cover;
+	background-size: cover;
+	background-position: center center;
+}
+
+.pic {
+	background-position: top top;
+}
