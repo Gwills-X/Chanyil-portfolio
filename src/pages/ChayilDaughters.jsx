@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import {
 	FaPrayingHands,
@@ -9,7 +10,7 @@ import {
 
 import backgroundPic from "../images/47b226c1-abcb-450d-983b-f1bfa8d36526.jpg";
 
-// Activities with icons and description
+// Activities
 const activities = [
 	{
 		title: "Prayer & Intercession",
@@ -43,7 +44,7 @@ const activities = [
 	},
 ];
 
-// Testimonials (optionally add photos)
+// Testimonials
 const testimonials = [
 	{
 		name: "Ada E.",
@@ -58,13 +59,33 @@ const testimonials = [
 ];
 
 const ChayilDaughters = () => {
+	const [joinData, setJoinData] = useState({
+		name: "",
+		email: "",
+		phone: "",
+		country: "",
+		message: "",
+	});
+	const [submitted, setSubmitted] = useState(false);
+
+	const handleChange = (e) => {
+		setJoinData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+	};
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		console.log("Join Request:", joinData);
+		setSubmitted(true);
+		setJoinData({ name: "", email: "", phone: "", country: "", message: "" });
+		// TODO: Send email via backend
+	};
+
 	return (
 		<main className='bg-white'>
 			{/* ================= HEADER ================= */}
 			<section className='py-24 px-6 bg-gradient-to-r from-gray-600 via-gray-700 to-gray-600 h-dvh relative flex flex-col justify-center items-center'>
-				{/* Optional header image slot */}
 				<img
-					src={backgroundPic} // Background photo if needed
+					src={backgroundPic}
 					alt='Chayil Daughters Header'
 					className='absolute inset-0 w-full h-full object-cover opacity-50'
 				/>
@@ -80,11 +101,18 @@ const ChayilDaughters = () => {
 					<p className='text-lg text-white leading-relaxed'>
 						A global sisterhood rooted in faith, unity, and purpose.
 					</p>
-					<a
-						href='#activities'
-						className='mt-6 inline-block px-8 py-3 bg-white text-black font-semibold rounded-full hover:bg-gray-100 transition'>
-						Explore Our Activities
-					</a>
+					<div className='mt-6 flex flex-col sm:flex-row gap-4 justify-center'>
+						<a
+							href='#join-form'
+							className='inline-block px-8 py-3 bg-white text-black font-semibold rounded-full hover:bg-gray-100 transition'>
+							Join God’s Chayil Daughters
+						</a>
+						<a
+							href='/missions#partner'
+							className='inline-block px-8 py-3 bg-purple-700 text-white font-semibold rounded-full hover:bg-purple-800 transition'>
+							Partner With Us
+						</a>
+					</div>
 				</motion.div>
 			</section>
 
@@ -105,8 +133,8 @@ const ChayilDaughters = () => {
 					</p>
 					<p>
 						The community actively supports widows, single mothers, and orphans,
-						particularly across Africa, and provides a safe space for women to
-						grow in faith, leadership, and purpose.
+						providing a safe space for women to grow in faith, leadership, and
+						purpose.
 					</p>
 				</motion.div>
 			</section>
@@ -171,28 +199,80 @@ const ChayilDaughters = () => {
 				</div>
 			</section>
 
-			{/* ================= CTA ================= */}
-			<section className='py-24 px-6 text-center bg-gray-200'>
+			{/* ================= JOIN FORM ================= */}
+			<section id='join-form' className='py-24 px-6 bg-purple-50'>
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6 }}
 					viewport={{ once: true }}
-					className='max-w-4xl mx-auto'>
-					<h3 className='text-2xl md:text-3xl font-serif mb-6'>
-						Become part of a global sisterhood walking in faith and purpose.
-					</h3>
-
-					<a
-						href='#'
-						className='inline-block px-10 py-4 border bg-black text-white rounded-full hover:bg-transparent hover:text-black  transition mr-4 mb-4'>
+					className='max-w-4xl mx-auto text-center space-y-6'>
+					<h2 className='text-3xl font-serif mb-4'>
 						Join God’s Chayil Daughters
-					</a>
-					<a
-						href='#'
-						className='inline-block border px-10 py-4 bg-transparent text-black rounded-full hover:bg-black hover:text-white hover:border transition my-4'>
-						Learn More
-					</a>
+					</h2>
+					<p className='text-gray-700 text-lg'>
+						Fill the form below to become part of our global sisterhood.
+					</p>
+
+					{submitted && (
+						<p className='text-green-600 font-semibold'>
+							Thank you! Your request has been received. We will contact you
+							soon.
+						</p>
+					)}
+
+					<form
+						onSubmit={handleSubmit}
+						className='mt-8 grid gap-4 sm:grid-cols-2'>
+						<input
+							type='text'
+							name='name'
+							placeholder='Full Name'
+							value={joinData.name}
+							onChange={handleChange}
+							required
+							className='col-span-2 p-3 rounded-lg border border-gray-300'
+						/>
+						<input
+							type='email'
+							name='email'
+							placeholder='Email'
+							value={joinData.email}
+							onChange={handleChange}
+							required
+							className='p-3 rounded-lg border border-gray-300'
+						/>
+						<input
+							type='tel'
+							name='phone'
+							placeholder='Phone Number'
+							value={joinData.phone}
+							onChange={handleChange}
+							required
+							className='p-3 rounded-lg border border-gray-300'
+						/>
+						<input
+							type='text'
+							name='country'
+							placeholder='Country'
+							value={joinData.country}
+							onChange={handleChange}
+							required
+							className='p-3 rounded-lg border border-gray-300'
+						/>
+						<textarea
+							name='message'
+							placeholder='Tell us why you want to join (optional)'
+							value={joinData.message}
+							onChange={handleChange}
+							className='col-span-2 p-3 rounded-lg border border-gray-300'
+						/>
+						<button
+							type='submit'
+							className='col-span-2 py-3 bg-purple-700 text-white rounded-full hover:bg-purple-800 transition'>
+							Submit Request
+						</button>
+					</form>
 				</motion.div>
 			</section>
 		</main>

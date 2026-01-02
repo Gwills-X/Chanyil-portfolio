@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import {
 	FaUserGraduate,
@@ -45,6 +46,33 @@ const testimonials = [
 ];
 
 const LeadershipMentorship = () => {
+	const [mentorshipData, setMentorshipData] = useState({
+		name: "",
+		email: "",
+		phone: "",
+		country: "",
+		message: "",
+	});
+	const [submitted, setSubmitted] = useState(false);
+
+	const handleChange = (e) => {
+		setMentorshipData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+	};
+
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		console.log("Mentorship Request:", mentorshipData);
+		setSubmitted(true);
+		setMentorshipData({
+			name: "",
+			email: "",
+			phone: "",
+			country: "",
+			message: "",
+		});
+		// TODO: Send email via backend
+	};
+
 	return (
 		<main className='bg-white'>
 			{/* ================= HEADER ================= */}
@@ -62,11 +90,18 @@ const LeadershipMentorship = () => {
 						Faith-based leadership formation rooted in identity, obedience, and
 						sustainable impact.
 					</p>
-					<a
-						href='#pathways'
-						className='mt-6 inline-block px-8 py-3 bg-black text-white rounded-full hover:bg-gray-800 transition'>
-						Learn About Pathways
-					</a>
+					<div className='mt-6 flex flex-col sm:flex-row gap-4 justify-center'>
+						<a
+							href='#mentorship-form'
+							className='inline-block px-8 py-3 bg-black text-white rounded-full hover:bg-gray-800 transition'>
+							Request Mentorship
+						</a>
+						<a
+							href='/missions#partner'
+							className='inline-block px-8 py-3 bg-purple-700 text-white rounded-full hover:bg-purple-800 transition'>
+							Partner With Us
+						</a>
+					</div>
 				</motion.div>
 			</section>
 
@@ -146,23 +181,7 @@ const LeadershipMentorship = () => {
 
 						{/* Image Cards */}
 						<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-16'>
-							{[
-								{
-									img: mentorship1,
-									title: "One-to-One Mentorship",
-									desc: "Personalized guidance tailored to your calling.",
-								},
-								{
-									img: mentorship2,
-									title: "Leadership Training",
-									desc: "Develop leadership skills with practical insights.",
-								},
-								{
-									img: mentorship3,
-									title: "Speaking Engagements",
-									desc: "Inspiring talks for growth and vision.",
-								},
-							].map((item, index) => (
+							{[mentorship1, mentorship2, mentorship3].map((img, index) => (
 								<motion.div
 									key={index}
 									initial={{ opacity: 0, y: 20 }}
@@ -171,14 +190,10 @@ const LeadershipMentorship = () => {
 									viewport={{ once: true }}
 									className='rounded-xl overflow-hidden border hover:shadow-lg transition'>
 									<img
-										src={item.img}
-										alt={item.title}
+										src={img}
+										alt={`Mentorship ${index + 1}`}
 										className='w-full h-60 object-cover'
 									/>
-									<div className='p-4 text-center'>
-										<h4 className='font-semibold text-lg'>{item.title}</h4>
-										<p className='text-gray-600 text-sm mt-1'>{item.desc}</p>
-									</div>
 								</motion.div>
 							))}
 						</div>
@@ -209,6 +224,81 @@ const LeadershipMentorship = () => {
 				</div>
 			</section>
 
+			{/* ================= MENTORSHIP FORM ================= */}
+			<section id='mentorship-form' className='py-24 px-6 bg-green-50'>
+				<motion.div
+					initial={{ opacity: 0, y: 20 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.6 }}
+					viewport={{ once: true }}
+					className='max-w-4xl mx-auto text-center space-y-6'>
+					<h2 className='text-3xl font-serif mb-4'>Request Mentorship</h2>
+					<p className='text-gray-700 text-lg'>
+						Fill the form below to request mentorship from Chanel.
+					</p>
+
+					{submitted && (
+						<p className='text-green-600 font-semibold'>
+							Thank you! Your mentorship request has been received. We will
+							contact you soon.
+						</p>
+					)}
+
+					<form
+						onSubmit={handleSubmit}
+						className='mt-8 grid gap-4 sm:grid-cols-2'>
+						<input
+							type='text'
+							name='name'
+							placeholder='Full Name'
+							value={mentorshipData.name}
+							onChange={handleChange}
+							required
+							className='col-span-2 p-3 rounded-lg border border-gray-300'
+						/>
+						<input
+							type='email'
+							name='email'
+							placeholder='Email'
+							value={mentorshipData.email}
+							onChange={handleChange}
+							required
+							className='p-3 rounded-lg border border-gray-300'
+						/>
+						<input
+							type='tel'
+							name='phone'
+							placeholder='Phone Number'
+							value={mentorshipData.phone}
+							onChange={handleChange}
+							required
+							className='p-3 rounded-lg border border-gray-300'
+						/>
+						<input
+							type='text'
+							name='country'
+							placeholder='Country'
+							value={mentorshipData.country}
+							onChange={handleChange}
+							required
+							className='p-3 rounded-lg border border-gray-300'
+						/>
+						<textarea
+							name='message'
+							placeholder='Tell us what guidance you are seeking'
+							value={mentorshipData.message}
+							onChange={handleChange}
+							className='col-span-2 p-3 rounded-lg border border-gray-300'
+						/>
+						<button
+							type='submit'
+							className='col-span-2 py-3 bg-green-600 text-white rounded-full hover:bg-green-700 transition'>
+							Request Mentorship
+						</button>
+					</form>
+				</motion.div>
+			</section>
+
 			{/* ================= CTA ================= */}
 			<section className='py-24 px-6 text-center bg-gradient-to-r from-gray-50 to-gray-100'>
 				<motion.div
@@ -222,9 +312,14 @@ const LeadershipMentorship = () => {
 					</h3>
 
 					<a
-						href='#'
+						href='#mentorship-form'
 						className='inline-block px-10 py-4 bg-black text-white rounded-full hover:bg-gray-800 transition mr-4 mb-4'>
-						Enquire About Mentorship
+						Request Mentorship
+					</a>
+					<a
+						href='/missions#partner'
+						className='inline-block px-10 py-4 bg-purple-700 text-white rounded-full hover:bg-purple-800 transition mb-4'>
+						Partner With Us
 					</a>
 					<a
 						href='#'

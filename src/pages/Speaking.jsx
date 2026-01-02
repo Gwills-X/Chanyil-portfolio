@@ -22,24 +22,63 @@ const ministrySlides = [one, two, three, four, five, six];
 const Speaking = () => {
 	const [current, setCurrent] = useState(0);
 
+	// Forms state
+	const [partnerData, setPartnerData] = useState({
+		name: "",
+		email: "",
+		phone: "",
+		amount: "",
+		message: "",
+	});
+	const [inviteData, setInviteData] = useState({
+		name: "",
+		email: "",
+		phone: "",
+		event: "",
+		message: "",
+	});
+	const [partnerSubmitted, setPartnerSubmitted] = useState(false);
+	const [inviteSubmitted, setInviteSubmitted] = useState(false);
+
 	// Auto slide
 	useEffect(() => {
 		const interval = setInterval(() => {
 			setCurrent((prev) => (prev + 1) % ministrySlides.length);
 		}, 5000);
-
 		return () => clearInterval(interval);
 	}, []);
 
 	const next = () => setCurrent((prev) => (prev + 1) % ministrySlides.length);
-
 	const prev = () =>
 		setCurrent(
 			(prev) => (prev - 1 + ministrySlides.length) % ministrySlides.length
 		);
 
+	// Form handlers
+	const handlePartnerChange = (e) => {
+		setPartnerData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+	};
+	const handleInviteChange = (e) => {
+		setInviteData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+	};
+
+	const handlePartnerSubmit = (e) => {
+		e.preventDefault();
+		console.log("Partner Request:", partnerData);
+		setPartnerSubmitted(true);
+		setPartnerData({ name: "", email: "", phone: "", amount: "", message: "" });
+		// TODO: send email to backend
+	};
+	const handleInviteSubmit = (e) => {
+		e.preventDefault();
+		console.log("Invitation Request:", inviteData);
+		setInviteSubmitted(true);
+		setInviteData({ name: "", email: "", phone: "", event: "", message: "" });
+		// TODO: send email to backend
+	};
+
 	return (
-		<main className='bg-white overflow-x-hidden '>
+		<main className='bg-white overflow-x-hidden'>
 			{/* ========== PROFESSIONAL SECTION ========== */}
 			<section className='py-24 px-6 bg-white pt-40'>
 				<div className='max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-14 items-center'>
@@ -62,6 +101,20 @@ const Speaking = () => {
 							delivering faith-centered messages that inspire obedience,
 							spiritual clarity, and transformation through Christ.
 						</p>
+
+						{/* Buttons */}
+						<div className='flex flex-col sm:flex-row gap-4 mt-6'>
+							<a
+								href='/missions#partner'
+								className='px-8 py-3 bg-purple-700 text-white rounded-full hover:bg-purple-800 transition'>
+								Partner With Us
+							</a>
+							<a
+								href='#invite-form'
+								className='px-8 py-3 border border-purple-700 text-purple-700 rounded-full hover:bg-purple-700 hover:text-white transition'>
+								Invite Chanel
+							</a>
+						</div>
 					</div>
 				</div>
 			</section>
@@ -81,7 +134,7 @@ const Speaking = () => {
 						</p>
 					</div>
 
-					{/* SLIDER FIXED */}
+					{/* SLIDER */}
 					<div className='relative w-full max-w-md mx-auto h-[420px] rounded-2xl overflow-hidden shadow-xl'>
 						<AnimatePresence mode='wait'>
 							<motion.img
@@ -139,30 +192,78 @@ const Speaking = () => {
 				</motion.div>
 			</section>
 
-			{/* ============ CTA ============ */}
-			<section className='py-24 px-6 text-center bg-gray-50'>
+			{/* ============ INVITATION FORM ============ */}
+			<section id='invite-form' className='py-24 px-6 bg-purple-50'>
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6 }}
 					viewport={{ once: true }}
-					className='max-w-4xl mx-auto'>
-					<h3 className='text-2xl md:text-3xl font-serif mb-6'>
-						Invite Chanel to minister, teach, or lead worship at your gathering.
-					</h3>
+					className='max-w-4xl mx-auto text-center space-y-6'>
+					<h2 className='text-3xl font-serif mb-4'>Invite Chanel to Speak</h2>
+					<p className='text-gray-700 text-lg'>
+						Fill the form below to request Chanel to minister, teach, or lead
+						worship at your event.
+					</p>
 
-					<div className='flex gap-2 justify-center'>
-						<a
-							href='#'
-							className='inline-block px-10 py-4 border bg-black text-white rounded-full hover:bg-transparent hover:text-black transition-all duration-200'>
-							Invite Chanel to Speak
-						</a>
-						<a
-							href='#'
-							className='inline-block px-10 py-4 border bg-transparent text-black rounded-full hover:bg-black hover:text-white transition-all duration-200'>
-							Enquire About Speaking
-						</a>
-					</div>
+					{inviteSubmitted && (
+						<p className='text-green-600 font-semibold'>
+							Thank you! Your invitation request has been received.
+						</p>
+					)}
+
+					<form
+						onSubmit={handleInviteSubmit}
+						className='mt-8 grid gap-4 sm:grid-cols-2'>
+						<input
+							type='text'
+							name='name'
+							placeholder='Full Name'
+							value={inviteData.name}
+							onChange={handleInviteChange}
+							required
+							className='col-span-2 p-3 rounded-lg border border-gray-300'
+						/>
+						<input
+							type='email'
+							name='email'
+							placeholder='Email'
+							value={inviteData.email}
+							onChange={handleInviteChange}
+							required
+							className='p-3 rounded-lg border border-gray-300'
+						/>
+						<input
+							type='tel'
+							name='phone'
+							placeholder='Phone Number'
+							value={inviteData.phone}
+							onChange={handleInviteChange}
+							required
+							className='p-3 rounded-lg border border-gray-300'
+						/>
+						<input
+							type='text'
+							name='event'
+							placeholder='Event Name / Details'
+							value={inviteData.event}
+							onChange={handleInviteChange}
+							required
+							className='col-span-2 p-3 rounded-lg border border-gray-300'
+						/>
+						<textarea
+							name='message'
+							placeholder='Any additional message'
+							value={inviteData.message}
+							onChange={handleInviteChange}
+							className='col-span-2 p-3 rounded-lg border border-gray-300'
+						/>
+						<button
+							type='submit'
+							className='col-span-2 py-3 bg-purple-700 text-white rounded-full hover:bg-purple-800 transition'>
+							Send Invitation Request
+						</button>
+					</form>
 				</motion.div>
 			</section>
 		</main>
