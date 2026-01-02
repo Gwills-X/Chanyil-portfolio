@@ -214,7 +214,7 @@ const Speaking = () => {
 
 					<form
 						onSubmit={handleInviteSubmit}
-						className='mt-8 grid gap-4 sm:grid-cols-2'>
+						className='mt-8 grid gap-4 grid-cols-1'>
 						<input
 							type='text'
 							name='name'
@@ -222,7 +222,7 @@ const Speaking = () => {
 							value={inviteData.name}
 							onChange={handleInviteChange}
 							required
-							className='col-span-2 p-3 rounded-lg border border-gray-300'
+							className=' p-3 rounded-lg border border-gray-300'
 						/>
 						<input
 							type='email'
@@ -249,18 +249,18 @@ const Speaking = () => {
 							value={inviteData.event}
 							onChange={handleInviteChange}
 							required
-							className='col-span-2 p-3 rounded-lg border border-gray-300'
+							className=' p-3 rounded-lg border border-gray-300'
 						/>
 						<textarea
 							name='message'
 							placeholder='Any additional message'
 							value={inviteData.message}
 							onChange={handleInviteChange}
-							className='col-span-2 p-3 rounded-lg border border-gray-300'
+							className=' p-3 rounded-lg border border-gray-300'
 						/>
 						<button
 							type='submit'
-							className='col-span-2 py-3 bg-purple-700 text-white rounded-full hover:bg-purple-800 transition'>
+							className=' py-3 bg-purple-700 text-white rounded-full hover:bg-purple-800 transition'>
 							Send Invitation Request
 						</button>
 					</form>
