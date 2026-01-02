@@ -198,7 +198,7 @@ const Mission = () => {
 						/>
 						<button
 							type='submit'
-							className=' py-3 bg-purple-700 text-white rounded-full hover:bg-purple-800 transition'>
+							className=' py-3 bg-black text-white rounded-full hover:bg-gray-800 transition'>
 							Submit Partnership Request
 						</button>
 					</form>

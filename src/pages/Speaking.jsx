@@ -106,12 +106,12 @@ const Speaking = () => {
 						<div className='flex flex-col sm:flex-row gap-4 mt-6'>
 							<a
 								href='/missions#partner'
-								className='px-8 py-3 bg-purple-700 text-white rounded-full hover:bg-purple-800 transition'>
+								className='px-8 py-3 border bg-black text-white rounded-full hover:bg-transparent hover:text-black transition-all duration-300'>
 								Partner With Us
 							</a>
 							<a
 								href='#invite-form'
-								className='px-8 py-3 border border-purple-700 text-purple-700 rounded-full hover:bg-purple-700 hover:text-white transition'>
+								className='px-8 py-3 border bg-transparent text-black rounded-full hover:bg-black hover:text-white  transition-all duration-300'>
 								Invite Chanel
 							</a>
 						</div>
@@ -260,7 +260,7 @@ const Speaking = () => {
 						/>
 						<button
 							type='submit'
-							className=' py-3 bg-purple-700 text-white rounded-full hover:bg-purple-800 transition'>
+							className=' py-3 bg-black text-white rounded-full hover:bg-gray-800 transition'>
 							Send Invitation Request
 						</button>
 					</form>

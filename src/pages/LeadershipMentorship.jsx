@@ -93,12 +93,12 @@ const LeadershipMentorship = () => {
 					<div className='mt-6 flex flex-col sm:flex-row gap-4 justify-center'>
 						<a
 							href='#mentorship-form'
-							className='inline-block px-8 py-3 bg-black text-white rounded-full hover:bg-gray-800 transition'>
+							className='inline-block px-8 py-3 border bg-white text-black font-semibold rounded-full hover:bg-black hover:text-white transition-all duration-300'>
 							Request Mentorship
 						</a>
 						<a
 							href='/missions#partner'
-							className='inline-block px-8 py-3 bg-purple-700 text-white rounded-full hover:bg-purple-800 transition'>
+							className='inline-block px-8 py-3 border bg-black text-white font-semibold rounded-full hover:bg-white hover:text-black transition-all duration-300'>
 							Partner With Us
 						</a>
 					</div>
@@ -292,7 +292,7 @@ const LeadershipMentorship = () => {
 						/>
 						<button
 							type='submit'
-							className=' py-3 bg-green-600 text-white rounded-full hover:bg-green-700 transition'>
+							className=' py-3 bg-black text-white rounded-full hover:bg-gray-800 transition'>
 							Request Mentorship
 						</button>
 					</form>
@@ -318,7 +318,7 @@ const LeadershipMentorship = () => {
 					</a>
 					<a
 						href='/missions#partner'
-						className='inline-block px-10 py-4 bg-purple-700 text-white rounded-full hover:bg-purple-800 transition mb-4'>
+						className='inline-block px-10 py-4 bg-purple-700  text-white rounded-full hover:bg-purple-900 transition mr-4 mb-4'>
 						Partner With Us
 					</a>
 					<a
