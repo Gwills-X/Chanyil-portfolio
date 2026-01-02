@@ -246,7 +246,7 @@ const LeadershipMentorship = () => {
 
 					<form
 						onSubmit={handleSubmit}
-						className='mt-8 grid gap-4 sm:grid-cols-2'>
+						className='mt-8 grid gap-4 max-md:grid-cols-1'>
 						<input
 							type='text'
 							name='name'
@@ -254,7 +254,7 @@ const LeadershipMentorship = () => {
 							value={mentorshipData.name}
 							onChange={handleChange}
 							required
-							className='col-span-2 p-3 rounded-lg border border-gray-300'
+							className=' p-3 rounded-lg border border-gray-300'
 						/>
 						<input
 							type='email'
@@ -288,11 +288,11 @@ const LeadershipMentorship = () => {
 							placeholder='Tell us what guidance you are seeking'
 							value={mentorshipData.message}
 							onChange={handleChange}
-							className='col-span-2 p-3 rounded-lg border border-gray-300'
+							className=' p-3 rounded-lg border border-gray-300'
 						/>
 						<button
 							type='submit'
-							className='col-span-2 py-3 bg-green-600 text-white rounded-full hover:bg-green-700 transition'>
+							className=' py-3 bg-green-600 text-white rounded-full hover:bg-green-700 transition'>
 							Request Mentorship
 						</button>
 					</form>
