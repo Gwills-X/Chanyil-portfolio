@@ -13,7 +13,7 @@ const Footer = () => {
 						whileInView={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.6 }}
 						viewport={{ once: true }}>
-						<h3 className='text-2xl font-serif mb-4'>Chanel Ministry</h3>
+						<h3 className='text-2xl font-serif mb-4'>Channelle Ministry</h3>
 						<p className='text-gray-400 leading-relaxed'>
 							Faith-rooted speaking and worship ministry committed to obedience,
 							clarity, and spiritual alignment.
@@ -89,7 +89,7 @@ const Footer = () => {
 
 				{/* Divider */}
 				<div className='border-t border-gray-800 mt-16 pt-8 text-center text-gray-500 text-sm'>
-					© {new Date().getFullYear()} Chanel Ministry. All rights reserved.
+					© {new Date().getFullYear()} Channelle Ministry. All rights reserved.
 				</div>
 			</div>
 		</footer>

@@ -97,7 +97,7 @@ const Speaking = () => {
 							Speaking & Worship Ministry
 						</h2>
 						<p className='text-lg text-gray-700 leading-relaxed'>
-							Chanel ministers through both the spoken word and worship,
+							Channelle ministers through both the spoken word and worship,
 							delivering faith-centered messages that inspire obedience,
 							spiritual clarity, and transformation through Christ.
 						</p>
@@ -112,7 +112,7 @@ const Speaking = () => {
 							<a
 								href='#invite-form'
 								className='px-8 py-3 border bg-transparent text-black rounded-full hover:bg-black hover:text-white  transition-all duration-300'>
-								Invite Chanel
+								Invite Channelle
 							</a>
 						</div>
 					</div>
@@ -128,7 +128,7 @@ const Speaking = () => {
 							Ministry in Action
 						</h2>
 						<p className='text-lg text-gray-700 leading-relaxed'>
-							From worship sessions to teaching moments, Chanel’s ministry
+							From worship sessions to teaching moments, Channelle’s ministry
 							creates spaces where hearts are aligned, faith is strengthened,
 							and God’s presence is experienced.
 						</p>
@@ -200,9 +200,11 @@ const Speaking = () => {
 					transition={{ duration: 0.6 }}
 					viewport={{ once: true }}
 					className='max-w-4xl mx-auto text-center space-y-6'>
-					<h2 className='text-3xl font-serif mb-4'>Invite Chanel to Speak</h2>
+					<h2 className='text-3xl font-serif mb-4'>
+						Invite Channelle to Speak
+					</h2>
 					<p className='text-gray-700 text-lg'>
-						Fill the form below to request Chanel to minister, teach, or lead
+						Fill the form below to request Channelle to minister, teach, or lead
 						worship at your event.
 					</p>
 

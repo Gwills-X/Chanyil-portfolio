@@ -12,7 +12,7 @@ const Hero = () => {
 					animate={{ opacity: 1, x: 0 }}
 					transition={{ duration: 0.8 }}>
 					<h1 className='text-5xl md:text-6xl font-serif font-bold mb-6'>
-						Chanel Chayil
+						Channelle Chayil
 					</h1>
 					<p className='text-xl md:text-2xl mb-8'>
 						Faith-Centred Leader | Speaker | Mentor | Visionary
@@ -27,7 +27,7 @@ const Hero = () => {
 						<a
 							href='/speaking'
 							className='px-8 py-4 bg-black text-white rounded-full hover:bg-transparent hover:text-black hover:border hover:border-black transition hover:-translate-y-2 duration-500'>
-							Work With Chanel
+							Work With Channelle
 						</a>
 						<a
 							href='/chayil-daughters'
@@ -45,7 +45,7 @@ const Hero = () => {
 					transition={{ duration: 0.8 }}>
 					<img
 						src={profilePic} // Replace with your image
-						alt='Chanel Chayil'
+						alt='Channelle Chayil'
 						className='rounded-xl shadow-lg w-full object-cover'
 					/>
 				</motion.div>

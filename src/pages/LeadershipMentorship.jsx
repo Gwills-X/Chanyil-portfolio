@@ -7,9 +7,6 @@ import {
 	FaHandsHelping,
 } from "react-icons/fa";
 import profilePic from "../images/profilePic.png";
-import mentorship1 from "../images/02aa05e6-e61a-4cf2-8373-dbd870a9efa3.jpg";
-import mentorship2 from "../images/61e5efdf-5d5d-4500-936c-e18e7209bed0.jpg";
-import mentorship3 from "../images/a5edebd0-6cd5-40c0-a285-c4e8effa862d.jpg";
 
 const pathways = [
 	{
@@ -204,14 +201,6 @@ const LeadershipMentorship = () => {
 								</div>
 								<h4 className='font-semibold mb-2'>{item.title}</h4>
 								<p className='text-sm text-gray-600'>{item.desc}</p>
-							</div>
-						))}
-					</div>
-
-					<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-16'>
-						{[mentorship1, mentorship2, mentorship3].map((img, i) => (
-							<div key={i} className='rounded-xl overflow-hidden shadow'>
-								<img src={img} alt='' className='h-60 w-full object-cover' />
 							</div>
 						))}
 					</div>

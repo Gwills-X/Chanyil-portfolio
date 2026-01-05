@@ -15,7 +15,7 @@ const Intro = () => {
 					initial={{ opacity: 0, x: -20 }}
 					animate={{ opacity: 1, x: 0 }}
 					transition={{ delay: 0.2, duration: 0.6 }}>
-					Meet Chanel Chayil
+					Meet Channelle Chayil
 				</motion.h2>
 
 				{/* Paragraph 1 */}
@@ -24,9 +24,9 @@ const Intro = () => {
 					initial={{ opacity: 0, x: 20 }}
 					animate={{ opacity: 1, x: 0 }}
 					transition={{ delay: 0.4, duration: 0.6 }}>
-					Chanel Chayil is a Christian leader, mentor, and visionary committed
-					to equipping women to walk confidently in their God-given identity and
-					calling.
+					Channelle Chayil is a Christian leader, mentor, and visionary
+					committed to equipping women to walk confidently in their God-given
+					identity and calling.
 				</motion.p>
 
 				{/* Paragraph 2 */}
