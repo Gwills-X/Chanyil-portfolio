@@ -95,7 +95,7 @@ const navLinks = (closeMenu) => (
 			label='Leadership & Mentorship'
 			closeMenu={closeMenu}
 		/>
-		<NavItem to='/speaking' label='Speaking' closeMenu={closeMenu} />
+		<NavItem to='/invite' label='Invite' closeMenu={closeMenu} />
 		<NavItem to='/media' label='Media Resources' closeMenu={closeMenu} />
 	</>
 );

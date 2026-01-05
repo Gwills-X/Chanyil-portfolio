@@ -14,12 +14,19 @@ const Hero = () => {
 					<h1 className='text-5xl md:text-6xl font-serif font-bold mb-6'>
 						Channelle Chayil
 					</h1>
-					<p className='text-xl md:text-2xl mb-8'>
-						Faith-Centred Leader | Speaker | Mentor | Visionary
+
+					<p className='text-xl md:text-2xl mb-4'>
+						Faith-Centered Leader | Speaker | Mentor | Worship Minister
 					</p>
-					<p className='text-lg md:text-xl mb-8'>
+
+					<p className='text-lg md:text-xl mb-6'>
 						Raising purpose-driven women to lead with faith, clarity, and
 						obedience—impacting lives, communities, and generations.
+					</p>
+
+					<p className='text-lg md:text-xl mb-8'>
+						Through her voice and ministry, Channelle inspires hearts with
+						worship, song, and faith-based teaching.
 					</p>
 
 					{/* Buttons */}
@@ -44,7 +51,7 @@ const Hero = () => {
 					animate={{ opacity: 1, x: 0 }}
 					transition={{ duration: 0.8 }}>
 					<img
-						src={profilePic} // Replace with your image
+						src={profilePic}
 						alt='Channelle Chayil'
 						className='rounded-xl shadow-lg w-full object-cover'
 					/>

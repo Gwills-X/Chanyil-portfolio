@@ -10,8 +10,8 @@ import five from "../images/62c45394-478c-4964-bea7-c9a5f2b0493d.jpg";
 import six from "../images/8aad0d5b-2a4a-44cd-9ed7-7c207b33d821.jpg";
 
 const topics = [
-	"Identity & Purpose",
-	"Faith-Based Leadership",
+	"Worship & Music Ministry",
+	"Faith-Centered Leadership",
 	"Obedience & Alignment",
 	"Healing, Restoration & Calling",
 	"Women, Legacy & Impact",
@@ -22,14 +22,6 @@ const ministrySlides = [one, two, three, four, five, six];
 const Speaking = () => {
 	const [current, setCurrent] = useState(0);
 
-	// Forms state
-	const [partnerData, setPartnerData] = useState({
-		name: "",
-		email: "",
-		phone: "",
-		amount: "",
-		message: "",
-	});
 	const [inviteData, setInviteData] = useState({
 		name: "",
 		email: "",
@@ -37,10 +29,8 @@ const Speaking = () => {
 		event: "",
 		message: "",
 	});
-	const [partnerSubmitted, setPartnerSubmitted] = useState(false);
 	const [inviteSubmitted, setInviteSubmitted] = useState(false);
 
-	// Auto slide
 	useEffect(() => {
 		const interval = setInterval(() => {
 			setCurrent((prev) => (prev + 1) % ministrySlides.length);
@@ -54,39 +44,27 @@ const Speaking = () => {
 			(prev) => (prev - 1 + ministrySlides.length) % ministrySlides.length
 		);
 
-	// Form handlers
-	const handlePartnerChange = (e) => {
-		setPartnerData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-	};
 	const handleInviteChange = (e) => {
 		setInviteData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 	};
 
-	const handlePartnerSubmit = (e) => {
-		e.preventDefault();
-		console.log("Partner Request:", partnerData);
-		setPartnerSubmitted(true);
-		setPartnerData({ name: "", email: "", phone: "", amount: "", message: "" });
-		// TODO: send email to backend
-	};
 	const handleInviteSubmit = (e) => {
 		e.preventDefault();
 		console.log("Invitation Request:", inviteData);
 		setInviteSubmitted(true);
 		setInviteData({ name: "", email: "", phone: "", event: "", message: "" });
-		// TODO: send email to backend
 	};
 
 	return (
 		<main className='bg-white overflow-x-hidden'>
-			{/* ========== PROFESSIONAL SECTION ========== */}
+			{/* ================= HERO ================= */}
 			<section className='py-24 px-6 bg-white pt-40'>
 				<div className='max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-14 items-center'>
 					{/* Profile */}
 					<div className='flex justify-center'>
 						<img
 							src={profilePic}
-							alt='Professional portrait'
+							alt='Channelle Chayil'
 							className='w-full max-w-sm rounded-2xl shadow-xl object-cover grayscale'
 						/>
 					</div>
@@ -94,15 +72,15 @@ const Speaking = () => {
 					{/* Text */}
 					<div>
 						<h2 className='text-3xl md:text-4xl font-serif mb-6'>
-							Speaking & Worship Ministry
+							Worship & Speaking Ministry
 						</h2>
 						<p className='text-lg text-gray-700 leading-relaxed'>
-							Channelle ministers through both the spoken word and worship,
-							delivering faith-centered messages that inspire obedience,
-							spiritual clarity, and transformation through Christ.
+							Channelle ministers through worship, singing, and the spoken word,
+							inspiring hearts to connect with God and experience spiritual
+							transformation. Her ministry blends music, teaching, and speaking
+							to encourage faith, obedience, and clarity.
 						</p>
 
-						{/* Buttons */}
 						<div className='flex flex-col sm:flex-row gap-4 mt-6'>
 							<a
 								href='/missions#partner'
@@ -111,7 +89,7 @@ const Speaking = () => {
 							</a>
 							<a
 								href='#invite-form'
-								className='px-8 py-3 border bg-transparent text-black rounded-full hover:bg-black hover:text-white  transition-all duration-300'>
+								className='px-8 py-3 border bg-transparent text-black rounded-full hover:bg-black hover:text-white transition-all duration-300'>
 								Invite Channelle
 							</a>
 						</div>
@@ -119,22 +97,22 @@ const Speaking = () => {
 				</div>
 			</section>
 
-			{/* ========== SLIDESHOW SECTION ========== */}
+			{/* ================= SLIDESHOW ================= */}
 			<section className='py-24 px-6 bg-gray-50'>
 				<div className='max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-14 items-center'>
 					{/* Text */}
 					<div>
 						<h2 className='text-3xl md:text-4xl font-serif mb-6'>
-							Ministry in Action
+							Ministry in Worship
 						</h2>
 						<p className='text-lg text-gray-700 leading-relaxed'>
-							From worship sessions to teaching moments, Channelle’s ministry
-							creates spaces where hearts are aligned, faith is strengthened,
-							and God’s presence is experienced.
+							Through worship sessions, live music, and faith-based teaching,
+							Channelle leads spaces where God’s presence is felt, hearts are
+							transformed, and faith is strengthened.
 						</p>
 					</div>
 
-					{/* SLIDER */}
+					{/* Slider */}
 					<div className='relative w-full max-w-md mx-auto h-[420px] rounded-2xl overflow-hidden shadow-xl'>
 						<AnimatePresence mode='wait'>
 							<motion.img
@@ -173,7 +151,7 @@ const Speaking = () => {
 					viewport={{ once: true }}
 					className='max-w-5xl mx-auto'>
 					<h2 className='text-3xl font-serif mb-12 text-center'>
-						Speaking Topics Include
+						Ministry Topics Include
 					</h2>
 
 					<div className='grid gap-6 md:grid-cols-2'>
@@ -201,11 +179,11 @@ const Speaking = () => {
 					viewport={{ once: true }}
 					className='max-w-4xl mx-auto text-center space-y-6'>
 					<h2 className='text-3xl font-serif mb-4'>
-						Invite Channelle to Speak
+						Invite Channelle to Worship & Teach
 					</h2>
 					<p className='text-gray-700 text-lg'>
-						Fill the form below to request Channelle to minister, teach, or lead
-						worship at your event.
+						Fill the form below to request Channelle to lead worship, teach, or
+						speak at your event.
 					</p>
 
 					{inviteSubmitted && (
@@ -224,7 +202,7 @@ const Speaking = () => {
 							value={inviteData.name}
 							onChange={handleInviteChange}
 							required
-							className=' p-3 rounded-lg border border-gray-300'
+							className='p-3 rounded-lg border border-gray-300'
 						/>
 						<input
 							type='email'
@@ -251,18 +229,18 @@ const Speaking = () => {
 							value={inviteData.event}
 							onChange={handleInviteChange}
 							required
-							className=' p-3 rounded-lg border border-gray-300'
+							className='p-3 rounded-lg border border-gray-300'
 						/>
 						<textarea
 							name='message'
 							placeholder='Any additional message'
 							value={inviteData.message}
 							onChange={handleInviteChange}
-							className=' p-3 rounded-lg border border-gray-300'
+							className='p-3 rounded-lg border border-gray-300'
 						/>
 						<button
 							type='submit'
-							className=' py-3 bg-black text-white rounded-full hover:bg-gray-800 transition'>
+							className='py-3 bg-black text-white rounded-full hover:bg-gray-800 transition'>
 							Send Invitation Request
 						</button>
 					</form>

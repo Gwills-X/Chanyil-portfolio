@@ -24,9 +24,9 @@ const Intro = () => {
 					initial={{ opacity: 0, x: 20 }}
 					animate={{ opacity: 1, x: 0 }}
 					transition={{ delay: 0.4, duration: 0.6 }}>
-					Channelle Chayil is a Christian leader, mentor, and visionary
+					Channelle Chayil is a Christian leader, mentor, singer, and visionary
 					committed to equipping women to walk confidently in their God-given
-					identity and calling.
+					identity, calling, and purpose.
 				</motion.p>
 
 				{/* Paragraph 2 */}
@@ -35,9 +35,9 @@ const Intro = () => {
 					initial={{ opacity: 0, x: 20 }}
 					animate={{ opacity: 1, x: 0 }}
 					transition={{ delay: 0.6, duration: 0.6 }}>
-					Through leadership formation, discipleship, and global
-					community-building, she creates spaces where faith meets practical
-					leadership and lasting impact.
+					Through leadership formation, discipleship, worship ministry, and
+					global community-building, she creates spaces where faith meets
+					practical leadership and hearts are moved through music and teaching.
 				</motion.p>
 
 				{/* Paragraph 3 */}
@@ -46,9 +46,9 @@ const Intro = () => {
 					initial={{ opacity: 0, x: 20 }}
 					animate={{ opacity: 1, x: 0 }}
 					transition={{ delay: 0.8, duration: 0.6 }}>
-					Her work spans ministry, mentorship, leadership development, and
-					charitable outreach, with a heart for restoring identity, purpose, and
-					spiritual maturity in women across nations.
+					Her work spans ministry, mentorship, leadership development, worship,
+					and charitable outreach, with a heart for restoring identity, purpose,
+					and spiritual maturity in women across nations.
 				</motion.p>
 			</motion.div>
 		</section>

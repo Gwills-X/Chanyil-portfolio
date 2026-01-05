@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import {
-	FaAward,
-	FaGlobe,
+	FaMicrophone,
+	FaMusic,
 	FaUsers,
 	FaBook,
 	FaHandsHelping,
@@ -10,16 +10,16 @@ import {
 const Highlights = () => {
 	const highlights = [
 		{
-			icon: <FaAward className='text-4xl text-black' />,
-			text: "Award-Winning Woman Leader in Ministry",
+			icon: <FaMusic className='text-4xl text-black' />,
+			text: "Ministering Through Worship & Song",
 		},
 		{
-			icon: <FaGlobe className='text-4xl text-black' />,
-			text: "International Speaker & Mentor",
+			icon: <FaMicrophone className='text-4xl text-black' />,
+			text: "Global Worship Leader & Speaker",
 		},
 		{
 			icon: <FaUsers className='text-4xl text-black' />,
-			text: "Founder of God’s Chayil Daughters",
+			text: "Founder of God’s Chayil Daughters Community",
 		},
 		{
 			icon: <FaBook className='text-4xl text-black' />,
@@ -27,7 +27,7 @@ const Highlights = () => {
 		},
 		{
 			icon: <FaHandsHelping className='text-4xl text-black' />,
-			text: "Global Community Builder & Advocate for Women",
+			text: "Empowering Women Through Mentorship & Music",
 		},
 	];
 

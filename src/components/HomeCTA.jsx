@@ -14,7 +14,7 @@ const HomeCTA = () => {
 					initial={{ opacity: 0, y: 10 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ delay: 0.2, duration: 0.6 }}>
-					Ready to Connect with Chanel?
+					Experience Channelle’s Ministry & Leadership
 				</motion.h2>
 
 				<motion.p
@@ -22,8 +22,9 @@ const HomeCTA = () => {
 					initial={{ opacity: 0, y: 10 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ delay: 0.4, duration: 0.6 }}>
-					Whether you want mentorship, speaking opportunities, or to join the
-					God’s Chayil Daughters community, take the next step today.
+					Whether you want to be inspired through worship and music, explore
+					mentorship, or invite Channelle to speak, take the next step to engage
+					with her ministry today.
 				</motion.p>
 
 				<motion.div
@@ -32,9 +33,9 @@ const HomeCTA = () => {
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ delay: 0.6, duration: 0.6 }}>
 					<a
-						href='/speaking'
+						href='/invite'
 						className='px-10 py-4 bg-white text-black font-semibold rounded-full shadow-lg hover:bg-transparent hover:text-white hover:border hover:border-white hover:-translate-y-2 transition duration-500'>
-						Work With Chanel
+						Work With Channelle
 					</a>
 
 					<a
