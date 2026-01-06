@@ -18,6 +18,7 @@ const coreValues = [
 ];
 
 const Mission = () => {
+	// Form state
 	const [formData, setFormData] = useState({
 		name: "",
 		email: "",
@@ -27,25 +28,84 @@ const Mission = () => {
 	});
 	const [submitted, setSubmitted] = useState(false);
 
+	// Update form fields
 	const handleChange = (e) => {
 		setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 	};
 
-	const handleSubmit = (e) => {
+	// WhatsApp number for redirect
+	const whatsappNumber = "447380923100"; // replace with your default number
+	const whatsappMessage = encodeURIComponent(
+		"Hello! I just submitted the partnership form and would like to connect."
+	);
+
+	// Handle form submit
+	const handleSubmit = async (e) => {
 		e.preventDefault();
 
-		// TODO: Send formData to backend or email service
-		console.log("Partnership request submitted:", formData);
+		// Prepare FormSubmit data
+		const data = new FormData();
+		data.append("name", formData.name);
+		data.append("email", formData.email);
+		data.append("phone", formData.phone);
+		data.append("amount", formData.amount);
+		data.append("message", formData.message);
 
-		setSubmitted(true);
-		setFormData({ name: "", email: "", phone: "", amount: "", message: "" });
+		// Email sent to ministry (you)
+		data.append("_subject", "New Partnership Request");
+		data.append("_template", "table");
+		data.append("_captcha", "false");
+
+		// Email sent to user automatically
+		data.append("_replyto", formData.email);
+		data.append(
+			"_autoresponse",
+			`Hello ${formData.name},\n\nThank you for partnering with us! 
+You will find the account details below to make your contribution:\n\nBank: XYZ Bank\nAccount Name: Channelle Chayil\nAccount Number: 1234567890\n\nWe appreciate your support and commitment.\n\nBlessings,\nChannelle Chayil Ministry`
+		);
+
+		try {
+			const response = await fetch(
+				"https://formsubmit.co/ajax/partner@channellechayil.com",
+				{
+					method: "POST",
+					body: data,
+					headers: { Accept: "application/json" },
+				}
+			);
+
+			if (response.ok) {
+				// Show success message
+				setSubmitted(true);
+				// Reset form
+				setFormData({
+					name: "",
+					email: "",
+					phone: "",
+					amount: "",
+					message: "",
+				});
+
+				// Redirect to WhatsApp after 2 seconds (optional delay)
+				setTimeout(() => {
+					window.open(
+						`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`,
+						"_blank"
+					);
+				}, 2000);
+			} else {
+				alert("Oops! Something went wrong. Please try again.");
+			}
+		} catch (err) {
+			console.error(err);
+			alert("Network error. Please check your connection.");
+		}
 	};
 
 	return (
 		<main className='bg-white'>
 			{/* ================= HEADER ================= */}
 			<section className='py-24 px-6 bg-gradient-to-r from-gray-500 via-gray-600 to-gray-500 relative h-dvh flex flex-col justify-center items-center'>
-				{/* Optional subtle header image */}
 				<img
 					src={mentorship3}
 					alt='Mission header'
@@ -131,7 +191,7 @@ const Mission = () => {
 				</motion.div>
 			</section>
 
-			{/* ================= PARTNER WITH US ================= */}
+			{/* ================= PARTNER WITH US FORM ================= */}
 			<section id='partner' className='py-24 px-6 bg-purple-50'>
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
@@ -145,9 +205,12 @@ const Mission = () => {
 						raise purpose-driven women. Fill out the form below to get started.
 					</p>
 
+					{/* Show success message after submission */}
 					{submitted && (
 						<p className='text-green-600 font-semibold'>
-							Thank you! Your partnership request has been received.
+							Thank you! Your partnership request has been received. Check your
+							email for account details. You will also be redirected to WhatsApp
+							shortly.
 						</p>
 					)}
 

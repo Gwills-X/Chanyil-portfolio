@@ -59,6 +59,7 @@ const testimonials = [
 ];
 
 const ChayilDaughters = () => {
+	// Form state
 	const [joinData, setJoinData] = useState({
 		name: "",
 		email: "",
@@ -68,16 +69,78 @@ const ChayilDaughters = () => {
 	});
 	const [submitted, setSubmitted] = useState(false);
 
+	// WhatsApp number and message
+	const whatsappNumber = "447380923100"; // Replace with your default WhatsApp number
+	const whatsappMessage = encodeURIComponent(
+		"Hello! I just submitted my request to join God’s Chayil Daughters and would like to connect."
+	);
+
+	// Handle input change
 	const handleChange = (e) => {
 		setJoinData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 	};
 
-	const handleSubmit = (e) => {
+	// Handle form submission
+	const handleSubmit = async (e) => {
 		e.preventDefault();
-		console.log("Join Request:", joinData);
-		setSubmitted(true);
-		setJoinData({ name: "", email: "", phone: "", country: "", message: "" });
-		// TODO: Send email via backend
+
+		// Prepare form data for FormSubmit
+		const data = new FormData();
+		data.append("name", joinData.name);
+		data.append("email", joinData.email);
+		data.append("phone", joinData.phone);
+		data.append("country", joinData.country);
+		data.append("message", joinData.message);
+
+		// Email subject to ministry
+		data.append("_subject", "New Join Request - Chayil Daughters");
+		data.append("_template", "table");
+		data.append("_captcha", "false");
+
+		// Autoresponse to user
+		data.append("_replyto", joinData.email);
+		data.append(
+			"_autoresponse",
+			`Hello ${joinData.name},\n\nThank you for your request to join God’s Chayil Daughters! 
+We appreciate your effort and will reach out soon.\n\nBlessings,\nChayil Daughters Team`
+		);
+
+		try {
+			const response = await fetch(
+				"https://formsubmit.co/ajax/join@channellechayil.com",
+				{
+					method: "POST",
+					body: data,
+					headers: { Accept: "application/json" },
+				}
+			);
+
+			if (response.ok) {
+				// Show success message
+				setSubmitted(true);
+				// Reset form
+				setJoinData({
+					name: "",
+					email: "",
+					phone: "",
+					country: "",
+					message: "",
+				});
+
+				// Redirect to WhatsApp after 2 seconds
+				setTimeout(() => {
+					window.open(
+						`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`,
+						"_blank"
+					);
+				}, 2000);
+			} else {
+				alert("Oops! Something went wrong. Please try again.");
+			}
+		} catch (err) {
+			console.error(err);
+			alert("Network error. Please check your connection.");
+		}
 	};
 
 	return (
@@ -214,10 +277,11 @@ const ChayilDaughters = () => {
 						Fill the form below to become part of our global sisterhood.
 					</p>
 
+					{/* Success message */}
 					{submitted && (
 						<p className='text-green-600 font-semibold'>
-							Thank you! Your request has been received. We will contact you
-							soon.
+							Thank you! Your request has been received. Check your email for
+							more info. You will also be redirected to WhatsApp shortly.
 						</p>
 					)}
 
