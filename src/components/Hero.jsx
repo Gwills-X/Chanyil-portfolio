@@ -32,7 +32,7 @@ const Hero = () => {
 					{/* Buttons */}
 					<div className='flex flex-col sm:flex-row gap-4'>
 						<a
-							href='/speaking'
+							href='/invite'
 							className='px-8 py-4 bg-black text-white rounded-full hover:bg-transparent hover:text-black hover:border hover:border-black transition hover:-translate-y-2 duration-500'>
 							Work With Channelle
 						</a>

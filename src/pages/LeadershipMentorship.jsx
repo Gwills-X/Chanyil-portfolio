@@ -8,6 +8,7 @@ import {
 } from "react-icons/fa";
 import profilePic from "../images/profilePic.png";
 
+// Define mentorship pathways for the section
 const pathways = [
 	{
 		title: "One-to-One Mentorship",
@@ -31,6 +32,7 @@ const pathways = [
 	},
 ];
 
+// Testimonials to display in the page
 const testimonials = [
 	{
 		name: "Jane Doe",
@@ -43,11 +45,72 @@ const testimonials = [
 ];
 
 const LeadershipMentorship = () => {
+	// State to track if form was submitted successfully
 	const [submitted, setSubmitted] = useState(false);
 
-	const handleSubmit = (e) => {
+	// State to hold form data inputs
+	const [formData, setFormData] = useState({
+		name: "",
+		email: "",
+		phone: "",
+		country: "",
+		message: "",
+	});
+
+	// Update form data on input change
+	const handleChange = (e) => {
+		setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+	};
+
+	// Handle form submission
+	const handleSubmit = async (e) => {
 		e.preventDefault();
-		setSubmitted(true);
+
+		// Prepare data to send via FormSubmit
+		const data = new FormData();
+		data.append("name", formData.name);
+		data.append("email", formData.email);
+		data.append("phone", formData.phone);
+		data.append("country", formData.country);
+		data.append("message", formData.message);
+		data.append("_subject", "New Leadership Registration"); // Email subject
+		data.append("_template", "table"); // FormSubmit email format
+		data.append("_captcha", "false"); // Disable captcha for convenience
+
+		// Optional: Redirect to WhatsApp after submit
+		// data.append("_next", "https://wa.me/234XXXXXXXXXX?text=Hello! I want to join the leadership program");
+
+		try {
+			// Send data to FormSubmit endpoint
+			const response = await fetch(
+				"https://formsubmit.co/ajax/register@channellechayil.com",
+				{
+					method: "POST",
+					body: data,
+					headers: { Accept: "application/json" },
+				}
+			);
+
+			if (response.ok) {
+				// Show confirmation message
+				setSubmitted(true);
+				// Reset form fields
+				setFormData({
+					name: "",
+					email: "",
+					phone: "",
+					country: "",
+					message: "",
+				});
+				// Optional WhatsApp redirect
+				// window.location.href = "https://wa.me/234XXXXXXXXXX?text=Hello! I want to join the leadership program";
+			} else {
+				alert("Oops! Something went wrong. Please try again.");
+			}
+		} catch (err) {
+			console.error(err);
+			alert("Network error. Please check your connection.");
+		}
 	};
 
 	return (
@@ -62,17 +125,16 @@ const LeadershipMentorship = () => {
 					<h1 className='text-4xl md:text-5xl font-serif font-semibold mb-6'>
 						Chayil School of Leadership
 					</h1>
-
 					<p className='text-lg text-gray-700 mb-4'>
 						Leadership formation for women called to lead with wisdom,
 						confidence, and impact.
 					</p>
-
 					<p className='text-gray-600 leading-relaxed max-w-2xl mx-auto'>
 						A faith-rooted, practical leadership programme designed to prepare
 						women for real responsibility — not just visibility.
 					</p>
 
+					{/* Buttons linking to sections */}
 					<div className='mt-10 flex flex-col sm:flex-row gap-4 justify-center'>
 						<a
 							href='#application'
@@ -91,7 +153,7 @@ const LeadershipMentorship = () => {
 			{/* ================= ABOUT ================= */}
 			<section id='about' className='py-24 px-6'>
 				<div className='max-w-6xl mx-auto grid md:grid-cols-2 gap-14 items-center'>
-					{/* Text */}
+					{/* Text content */}
 					<motion.div
 						initial={{ opacity: 0, y: 20 }}
 						whileInView={{ opacity: 1, y: 0 }}
@@ -139,7 +201,7 @@ const LeadershipMentorship = () => {
 						</p>
 					</motion.div>
 
-					{/* Founder Image */}
+					{/* Founder image */}
 					<motion.div
 						initial={{ opacity: 0, scale: 0.95 }}
 						whileInView={{ opacity: 1, scale: 1 }}
@@ -159,7 +221,6 @@ const LeadershipMentorship = () => {
 			<section className='py-24 bg-gray-50 px-6'>
 				<div className='max-w-4xl mx-auto text-center space-y-6'>
 					<h2 className='text-3xl font-serif'>The Programme</h2>
-
 					<p className='text-gray-700'>
 						<strong>Duration:</strong> 3 Months &nbsp;|&nbsp;
 						<strong>Format:</strong> Online (Live via Zoom)
@@ -169,6 +230,7 @@ const LeadershipMentorship = () => {
 						<strong>Investment:</strong> £100
 					</p>
 
+					{/* Features grid */}
 					<div className='grid md:grid-cols-2 gap-4 text-left max-w-2xl mx-auto mt-8'>
 						<ul className='space-y-2'>
 							<li>✔ Weekly live group leadership classes</li>
@@ -224,7 +286,7 @@ const LeadershipMentorship = () => {
 				</div>
 			</section>
 
-			{/* ================= APPLICATION ================= */}
+			{/* ================= APPLICATION FORM ================= */}
 			<section id='application' className='py-24 px-6 bg-green-50'>
 				<div className='max-w-4xl mx-auto text-center'>
 					<h2 className='text-3xl font-serif mb-4'>Apply & Register</h2>
@@ -233,38 +295,67 @@ const LeadershipMentorship = () => {
 						required.
 					</p>
 
+					{/* Confirmation message on successful submission */}
 					{submitted && (
 						<p className='text-green-600 font-semibold mb-4'>
 							Application received. We’ll be in touch soon.
 						</p>
 					)}
 
+					{/* Form */}
 					<form onSubmit={handleSubmit} className='grid gap-4'>
+						{/* Name input */}
 						<input
-							className='p-3 border rounded-lg'
+							type='text'
+							name='name'
 							placeholder='Full Name'
+							value={formData.name}
+							onChange={handleChange}
 							required
-						/>
-						<input
 							className='p-3 border rounded-lg'
+						/>
+						{/* Email input */}
+						<input
+							type='email'
+							name='email'
 							placeholder='Email'
+							value={formData.email}
+							onChange={handleChange}
 							required
-						/>
-						<input
 							className='p-3 border rounded-lg'
+						/>
+						{/* Phone input */}
+						<input
+							type='tel'
+							name='phone'
 							placeholder='Phone Number'
+							value={formData.phone}
+							onChange={handleChange}
 							required
+							className='p-3 border rounded-lg'
 						/>
+						{/* Country input */}
 						<input
-							className='p-3 border rounded-lg'
+							type='text'
+							name='country'
 							placeholder='Country'
+							value={formData.country}
+							onChange={handleChange}
 							required
-						/>
-						<textarea
 							className='p-3 border rounded-lg'
-							placeholder='Why are you applying?'
 						/>
-						<button className='py-3 bg-black text-white rounded-full'>
+						{/* Message textarea */}
+						<textarea
+							name='message'
+							placeholder='Why are you applying?'
+							value={formData.message}
+							onChange={handleChange}
+							className='p-3 border rounded-lg'
+						/>
+						{/* Submit button */}
+						<button
+							type='submit'
+							className='py-3 bg-black text-white rounded-full'>
 							Submit Application
 						</button>
 					</form>
