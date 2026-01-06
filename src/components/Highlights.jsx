@@ -11,7 +11,7 @@ const Highlights = () => {
 	const highlights = [
 		{
 			icon: <FaMusic className='text-4xl text-black' />,
-			text: "Ministering Through Worship & Song",
+			text: "Ministering Through Worship in Sound",
 		},
 		{
 			icon: <FaMicrophone className='text-4xl text-black' />,
@@ -27,7 +27,7 @@ const Highlights = () => {
 		},
 		{
 			icon: <FaHandsHelping className='text-4xl text-black' />,
-			text: "Empowering Women Through Mentorship & Music",
+			text: "Empowering Women Through Mentorship ",
 		},
 	];
 

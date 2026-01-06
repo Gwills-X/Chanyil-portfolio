@@ -13,10 +13,10 @@ const Footer = () => {
 						whileInView={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.6 }}
 						viewport={{ once: true }}>
-						<h3 className='text-2xl font-serif mb-4'>Channelle Ministry</h3>
+						<h3 className='text-2xl font-serif mb-4'>Channelle's Ministry</h3>
 						<p className='text-gray-400 leading-relaxed'>
-							Faith-rooted speaking and worship ministry committed to obedience,
-							clarity, and spiritual alignment.
+							Faith-rooted speaking and worship ministry committed to love,
+							faith, and obedience.
 						</p>
 					</motion.div>
 

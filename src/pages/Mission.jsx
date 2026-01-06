@@ -137,7 +137,7 @@ You will find the account details below to make your contribution:\n\nBank: XYZ 
 					<h2 className='text-3xl font-serif mb-2'>Our Mission</h2>
 					<p className='text-xl text-gray-700 leading-relaxed'>
 						To raise faith-filled, purpose-driven women who are grounded in
-						identity, obedience, and spiritual maturity — equipped to lead and
+						identity, obedience, and spiritual maturity — equipped with love and
 						serve with impact.
 					</p>
 				</motion.div>
@@ -154,7 +154,7 @@ You will find the account details below to make your contribution:\n\nBank: XYZ 
 					<h2 className='text-3xl font-serif mb-2'>Our Vision</h2>
 					<p className='text-xl text-gray-700 leading-relaxed'>
 						A global movement of women walking confidently in their God-given
-						calling, influencing families, communities, and nations through
+						calling, influencing others, communities, and nations through
 						faith-centred leadership.
 					</p>
 				</motion.div>

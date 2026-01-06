@@ -126,12 +126,13 @@ const LeadershipMentorship = () => {
 						Chayil School of Leadership
 					</h1>
 					<p className='text-lg text-gray-700 mb-4'>
-						Leadership formation for women called to lead with wisdom,
-						confidence, and impact.
+						Leadership formation for women ready to lead with wisdom, impact and
+						love.
 					</p>
 					<p className='text-gray-600 leading-relaxed max-w-2xl mx-auto'>
-						A faith-rooted, practical leadership programme designed to prepare
-						women for real responsibility — not just visibility.
+						A faith-rooted leadership formation for purpose-driven women ready
+						to lead with wisdom, confidence, and love - equipped through
+						mentorship, biblical foundations, and practical training.
 					</p>
 
 					{/* Buttons linking to sections */}
@@ -164,12 +165,13 @@ const LeadershipMentorship = () => {
 							The Vision
 						</h2>
 						<p>
-							The Chayil School of Leadership exists to form prepared leaders —
-							not rushed or performative ones. This is not a theory-only course.
+							Chayil School of Leadership forms faith-rooted women who lead from
+							identity, wisdom, and love through mentorship, biblical
+							foundations, and practical leadership training.
 						</p>
 						<p>
-							It is personal formation, mentorship, and practical leadership
-							development grounded in identity, obedience, and execution.
+							We raise grounded, confident, and love-led leaders who steward
+							influence well and create lasting impact in every sphere of life.
 						</p>
 
 						<h3 className='text-xl font-serif font-semibold text-black pt-4'>

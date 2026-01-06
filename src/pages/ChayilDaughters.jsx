@@ -8,7 +8,8 @@ import {
 	FaChalkboardTeacher,
 } from "react-icons/fa";
 
-import backgroundPic from "../images/47b226c1-abcb-450d-983b-f1bfa8d36526.jpg";
+import backgroundPic from "../images/IMG-20260106-WA0081.jpg";
+import { FaPeopleGroup } from "react-icons/fa6";
 
 // Activities
 const activities = [
@@ -41,6 +42,12 @@ const activities = [
 		icon: <FaChalkboardTeacher />,
 		description:
 			"Equipping women with leadership skills and spiritual formation to impact communities.",
+	},
+	{
+		title: " Events & Programmes.",
+		icon: <FaPeopleGroup />,
+		description:
+			"Faith-led gatherings which empower, build community and strengthen women.",
 	},
 ];
 
@@ -171,9 +178,10 @@ We appreciate your effort and will reach out soon.\n\nBlessings,\nChayil Daughte
 							Join God’s Chayil Daughters
 						</a>
 						<a
-							href='/missions#partner'
+							href='https://linktr.ee/channellechayil?utm_source=linktree_profile_share&ltsid=260f301a-8b8e-4f8d-8c87-0eeed8c02291.'
+							target='_blank'
 							className='inline-block px-8 py-3 border bg-black text-white font-semibold rounded-full hover:bg-white hover:text-black transition-all duration-300'>
-							Partner With Us
+							Follow Channelle
 						</a>
 					</div>
 				</motion.div>

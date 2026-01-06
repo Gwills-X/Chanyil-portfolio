@@ -20,7 +20,7 @@ const Hero = () => {
 					</p>
 
 					<p className='text-lg md:text-xl mb-6'>
-						Raising purpose-driven women to lead with faith, clarity, and
+						Raising purpose-driven women to lead in love, faith, and
 						obedience—impacting lives, communities, and generations.
 					</p>
 

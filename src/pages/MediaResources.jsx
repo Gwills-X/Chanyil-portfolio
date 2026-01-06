@@ -1,18 +1,19 @@
 import { motion } from "framer-motion";
-import { FaTiktok, FaTwitter } from "react-icons/fa";
+import { FaLink, FaTiktok, FaTwitter } from "react-icons/fa";
 import {
 	FaYoutube,
 	FaPodcast,
 	FaInstagram,
 	FaFacebook,
 	FaXTwitter,
+	FaX,
 } from "react-icons/fa6";
 
 const resources = [
 	{
 		title: "Videos & Teachings",
 		description:
-			"Faith-based video teachings designed to equip, refine, and strengthen women in identity, obedience, leadership, and purpose.",
+			"Faith-based words of encouragement, teachings to empower, strengthen, equip and refine women in faith, identity, obedience and purpose. ",
 		button: "Watch on YouTube",
 		link: "https://youtube.com/c/ChannelleDebrah?sub_confirmation=1", // YouTube channel link
 		icon: <FaYoutube />,
@@ -31,15 +32,15 @@ const resources = [
 			"Written devotionals, guides, and digital resources created to support daily spiritual growth and leadership formation.",
 		button: "View Resources",
 		link: "https://x.com/channellechayil/status/2005365753281921174?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E2005365753281921174%7Ctwgr%5E612724389a382219a93f8b838613fd48e9742593%7Ctwcon%5Es1_c10&ref_url=https%3A%2F%2Flinktr.ee%2Fchannellechayil",
-		icon: <FaTwitter />,
+		icon: <FaXTwitter />,
 	},
 	{
 		title: "Upcoming Projects",
 		description:
 			"Books, Chayil TV, and the Chayil School of Leadership — prayerfully built initiatives designed for global and generational impact.",
 		button: "Learn More",
-		link: "https://www.instagram.com/channellechayil/?utm_source=ig_web_button_share_sheet",
-		icon: <FaInstagram />,
+		link: "https://linktr.ee/channellechayil?utm_source=linktree_profile_share&ltsid=260f301a-8b8e-4f8d-8c87-0eeed8c02291.",
+		icon: <FaLink />,
 	},
 ];
 

@@ -84,7 +84,7 @@ const navLinks = (closeMenu) => (
 	<>
 		<NavItem to='/' label='Home' closeMenu={closeMenu} />
 		<NavItem to='/about' label='About' closeMenu={closeMenu} />
-		<NavItem to='/missions' label='Missions' closeMenu={closeMenu} />
+		<NavItem to='/missions' label='Mission' closeMenu={closeMenu} />
 		<NavItem
 			to='/chayil-daughters'
 			label='Chayil Daughters'

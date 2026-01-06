@@ -15,6 +15,7 @@ const topics = [
 	"Obedience & Alignment",
 	"Healing, Restoration & Calling",
 	"Women, Legacy & Impact",
+	"Faith-based empowerment",
 ];
 
 const ministrySlides = [one, two, three, four, five, six];
@@ -104,8 +105,8 @@ const Speaking = () => {
 							Worship & Speaking Ministry
 						</h2>
 						<p className='text-lg text-gray-700 leading-relaxed'>
-							Channelle ministers through worship, singing, and the spoken word,
-							inspiring hearts to connect with God and experience spiritual
+							Channelle ministers through worship and the spoken word, inspiring
+							hearts to connect with God and experience spiritual
 							transformation. Her ministry blends music, teaching, and speaking
 							to encourage faith, obedience, and clarity.
 						</p>
@@ -134,7 +135,7 @@ const Speaking = () => {
 							Ministry in Worship
 						</h2>
 						<p className='text-lg text-gray-700 leading-relaxed'>
-							Through worship sessions, live music, and faith-based teaching,
+							Through worship sessions, faith-based speaking and teaching,
 							Channelle leads spaces where God’s presence is felt, hearts are
 							transformed, and faith is strengthened.
 						</p>
@@ -204,9 +205,7 @@ const Speaking = () => {
 					transition={{ duration: 0.6 }}
 					viewport={{ once: true }}
 					className='max-w-4xl mx-auto text-center space-y-6'>
-					<h2 className='text-3xl font-serif mb-4'>
-						Invite Channelle to Worship & Teach
-					</h2>
+					<h2 className='text-3xl font-serif mb-4'>Invite Channelle Chayil</h2>
 					<p className='text-gray-700 text-lg'>
 						Fill the form below to request Channelle to lead worship, teach, or
 						speak at your event.
