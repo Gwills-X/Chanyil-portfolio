@@ -48,11 +48,42 @@ const Speaking = () => {
 		setInviteData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 	};
 
-	const handleInviteSubmit = (e) => {
+	const handleInviteSubmit = async (e) => {
 		e.preventDefault();
-		console.log("Invitation Request:", inviteData);
-		setInviteSubmitted(true);
-		setInviteData({ name: "", email: "", phone: "", event: "", message: "" });
+		// Prepare FormSubmit URL
+		const formUrl = "https://formsubmit.co/ajax/invite@channellechayil.com";
+		const formData = new FormData();
+		Object.keys(inviteData).forEach((key) => {
+			formData.append(key, inviteData[key]);
+		});
+		formData.append("_subject", "New Invite Request");
+		formData.append("_template", "table");
+		formData.append("_captcha", "false");
+
+		try {
+			const response = await fetch(formUrl, {
+				method: "POST",
+				body: formData,
+				headers: {
+					Accept: "application/json",
+				},
+			});
+			if (response.ok) {
+				setInviteSubmitted(true);
+				setInviteData({
+					name: "",
+					email: "",
+					phone: "",
+					event: "",
+					message: "",
+				});
+			} else {
+				alert("Oops! Something went wrong. Please try again.");
+			}
+		} catch (error) {
+			console.error(error);
+			alert("Network error. Please check your connection and try again.");
+		}
 	};
 
 	return (
@@ -60,7 +91,6 @@ const Speaking = () => {
 			{/* ================= HERO ================= */}
 			<section className='py-24 px-6 bg-white pt-40'>
 				<div className='max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-14 items-center'>
-					{/* Profile */}
 					<div className='flex justify-center'>
 						<img
 							src={profilePic}
@@ -69,7 +99,6 @@ const Speaking = () => {
 						/>
 					</div>
 
-					{/* Text */}
 					<div>
 						<h2 className='text-3xl md:text-4xl font-serif mb-6'>
 							Worship & Speaking Ministry
@@ -100,7 +129,6 @@ const Speaking = () => {
 			{/* ================= SLIDESHOW ================= */}
 			<section className='py-24 px-6 bg-gray-50'>
 				<div className='max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-14 items-center'>
-					{/* Text */}
 					<div>
 						<h2 className='text-3xl md:text-4xl font-serif mb-6'>
 							Ministry in Worship
@@ -112,7 +140,6 @@ const Speaking = () => {
 						</p>
 					</div>
 
-					{/* Slider */}
 					<div className='relative w-full max-w-md mx-auto h-[420px] rounded-2xl overflow-hidden shadow-xl'>
 						<AnimatePresence mode='wait'>
 							<motion.img
@@ -127,7 +154,6 @@ const Speaking = () => {
 							/>
 						</AnimatePresence>
 
-						{/* Controls */}
 						<button
 							onClick={prev}
 							className='absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white w-9 h-9 rounded-full'>
@@ -170,7 +196,7 @@ const Speaking = () => {
 				</motion.div>
 			</section>
 
-			{/* ============ INVITATION FORM ============ */}
+			{/* ============ INVITATION FORM (React + FormSubmit AJAX) ============ */}
 			<section id='invite-form' className='py-24 px-6 bg-purple-50'>
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
@@ -238,6 +264,7 @@ const Speaking = () => {
 							onChange={handleInviteChange}
 							className='p-3 rounded-lg border border-gray-300'
 						/>
+
 						<button
 							type='submit'
 							className='py-3 bg-black text-white rounded-full hover:bg-gray-800 transition'>
