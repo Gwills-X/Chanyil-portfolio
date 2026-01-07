@@ -287,7 +287,7 @@ const LeadershipMentorship = () => {
 							target='_blank'
 							rel='noopener noreferrer'
 							className='inline-flex border items-center justify-center rounded-full bg-black px-6 py-3 text-white font-medium  hover:bg-transparent hover:text-black transition-all duration-300'>
-							Apply for One-on-One Mentorship
+							Register for One-on-One Mentorship
 						</a>
 					</section>
 				</div>
