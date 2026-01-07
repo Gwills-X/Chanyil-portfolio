@@ -345,7 +345,7 @@ const LeadershipMentorship = () => {
 						{/* Message textarea */}
 						<textarea
 							name='message'
-							placeholder='Why are you applying?'
+							placeholder='What has led you to apply for the Chayil School of Leadership at this stage of your journey?'
 							value={formData.message}
 							onChange={handleChange}
 							className='p-3 border rounded-lg'
