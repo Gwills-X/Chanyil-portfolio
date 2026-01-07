@@ -54,13 +54,23 @@ const activities = [
 // Testimonials
 const testimonials = [
 	{
-		name: "Ada E.",
-		text: "Being part of God’s Chayil Daughters has strengthened my faith and given me a loving sisterhood across nations.",
+		name: " Apostle Joseph Seidu",
+		text: " Since coming to Ghana, Channelle Chayil has tirelessly poured herself into the lives of widows, orphans, and single mothers. Through her vision and commitment, sustainable systems were established—empowering many widows through farming initiatives, while others were supported to start small businesses. Her impact has gone far beyond relief; she has restored dignity, purpose, and hope. Her sacrifice, obedience, and unwavering willingness to serve have touched my life in ways words cannot fully express. ",
 		img: "",
 	},
 	{
-		name: "Blessing M.",
-		text: "This community empowered me to serve others while growing spiritually and emotionally.",
+		name: "Nanlop",
+		text: "sis Channelle is a devoted minister whose life truly reflects the heart of God, her service in ministry has been marked by humility , excellence and a deep passion for souls. As a leader of God's Chayil Daughter's, she has empowered many young people, children and women to grow in faith, purpose, prayer and strength. Her commitment, grace and unwavering love for God continue to inspire everyone around her",
+		img: "",
+	},
+	{
+		name: "Miriam",
+		text: " Channelle is a dedicated leader with a deep heart for women. She is passionate about seeing women grow and step into their powerful, God-given purpose. As an open book, she shares her own experiences honestly, creating a space where others can relate and feel seen. Through her story, she consistently points women to the God who transformed her life—the same God who still moves, still heals, and still does the impossible",
+		img: "",
+	},
+	{
+		name: "Mrs Phoebe Caleb manabe",
+		text: "Channele, the founder of Chayil Daughters, has been a true source of inspiration to me. Through her obedience and willingness to yield fully to the Lord, God has used this platform to transform lives—mine included. Being part of Chayil Daughters has greatly increased my prayer life and deepened my walk with God. Her surrender to God’s leading is evident in the impact this community continues to make. I am grateful for her obedience and for the spiritual growth I have experienced through this platform.",
 		img: "",
 	},
 ];

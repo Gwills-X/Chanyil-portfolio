@@ -155,9 +155,10 @@ const MediaResources = () => {
 					</h3>
 
 					<a
-						href='#'
+						href='https://linktr.ee/channellechayil?utm_source=linktree_profile_share&ltsid=260f301a-8b8e-4f8d-8c87-0eeed8c02291.'
+						target='_blank'
 						className='inline-block px-10 py-4 bg-black text-white rounded-full hover:bg-gray-800 transition'>
-						Explore Media & Resources
+						Follow Channelle
 					</a>
 				</motion.div>
 			</section>

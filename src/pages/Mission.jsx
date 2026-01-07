@@ -1,4 +1,9 @@
+// ================= IMPORTS =================
+
+// Framer Motion for animations
 import { motion } from "framer-motion";
+
+// Icons used in the Core Values section
 import {
 	FaPrayingHands,
 	FaBullseye,
@@ -6,9 +11,16 @@ import {
 	FaUsers,
 	FaGlobeAmericas,
 } from "react-icons/fa";
+
+// Header background image
 import mentorship3 from "../images/a5edebd0-6cd5-40c0-a285-c4e8effa862d.jpg";
+
+// React state management
 import { useState } from "react";
 
+// ================= CORE VALUES DATA =================
+// This array holds the values displayed on the page
+// Each value has a title and an icon
 const coreValues = [
 	{ title: "Faith & Obedience", icon: <FaPrayingHands /> },
 	{ title: "Identity & Purpose", icon: <FaBullseye /> },
@@ -18,7 +30,8 @@ const coreValues = [
 ];
 
 const Mission = () => {
-	// Form state
+	// ================= FORM STATE =================
+	// Stores all form input values
 	const [formData, setFormData] = useState({
 		name: "",
 		email: "",
@@ -26,47 +39,83 @@ const Mission = () => {
 		amount: "",
 		message: "",
 	});
+
+	// Tracks whether the form has been successfully submitted
 	const [submitted, setSubmitted] = useState(false);
 
-	// Update form fields
+	// ================= HANDLE INPUT CHANGES =================
+	// Updates the form state as the user types
 	const handleChange = (e) => {
-		setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+		setFormData((prev) => ({
+			...prev,
+			[e.target.name]: e.target.value,
+		}));
 	};
 
-	// WhatsApp number for redirect
-	const whatsappNumber = "447380923100"; // replace with your default number
+	// ================= WHATSAPP CONFIG =================
+	// WhatsApp number to redirect users to after submission
+	const whatsappNumber = "447380923100";
+
+	// Pre-filled WhatsApp message
 	const whatsappMessage = encodeURIComponent(
 		"Hello! I just submitted the partnership form and would like to connect."
 	);
 
-	// Handle form submit
+	// ================= FORM SUBMISSION HANDLER =================
 	const handleSubmit = async (e) => {
-		e.preventDefault();
+		e.preventDefault(); // Prevent page reload
 
-		// Prepare FormSubmit data
+		// Create FormData object for FormSubmit
 		const data = new FormData();
+
+		// Append user input fields
 		data.append("name", formData.name);
 		data.append("email", formData.email);
 		data.append("phone", formData.phone);
 		data.append("amount", formData.amount);
 		data.append("message", formData.message);
 
-		// Email sent to ministry (you)
+		// ================= FORM SUBMIT CONFIG =================
+		// Subject of the email YOU receive
 		data.append("_subject", "New Partnership Request");
+
+		// Makes email format cleaner
 		data.append("_template", "table");
+
+		// Disable captcha
 		data.append("_captcha", "false");
 
-		// Email sent to user automatically
+		// ================= AUTO-RESPONSE SETTINGS =================
+		// This ensures the reply goes to the user
 		data.append("_replyto", formData.email);
+
+		// Subject of the auto-reply email
+		data.append("_autoresponse_subject", "Thank you for partnering with us");
+
+		// Body of the auto-reply email sent to the user
 		data.append(
 			"_autoresponse",
-			`Hello ${formData.name},\n\nThank you for partnering with us! 
-You will find the account details below to make your contribution:\n\nBank: XYZ Bank\nAccount Name: Channelle Chayil\nAccount Number: 1234567890\n\nWe appreciate your support and commitment.\n\nBlessings,\nChannelle Chayil Ministry`
+			`Hello ${formData.name},
+
+Thank you for partnering with Channelle Chayil Ministry.
+
+Below are the account details to complete your partnership:
+
+Bank: XYZ Bank
+Account Name: Channelle Chayil
+Account Number: 1234567890
+
+We deeply appreciate your support and obedience.
+
+Blessings,
+Channelle Chayil Ministry`
 		);
 
 		try {
+			// ================= SEND FORM TO FORMSUBMIT =================
+			// IMPORTANT: No /ajax/ so autoresponse works
 			const response = await fetch(
-				"https://formsubmit.co/ajax/partner@channellechayil.com",
+				"https://formsubmit.co/partner@channellechayil.com",
 				{
 					method: "POST",
 					body: data,
@@ -77,7 +126,8 @@ You will find the account details below to make your contribution:\n\nBank: XYZ 
 			if (response.ok) {
 				// Show success message
 				setSubmitted(true);
-				// Reset form
+
+				// Reset form inputs
 				setFormData({
 					name: "",
 					email: "",
@@ -86,41 +136,39 @@ You will find the account details below to make your contribution:\n\nBank: XYZ 
 					message: "",
 				});
 
-				// Redirect to WhatsApp after 2 seconds (optional delay)
+				// Redirect user to WhatsApp after 3 seconds
 				setTimeout(() => {
-					window.open(
-						`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`,
-						"_blank"
-					);
-				}, 2000);
+					window.location.href = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+				}, 3000);
 			} else {
-				alert("Oops! Something went wrong. Please try again.");
+				alert("Submission failed. Please try again.");
 			}
-		} catch (err) {
-			console.error(err);
-			alert("Network error. Please check your connection.");
+		} catch (error) {
+			console.error(error);
+			alert("Network error. Please try again later.");
 		}
 	};
 
 	return (
 		<main className='bg-white'>
-			{/* ================= HEADER ================= */}
-			<section className='py-24 px-6 bg-gradient-to-r from-gray-500 via-gray-600 to-gray-500 relative h-dvh flex flex-col justify-center items-center'>
+			{/* ================= HEADER SECTION ================= */}
+			<section className='py-24 px-6 bg-gradient-to-r from-gray-500 via-gray-600 to-gray-500 relative h-dvh flex items-center justify-center'>
 				<img
 					src={mentorship3}
 					alt='Mission header'
 					className='absolute inset-0 w-full h-full object-cover opacity-50'
 				/>
+
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6 }}
-					className='max-w-4xl mx-auto text-center relative z-10'>
+					className='max-w-4xl text-center relative z-10'>
 					<h1 className='text-4xl md:text-5xl text-white font-serif font-semibold mb-4'>
 						Mission, Vision & Values
 					</h1>
 					<div className='w-24 h-1 bg-white mx-auto mb-6 rounded-full'></div>
-					<p className='text-lg text-white leading-relaxed'>
+					<p className='text-lg text-white'>
 						The foundation guiding the work, leadership, and movement.
 					</p>
 				</motion.div>
@@ -128,95 +176,66 @@ You will find the account details below to make your contribution:\n\nBank: XYZ 
 
 			{/* ================= MISSION ================= */}
 			<section className='py-20 px-6'>
-				<motion.div
-					initial={{ opacity: 0, y: 20 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.6 }}
-					viewport={{ once: true }}
-					className='max-w-4xl mx-auto text-center space-y-6'>
-					<h2 className='text-3xl font-serif mb-2'>Our Mission</h2>
-					<p className='text-xl text-gray-700 leading-relaxed'>
-						To raise faith-filled, purpose-driven women who are grounded in
-						identity, obedience, and spiritual maturity — equipped with love and
-						serve with impact.
+				<div className='max-w-4xl mx-auto text-center space-y-6'>
+					<h2 className='text-3xl font-serif'>Our Mission</h2>
+					<p className='text-xl text-gray-700'>
+						To raise faith-filled, purpose-driven women grounded in identity,
+						obedience, and spiritual maturity — equipped to serve with love and
+						impact.
 					</p>
-				</motion.div>
+				</div>
 			</section>
 
 			{/* ================= VISION ================= */}
 			<section className='py-20 px-6 bg-gray-50'>
-				<motion.div
-					initial={{ opacity: 0, y: 20 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.6 }}
-					viewport={{ once: true }}
-					className='max-w-4xl mx-auto text-center space-y-6'>
-					<h2 className='text-3xl font-serif mb-2'>Our Vision</h2>
-					<p className='text-xl text-gray-700 leading-relaxed'>
+				<div className='max-w-4xl mx-auto text-center space-y-6'>
+					<h2 className='text-3xl font-serif'>Our Vision</h2>
+					<p className='text-xl text-gray-700'>
 						A global movement of women walking confidently in their God-given
-						calling, influencing others, communities, and nations through
-						faith-centred leadership.
+						calling, influencing families, communities, and nations.
 					</p>
-				</motion.div>
+				</div>
 			</section>
 
 			{/* ================= CORE VALUES ================= */}
 			<section className='py-24 px-6'>
-				<motion.div
-					initial={{ opacity: 0, y: 20 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.6 }}
-					viewport={{ once: true }}
-					className='max-w-6xl mx-auto'>
+				<div className='max-w-6xl mx-auto'>
 					<h2 className='text-3xl font-serif mb-12 text-center'>
 						Our Core Values
 					</h2>
 
 					<div className='grid gap-6 md:grid-cols-2 lg:grid-cols-3'>
 						{coreValues.map((value, index) => (
-							<motion.div
+							<div
 								key={index}
-								initial={{ opacity: 0, y: 20 }}
-								whileInView={{ opacity: 1, y: 0 }}
-								transition={{ delay: index * 0.1 }}
-								viewport={{ once: true }}
-								className='border rounded-xl p-6 text-center text-gray-700 hover:shadow-lg transition'>
-								<div className='text-4xl mb-4 text-gray-700 flex justify-center'>
+								className='border rounded-xl p-6 text-center hover:shadow-lg transition'>
+								<div className='text-4xl mb-4 flex justify-center'>
 									{value.icon}
 								</div>
-								<h4 className='font-semibold text-lg'>{value.title}</h4>
-							</motion.div>
+								<h4 className='font-semibold'>{value.title}</h4>
+							</div>
 						))}
 					</div>
-				</motion.div>
+				</div>
 			</section>
 
-			{/* ================= PARTNER WITH US FORM ================= */}
+			{/* ================= PARTNER FORM ================= */}
 			<section id='partner' className='py-24 px-6 bg-purple-50'>
-				<motion.div
-					initial={{ opacity: 0, y: 20 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					transition={{ duration: 0.6 }}
-					viewport={{ once: true }}
-					className='max-w-4xl mx-auto text-center space-y-6'>
-					<h2 className='text-3xl font-serif mb-4'>Partner With Us</h2>
-					<p className='text-gray-700 text-lg'>
-						Join hands with our ministry to impact lives, support programs, and
-						raise purpose-driven women. Fill out the form below to get started.
+				<div className='max-w-4xl mx-auto text-center space-y-6'>
+					<h2 className='text-3xl font-serif'>Partner With Us</h2>
+					<p className='text-gray-700'>
+						Fill the form below. Account details will be sent to your email.
 					</p>
 
-					{/* Show success message after submission */}
+					{/* Success message */}
 					{submitted && (
 						<p className='text-green-600 font-semibold'>
-							Thank you! Your partnership request has been received. Check your
-							email for account details. You will also be redirected to WhatsApp
-							shortly.
+							Thank you! Check your email for partnership details. Redirecting
+							to WhatsApp…
 						</p>
 					)}
 
-					<form
-						onSubmit={handleSubmit}
-						className='mt-8 grid gap-4 sm:grid-cols-1 max-md:grid-cols-1'>
+					<form onSubmit={handleSubmit} className='grid gap-4'>
 						<input
 							type='text'
 							name='name'
@@ -224,7 +243,7 @@ You will find the account details below to make your contribution:\n\nBank: XYZ 
 							value={formData.name}
 							onChange={handleChange}
 							required
-							className=' p-3 rounded-lg border border-gray-300'
+							className='p-3 border rounded-lg'
 						/>
 						<input
 							type='email'
@@ -233,7 +252,7 @@ You will find the account details below to make your contribution:\n\nBank: XYZ 
 							value={formData.email}
 							onChange={handleChange}
 							required
-							className='p-3 rounded-lg border border-gray-300'
+							className='p-3 border rounded-lg'
 						/>
 						<input
 							type='tel'
@@ -242,7 +261,7 @@ You will find the account details below to make your contribution:\n\nBank: XYZ 
 							value={formData.phone}
 							onChange={handleChange}
 							required
-							className='p-3 rounded-lg border border-gray-300'
+							className='p-3 border rounded-lg'
 						/>
 						<input
 							type='number'
@@ -250,22 +269,20 @@ You will find the account details below to make your contribution:\n\nBank: XYZ 
 							placeholder='Amount (Optional)'
 							value={formData.amount}
 							onChange={handleChange}
-							className='p-3 rounded-lg border border-gray-300'
+							className='p-3 border rounded-lg'
 						/>
 						<textarea
 							name='message'
-							placeholder='Briefly tell us why you want to partner'
+							placeholder='Why do you want to partner?'
 							value={formData.message}
 							onChange={handleChange}
-							className=' p-3 rounded-lg border border-gray-300'
+							className='p-3 border rounded-lg'
 						/>
-						<button
-							type='submit'
-							className=' py-3 bg-black text-white rounded-full hover:bg-gray-800 transition'>
+						<button className='py-3 bg-black text-white rounded-full'>
 							Submit Partnership Request
 						</button>
 					</form>
-				</motion.div>
+				</div>
 			</section>
 		</main>
 	);

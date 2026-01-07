@@ -35,12 +35,12 @@ const pathways = [
 // Testimonials to display in the page
 const testimonials = [
 	{
-		name: "Jane Doe",
-		text: "This programme brought clarity to my calling and confidence in my leadership.",
+		name: "Susan ekeh - Mentee",
+		text: "Prophetess Chanelle is a leader per excellence. Having served closely under her leadership, I can confidently say she leads by example, not by title. She is intentional, structured, and deeply detailed in all that she does; nothing about her leadership is haphazard. There is always clarity, order, and purpose in her approach. What sets her apart is her selfless commitment to seeing people become the best version of themselves. I am a living testament to the transforming power of her leadership, mentorship, and unwavering dedication to excellence and purpose",
 	},
 	{
-		name: "Mary Smith",
-		text: "The mentorship was deeply personal, practical, and spiritually grounding.",
+		name: "Benedicta - Mentee",
+		text: "Ms. Chayil is an exceptional woman with a genuine heart for people. She is our prayer warrior, always standing in the gap and consistently covering everyone in the group with prayer and encouragement. She takes time to check on each person, ensuring that everyone is doing well spiritually, emotionally, and personally. She is truly one of a kind — selfless, compassionate, and deeply committed to the growth and well-being of others. Beyond leadership, she is a mentor who leads by example, offering guidance, wisdom, and unwavering support. I am grateful to be under her mentorship, and her influence has had a meaningful impact on my life.",
 	},
 ];
 
