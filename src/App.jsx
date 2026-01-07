@@ -9,6 +9,7 @@ import LeadershipMentorship from "./pages/LeadershipMentorship";
 import Speaking from "./pages/Speaking";
 import MediaResources from "./pages/MediaResources";
 import Footer from "./components/Footer";
+import NotFound from "./pages/NotFound";
 const App = () => {
 	return (
 		<div>
@@ -24,6 +25,7 @@ const App = () => {
 						<Route path='/leadership' element={<LeadershipMentorship />} />
 						<Route path='/invite' element={<Speaking />} />
 						<Route path='/media' element={<MediaResources />} />
+						<Route path='*' element={<NotFound />} />
 					</Routes>
 				</div>
 				<Footer />

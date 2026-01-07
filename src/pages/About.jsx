@@ -31,6 +31,14 @@ const About = () => {
 					<p className='text-lg md:text-xl text-white leading-relaxed max-w-3xl mx-auto relative z-10'>
 						A life shaped by culture, creativity, faith, and purposeful living.
 					</p>
+
+					<a
+						href='https://linktr.ee/channellechayil?utm_source=linktree_profile_share&ltsid=ac7aa049-1a4f-42ab-9886-6840bfff87d3'
+						target='_blank'
+						rel='noopener noreferrer'
+						className='inline-block mt-6 relative z-10 px-8 py-3 bg-black text-white font-semibold rounded-full hover:bg-white hover:text-black transition-all duration-300'>
+						Follow / Connect with Channelle
+					</a>
 				</motion.div>
 			</section>
 

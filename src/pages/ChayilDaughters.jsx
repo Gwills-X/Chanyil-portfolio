@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
 import {
 	FaPrayingHands,
@@ -7,9 +6,9 @@ import {
 	FaHandsHelping,
 	FaChalkboardTeacher,
 } from "react-icons/fa";
+import { FaPeopleGroup, FaWhatsapp } from "react-icons/fa6";
 
 import backgroundPic from "../images/IMG-20260106-WA0081.jpg";
-import { FaPeopleGroup } from "react-icons/fa6";
 
 // Activities
 const activities = [
@@ -54,111 +53,29 @@ const activities = [
 // Testimonials
 const testimonials = [
 	{
-		name: " Apostle Joseph Seidu",
-		text: " Since coming to Ghana, Channelle Chayil has tirelessly poured herself into the lives of widows, orphans, and single mothers. Through her vision and commitment, sustainable systems were established—empowering many widows through farming initiatives, while others were supported to start small businesses. Her impact has gone far beyond relief; she has restored dignity, purpose, and hope. Her sacrifice, obedience, and unwavering willingness to serve have touched my life in ways words cannot fully express. ",
+		name: "Apostle Joseph Seidu",
+		text: "Since coming to Ghana, Channelle Chayil has tirelessly poured herself into the lives of widows, orphans, and single mothers. Through her vision and commitment, sustainable systems were established—empowering many widows through farming initiatives, while others were supported to start small businesses. Her impact has gone far beyond relief; she has restored dignity, purpose, and hope. Her sacrifice, obedience, and unwavering willingness to serve have touched my life in ways words cannot fully express.",
 		img: "",
 	},
 	{
 		name: "Nanlop",
-		text: "sis Channelle is a devoted minister whose life truly reflects the heart of God, her service in ministry has been marked by humility , excellence and a deep passion for souls. As a leader of God's Chayil Daughter's, she has empowered many young people, children and women to grow in faith, purpose, prayer and strength. Her commitment, grace and unwavering love for God continue to inspire everyone around her",
+		text: "Sis Channelle is a devoted minister whose life truly reflects the heart of God, her service in ministry has been marked by humility, excellence, and a deep passion for souls. As a leader of God's Chayil Daughters, she has empowered many young people, children, and women to grow in faith, purpose, prayer, and strength. Her commitment, grace, and unwavering love for God continue to inspire everyone around her.",
 		img: "",
 	},
 	{
 		name: "Miriam",
-		text: " Channelle is a dedicated leader with a deep heart for women. She is passionate about seeing women grow and step into their powerful, God-given purpose. As an open book, she shares her own experiences honestly, creating a space where others can relate and feel seen. Through her story, she consistently points women to the God who transformed her life—the same God who still moves, still heals, and still does the impossible",
+		text: "Channelle is a dedicated leader with a deep heart for women. She is passionate about seeing women grow and step into their powerful, God-given purpose. As an open book, she shares her own experiences honestly, creating a space where others can relate and feel seen. Through her story, she consistently points women to the God who transformed her life—the same God who still moves, still heals, and still does the impossible.",
 		img: "",
 	},
 	{
-		name: "Mrs Phoebe Caleb manabe",
-		text: "Channele, the founder of Chayil Daughters, has been a true source of inspiration to me. Through her obedience and willingness to yield fully to the Lord, God has used this platform to transform lives—mine included. Being part of Chayil Daughters has greatly increased my prayer life and deepened my walk with God. Her surrender to God’s leading is evident in the impact this community continues to make. I am grateful for her obedience and for the spiritual growth I have experienced through this platform.",
+		name: "Mrs Phoebe Caleb Manabe",
+		text: "Channelle, the founder of Chayil Daughters, has been a true source of inspiration to me. Through her obedience and willingness to yield fully to the Lord, God has used this platform to transform lives—mine included. Being part of Chayil Daughters has greatly increased my prayer life and deepened my walk with God. Her surrender to God’s leading is evident in the impact this community continues to make. I am grateful for her obedience and for the spiritual growth I have experienced through this platform.",
 		img: "",
 	},
 ];
 
 const ChayilDaughters = () => {
-	// Form state
-	const [joinData, setJoinData] = useState({
-		name: "",
-		email: "",
-		phone: "",
-		country: "",
-		message: "",
-	});
-	const [submitted, setSubmitted] = useState(false);
-
-	// WhatsApp number and message
-	const whatsappNumber = "447380923100"; // Replace with your default WhatsApp number
-	const whatsappMessage = encodeURIComponent(
-		"Hello! I just submitted my request to join God’s Chayil Daughters and would like to connect."
-	);
-
-	// Handle input change
-	const handleChange = (e) => {
-		setJoinData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-	};
-
-	// Handle form submission
-	const handleSubmit = async (e) => {
-		e.preventDefault();
-
-		// Prepare form data for FormSubmit
-		const data = new FormData();
-		data.append("name", joinData.name);
-		data.append("email", joinData.email);
-		data.append("phone", joinData.phone);
-		data.append("country", joinData.country);
-		data.append("message", joinData.message);
-
-		// Email subject to ministry
-		data.append("_subject", "New Join Request - Chayil Daughters");
-		data.append("_template", "table");
-		data.append("_captcha", "false");
-
-		// Autoresponse to user
-		data.append("_replyto", joinData.email);
-		data.append(
-			"_autoresponse",
-			`Hello ${joinData.name},\n\nThank you for your request to join God’s Chayil Daughters! 
-We appreciate your effort and will reach out soon.\n\nBlessings,\nChayil Daughters Team`
-		);
-
-		try {
-			const response = await fetch(
-				"https://formsubmit.co/ajax/join@channellechayil.com",
-				{
-					method: "POST",
-					body: data,
-					headers: { Accept: "application/json" },
-				}
-			);
-
-			if (response.ok) {
-				// Show success message
-				setSubmitted(true);
-				// Reset form
-				setJoinData({
-					name: "",
-					email: "",
-					phone: "",
-					country: "",
-					message: "",
-				});
-
-				// Redirect to WhatsApp after 2 seconds
-				setTimeout(() => {
-					window.open(
-						`https://wa.me/${whatsappNumber}?text=${whatsappMessage}`,
-						"_blank"
-					);
-				}, 2000);
-			} else {
-				alert("Oops! Something went wrong. Please try again.");
-			}
-		} catch (err) {
-			console.error(err);
-			alert("Network error. Please check your connection.");
-		}
-	};
+	const whatsappGroupLink = "https://chat.whatsapp.com/YourGroupInviteLink"; // Replace with your WhatsApp group invite
 
 	return (
 		<main className='bg-white'>
@@ -183,15 +100,10 @@ We appreciate your effort and will reach out soon.\n\nBlessings,\nChayil Daughte
 					</p>
 					<div className='mt-6 flex flex-col sm:flex-row gap-4 justify-center'>
 						<a
-							href='#join-form'
-							className='inline-block px-8 py-3 border bg-white text-black font-semibold rounded-full hover:bg-black hover:text-white transition-all duration-300'>
-							Join God’s Chayil Daughters
-						</a>
-						<a
-							href='https://linktr.ee/channellechayil?utm_source=linktree_profile_share&ltsid=260f301a-8b8e-4f8d-8c87-0eeed8c02291.'
+							href='https://linktr.ee/godschayildaughters'
 							target='_blank'
-							className='inline-block px-8 py-3 border bg-black text-white font-semibold rounded-full hover:bg-white hover:text-black transition-all duration-300'>
-							Follow Channelle
+							className='inline-block px-8 py-3 border bg-white text-black font-semibold rounded-full hover:bg-black hover:text-white transition-all duration-300'>
+							Explore God’s Chayil Daughters
 						</a>
 					</div>
 				</motion.div>
@@ -280,7 +192,7 @@ We appreciate your effort and will reach out soon.\n\nBlessings,\nChayil Daughte
 				</div>
 			</section>
 
-			{/* ================= JOIN FORM ================= */}
+			{/* ================= JOIN VIA WHATSAPP ================= */}
 			<section id='join-form' className='py-24 px-6 bg-purple-50'>
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
@@ -289,72 +201,20 @@ We appreciate your effort and will reach out soon.\n\nBlessings,\nChayil Daughte
 					viewport={{ once: true }}
 					className='max-w-4xl mx-auto text-center space-y-6'>
 					<h2 className='text-3xl font-serif mb-4'>
-						Join God’s Chayil Daughters
+						Join God’s Chayil Daughters on WhatsApp
 					</h2>
 					<p className='text-gray-700 text-lg'>
-						Fill the form below to become part of our global sisterhood.
+						Click the button below to join our WhatsApp group and connect with
+						sisters globally.
 					</p>
 
-					{/* Success message */}
-					{submitted && (
-						<p className='text-green-600 font-semibold'>
-							Thank you! Your request has been received. Check your email for
-							more info. You will also be redirected to WhatsApp shortly.
-						</p>
-					)}
-
-					<form
-						onSubmit={handleSubmit}
-						className='mt-8 grid gap-4 max-md:grid-cols-1 grid-cols-1'>
-						<input
-							type='text'
-							name='name'
-							placeholder='Full Name'
-							value={joinData.name}
-							onChange={handleChange}
-							required
-							className=' p-3 rounded-lg border border-gray-300'
-						/>
-						<input
-							type='email'
-							name='email'
-							placeholder='Email'
-							value={joinData.email}
-							onChange={handleChange}
-							required
-							className='p-3 rounded-lg border border-gray-300'
-						/>
-						<input
-							type='tel'
-							name='phone'
-							placeholder='Phone Number'
-							value={joinData.phone}
-							onChange={handleChange}
-							required
-							className='p-3 rounded-lg border border-gray-300'
-						/>
-						<input
-							type='text'
-							name='country'
-							placeholder='Country'
-							value={joinData.country}
-							onChange={handleChange}
-							required
-							className='p-3 rounded-lg border border-gray-300'
-						/>
-						<textarea
-							name='message'
-							placeholder='Tell us why you want to join (optional)'
-							value={joinData.message}
-							onChange={handleChange}
-							className=' p-3 rounded-lg border border-gray-300'
-						/>
-						<button
-							type='submit'
-							className=' py-3 bg-black text-white rounded-full hover:bg-gray-800 transition'>
-							Submit Request
-						</button>
-					</form>
+					<a
+						href={whatsappGroupLink}
+						target='_blank'
+						rel='noopener noreferrer'
+						className='inline-flex items-center px-6 py-3 bg-green-500 text-white font-semibold rounded-full hover:bg-green-600 transition-all duration-300 gap-2'>
+						<FaWhatsapp className='text-2xl' /> Join Our WhatsApp Group
+					</a>
 				</motion.div>
 			</section>
 		</main>

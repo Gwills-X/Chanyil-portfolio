@@ -273,7 +273,7 @@ Channelle Chayil Ministry`
 						/>
 						<textarea
 							name='message'
-							placeholder='Why do you want to partner?'
+							placeholder='How Would You Like To Partner?'
 							value={formData.message}
 							onChange={handleChange}
 							className='p-3 border rounded-lg'

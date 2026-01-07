@@ -138,12 +138,8 @@ const LeadershipMentorship = () => {
 					{/* Buttons linking to sections */}
 					<div className='mt-10 flex flex-col sm:flex-row gap-4 justify-center'>
 						<a
-							href='#application'
-							className='px-8 py-3 bg-black text-white rounded-full hover:bg-gray-800 transition'>
-							Apply Now
-						</a>
-						<a
-							href='#about'
+							href='https://linktr.ee/chayilschoolofleadership?utm_source=linktree_profile_share&ltsid=61a0becf-1214-4184-b960-35c2d6a4369f'
+							target='_blank'
 							className='px-8 py-3 border border-black rounded-full hover:bg-black hover:text-white transition'>
 							Learn More
 						</a>

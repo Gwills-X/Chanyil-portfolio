@@ -111,12 +111,7 @@ const Speaking = () => {
 							to encourage faith, obedience, and clarity.
 						</p>
 
-						<div className='flex flex-col sm:flex-row gap-4 mt-6'>
-							<a
-								href='/missions#partner'
-								className='px-8 py-3 border bg-black text-white rounded-full hover:bg-transparent hover:text-black transition-all duration-300'>
-								Partner With Us
-							</a>
+						<div className='flex flex-col  sm:flex-row gap-4 mt-6'>
 							<a
 								href='#invite-form'
 								className='px-8 py-3 border bg-transparent text-black rounded-full hover:bg-black hover:text-white transition-all duration-300'>

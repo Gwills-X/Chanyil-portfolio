@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { FaInstagram, FaYoutube, FaEnvelope } from "react-icons/fa";
+import { FaInstagram, FaYoutube, FaEnvelope, FaLink } from "react-icons/fa"; // Added FaLink for Linktree
 
 const Footer = () => {
 	return (
@@ -29,23 +29,34 @@ const Footer = () => {
 						<h4 className='text-lg font-semibold mb-4'>Explore</h4>
 						<ul className='space-y-3 text-gray-400'>
 							<li>
-								<a href='/' className='hover:text-white'>
+								<a href='/' className='hover:text-white' title='Go to Home'>
 									Home
 								</a>
 							</li>
 							<li>
-								<a href='/about' className='hover:text-white'>
+								<a
+									href='/about'
+									className='hover:text-white'
+									title='Go to About'>
 									About
 								</a>
 							</li>
+
 							<li>
-								<a href='/speaking' className='hover:text-white'>
-									Speaking
+								<a
+									href='/missions'
+									className='hover:text-white'
+									title='Go To Mission'>
+									Mission
 								</a>
 							</li>
+
 							<li>
-								<a href='/contact' className='hover:text-white'>
-									Contact
+								<a
+									href='/media'
+									className='hover:text-white'
+									title='Media Resources'>
+									Media Resources
 								</a>
 							</li>
 						</ul>
@@ -63,7 +74,9 @@ const Footer = () => {
 							<a
 								href='https://www.instagram.com/channellechayil/?utm_source=ig_web_button_share_sheet'
 								aria-label='Instagram'
+								title='Go to Instagram'
 								target='_blank'
+								rel='noopener noreferrer'
 								className='text-gray-400 hover:text-white text-xl'>
 								<FaInstagram />
 							</a>
@@ -71,17 +84,30 @@ const Footer = () => {
 							<a
 								href='https://youtube.com/c/ChannelleDebrah?sub_confirmation=1'
 								aria-label='YouTube'
+								title='Go to YouTube'
 								target='_blank'
+								rel='noopener noreferrer'
 								className='text-gray-400 hover:text-white text-xl'>
 								<FaYoutube />
 							</a>
 
 							<a
-								href='#'
+								href='mailto:info@channellechayil.com'
 								aria-label='Email'
-								target='_blank'
+								title='Send an Email'
 								className='text-gray-400 hover:text-white text-xl'>
 								<FaEnvelope />
+							</a>
+
+							{/* Linktree button */}
+							<a
+								href='https://linktr.ee/channellechayil'
+								aria-label='Linktree'
+								title='Go to Linktree'
+								target='_blank'
+								rel='noopener noreferrer'
+								className='text-gray-400 hover:text-white text-xl'>
+								<FaLink />
 							</a>
 						</div>
 					</motion.div>
