@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 import profilePic from "../images/something.jpg";
 import one from "../images/61e5efdf-5d5d-4500-936c-e18e7209bed0.jpg";
-import two from "../images/IMG_5435.PNG";
+import two from "../images/IMG-20260106-WA0018.jpg";
 import three from "../images/IMG_4979.JPG";
 import four from "../images/IMG_4980.JPG";
 import five from "../images/62c45394-478c-4964-bea7-c9a5f2b0493d.jpg";

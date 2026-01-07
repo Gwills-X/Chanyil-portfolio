@@ -91,14 +91,6 @@ const Footer = () => {
 								<FaYoutube />
 							</a>
 
-							<a
-								href='mailto:info@channellechayil.com'
-								aria-label='Email'
-								title='Send an Email'
-								className='text-gray-400 hover:text-white text-xl'>
-								<FaEnvelope />
-							</a>
-
 							{/* Linktree button */}
 							<a
 								href='https://linktr.ee/channellechayil'

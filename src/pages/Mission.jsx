@@ -177,7 +177,7 @@ Channelle Chayil Ministry`
 			{/* ================= MISSION ================= */}
 			<section className='py-20 px-6'>
 				<div className='max-w-4xl mx-auto text-center space-y-6'>
-					<h2 className='text-3xl font-serif'>Our Mission</h2>
+					<h2 className='text-3xl font-serif'> Mission</h2>
 					<p className='text-xl text-gray-700'>
 						To raise faith-filled, purpose-driven women grounded in identity,
 						obedience, and spiritual maturity — equipped to serve with love and
@@ -189,7 +189,7 @@ Channelle Chayil Ministry`
 			{/* ================= VISION ================= */}
 			<section className='py-20 px-6 bg-gray-50'>
 				<div className='max-w-4xl mx-auto text-center space-y-6'>
-					<h2 className='text-3xl font-serif'>Our Vision</h2>
+					<h2 className='text-3xl font-serif'> Vision</h2>
 					<p className='text-xl text-gray-700'>
 						A global movement of women walking confidently in their God-given
 						calling, influencing families, communities, and nations.
@@ -200,9 +200,7 @@ Channelle Chayil Ministry`
 			{/* ================= CORE VALUES ================= */}
 			<section className='py-24 px-6'>
 				<div className='max-w-6xl mx-auto'>
-					<h2 className='text-3xl font-serif mb-12 text-center'>
-						Our Core Values
-					</h2>
+					<h2 className='text-3xl font-serif mb-12 text-center'>Core Values</h2>
 
 					<div className='grid gap-6 md:grid-cols-2 lg:grid-cols-3'>
 						{coreValues.map((value, index) => (

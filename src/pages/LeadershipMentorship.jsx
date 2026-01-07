@@ -134,16 +134,6 @@ const LeadershipMentorship = () => {
 						to lead with wisdom, confidence, and love - equipped through
 						mentorship, biblical foundations, and practical training.
 					</p>
-
-					{/* Buttons linking to sections */}
-					<div className='mt-10 flex flex-col sm:flex-row gap-4 justify-center'>
-						<a
-							href='https://linktr.ee/chayilschoolofleadership?utm_source=linktree_profile_share&ltsid=61a0becf-1214-4184-b960-35c2d6a4369f'
-							target='_blank'
-							className='px-8 py-3 border border-black rounded-full hover:bg-black hover:text-white transition'>
-							Learn More
-						</a>
-					</div>
 				</motion.div>
 			</section>
 
@@ -156,7 +146,7 @@ const LeadershipMentorship = () => {
 						whileInView={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.6 }}
 						viewport={{ once: true }}
-						className='space-y-6 text-gray-700 leading-relaxed'>
+						className='space-y-2 text-gray-700 leading-relaxed'>
 						<h2 className='text-2xl font-serif font-semibold text-black'>
 							The Vision
 						</h2>
@@ -197,6 +187,16 @@ const LeadershipMentorship = () => {
 							No title required — only availability, obedience, and
 							teachability.
 						</p>
+
+						{/* Buttons linking to sections */}
+						<div className='mt-5 items-center flex flex-col w-full sm:flex-row gap-4 justify-center'>
+							<a
+								href='https://linktr.ee/chayilschoolofleadership?utm_source=linktree_profile_share&ltsid=61a0becf-1214-4184-b960-35c2d6a4369f'
+								target='_blank'
+								className='px-8 py-3 border border-black w-1/2 text-center rounded-full hover:bg-black hover:text-white transition'>
+								Learn More
+							</a>
+						</div>
 					</motion.div>
 
 					{/* Founder image */}
@@ -264,6 +264,32 @@ const LeadershipMentorship = () => {
 							</div>
 						))}
 					</div>
+
+					{/* ono on mentorship */}
+					<section className='bg-transparent my-4 mt-7 text-center rounded-2xl border border-black p-6 md:p-8 max-w-3xl mx-auto shadow-sm'>
+						<h3 className='text-2xl md:text-3xl font-semibold text-neutral-900 mb-4'>
+							Chayil Daughter Mentorship
+						</h3>
+						<p className='text-neutral-700 leading-relaxed mb-6'>
+							Chayil Daughter Mentorship is a{" "}
+							<span className='font-medium'>
+								10-week, one-on-one discipleship journey
+							</span>{" "}
+							designed for women who desire to grow deeper in Christ and walk
+							confidently in{" "}
+							<span className='font-medium'>
+								purpose, love, faith, and obedience
+							</span>
+							.
+						</p>
+						<a
+							href='https://tr.ee/hGklTxXd4V'
+							target='_blank'
+							rel='noopener noreferrer'
+							className='inline-flex border items-center justify-center rounded-full bg-black px-6 py-3 text-white font-medium  hover:bg-transparent hover:text-black transition-all duration-300'>
+							Apply for One-on-One Mentorship
+						</a>
+					</section>
 				</div>
 			</section>
 
