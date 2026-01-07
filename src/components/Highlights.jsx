@@ -5,6 +5,7 @@ import {
 	FaUsers,
 	FaBook,
 	FaHandsHelping,
+	FaAward,
 } from "react-icons/fa";
 
 const Highlights = () => {
@@ -28,6 +29,10 @@ const Highlights = () => {
 		{
 			icon: <FaHandsHelping className='text-4xl text-black' />,
 			text: "Empowering Women Through Mentorship ",
+		},
+		{
+			icon: <FaAward className='text-4xl text-black' />,
+			text: "Best Woman Leader In Ministry - Women Worship Awards 2024 ",
 		},
 	];
 
