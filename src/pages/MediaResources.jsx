@@ -1,59 +1,70 @@
 import { motion } from "framer-motion";
-import { FaLink, FaTiktok, FaTwitter } from "react-icons/fa";
-import {
-	FaYoutube,
-	FaPodcast,
-	FaInstagram,
-	FaFacebook,
-	FaXTwitter,
-	FaX,
-} from "react-icons/fa6";
+import { FaLink, FaYoutube, FaTiktok, FaInstagram } from "react-icons/fa";
 
-const resources = [
-	{
-		title: "Videos & Teachings",
-		description:
-			"Faith-based words of encouragement, teachings to empower, strengthen, equip and refine women in faith, identity, obedience and purpose. ",
-		button: "Watch on YouTube",
-		link: "https://youtube.com/c/ChannelleDebrah?sub_confirmation=1", // YouTube channel link
-		icon: <FaYoutube />,
-	},
-	{
-		title: "Interviews & Podcasts",
-		description:
-			"Spirit-led conversations, interviews, and podcast features exploring faith, leadership, calling, healing, and generational impact.",
-		button: "Listen to Podcasts",
-		link: "https://www.tiktok.com/@channellechayil?_r=1&_t=zn-92bcqdp7g0u", // Podcast platform link
-		icon: <FaTiktok />,
-	},
-	{
-		title: "Devotionals & Digital Resources",
-		description:
-			"Written devotionals, guides, and digital resources created to support daily spiritual growth and leadership formation.",
-		button: "View Resources",
-		link: "https://x.com/channellechayil/status/2005365753281921174?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E2005365753281921174%7Ctwgr%5E612724389a382219a93f8b838613fd48e9742593%7Ctwcon%5Es1_c10&ref_url=https%3A%2F%2Flinktr.ee%2Fchannellechayil",
-		icon: <FaXTwitter />,
-	},
-	{
-		title: "Upcoming Projects",
-		description:
-			"Books, Chayil TV, and the Chayil School of Leadership — prayerfully built initiatives designed for global and generational impact.",
-		button: "Learn More",
-		link: "https://linktr.ee/channellechayil?utm_source=linktree_profile_share&ltsid=260f301a-8b8e-4f8d-8c87-0eeed8c02291.",
-		icon: <FaLink />,
-	},
-];
+import { FaXTwitter } from "react-icons/fa6"; // 👈 this is the correct import for X
+
+import flyerPlaceholder from "../images/IMG-20260106-WA0003.jpg"; // replace with actual flyer
 
 const MediaResources = () => {
+	const resources = [
+		{
+			title: "Videos & Teachings",
+			description:
+				"Faith-based words of encouragement, teachings to empower, strengthen, equip and refine women in faith, identity, obedience and purpose.",
+			button: "Watch on YouTube",
+			link: "https://youtube.com/c/ChannelleDebrah?sub_confirmation=1",
+			icon: <FaYoutube />,
+		},
+		{
+			title: "Interviews & Podcasts",
+			description:
+				"Spirit-led conversations, interviews, and podcast features exploring faith, leadership, calling, healing, and generational impact.",
+			button: "Listen to Podcasts",
+			link: "https://www.tiktok.com/@channellechayil?_r=1&_t=zn-92bcqdp7g0u",
+			icon: <FaTiktok />,
+		},
+		{
+			title: "Devotionals & Digital Resources",
+			description:
+				"Written devotionals, guides, and digital resources created to support daily spiritual growth and leadership formation.",
+			button: "View Resources",
+			link: "https://x.com/channellechayil/status/2005365753281921174",
+			icon: <FaXTwitter />,
+		},
+		{
+			title: "Upcoming Projects",
+			description:
+				"Books, Chayil TV, and the Chayil School of Leadership — prayerfully built initiatives designed for global and generational impact.",
+			button: "Learn More",
+			link: "https://linktr.ee/channellechayil",
+			icon: <FaLink />,
+		},
+	];
+
+	const upcomingEvents = [
+		{
+			title: "BOND & BUILD | Chayil Fellowships 🤍✨",
+			date: "Friday 30th January, 6–9PM",
+			location: "Croydon (exact location revealed upon registration)",
+			description: `
+A night to connect, be refreshed, and be strengthened in sisterhood. Come as you are. Leave built.
+Bond & Build is a safe, uplifting space where you can relax, connect, laugh, and leave empowered, refreshed, and strengthened. Enjoy prayer, worship, the Word, fun games, food & drinks, and genuine connection. ✨ Ladies only ✨
+      `,
+			registrationLink:
+				"https://www.eventbrite.co.uk/e/bond-and-build-chayil-felllowships-tickets-1979449721402",
+			flyer: flyerPlaceholder, // replace with actual flyer image
+		},
+	];
+
 	return (
 		<main className='bg-white'>
 			{/* ================= HEADER ================= */}
-			<section className='py-24 px-6 bg-gray-50 h-dvh flex flex-col justify-center items-center'>
+			<section className='py-24 px-6 bg-gray-50 flex flex-col justify-center items-center'>
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
 					animate={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6 }}
-					className='max-w-4xl mx-auto text-center'>
+					className='max-w-4xl mx-auto mt-10 text-center'>
 					<h1 className='text-4xl md:text-5xl font-serif font-semibold mb-6'>
 						Media & Resources
 					</h1>
@@ -79,7 +90,7 @@ const MediaResources = () => {
 							whileInView={{ opacity: 1, y: 0 }}
 							transition={{ delay: index * 0.1 }}
 							viewport={{ once: true }}
-							className='border rounded-2xl p-8 hover:shadow-lg transition'>
+							className='border rounded-2xl p-8 hover:shadow-lg transition flex flex-col justify-between'>
 							{item.icon && (
 								<div className='text-3xl mb-4 text-black'>{item.icon}</div>
 							)}
@@ -87,7 +98,6 @@ const MediaResources = () => {
 							<p className='text-gray-700 leading-relaxed mb-6'>
 								{item.description}
 							</p>
-
 							{item.button && (
 								<a
 									href={item.link}
@@ -101,45 +111,57 @@ const MediaResources = () => {
 				</motion.div>
 			</section>
 
-			{/* ================= SOCIAL MEDIA ================= */}
-			<section className='py-20 px-6 bg-gray-50'>
+			{/* ================= UPCOMING EVENTS ================= */}
+			<section className='py-24 px-6 bg-gray-50'>
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.6 }}
 					viewport={{ once: true }}
-					className='max-w-4xl mx-auto text-center'>
-					<h3 className='text-2xl md:text-3xl font-serif mb-6'>
-						Connect With Us
-					</h3>
-					<p className='text-gray-700 mb-10'>
-						Follow along for teachings, updates, encouragement, and faith-filled
-						conversations across our media platforms.
+					className='max-w-6xl mx-auto text-center mb-16'>
+					<h2 className='text-4xl md:text-5xl font-bold mb-4 text-black'>
+						Upcoming Events
+					</h2>
+					<p className='text-gray-800 max-w-2xl mx-auto'>
+						Join us for inspiring fellowship, prayer, and community events.
+						Register for events below.
 					</p>
-
-					<div className='flex justify-center gap-6 text-3xl'>
-						<a
-							href='https://youtube.com/c/ChannelleDebrah?sub_confirmation=1'
-							target='_blank'
-							className='hover:text-gray-600 transition'>
-							<FaYoutube />
-						</a>
-
-						<a
-							href='https://www.instagram.com/channellechayil/?utm_source=ig_web_button_share_sheet'
-							target='_blank'
-							className='hover:text-gray-600 transition'>
-							<FaInstagram />
-						</a>
-
-						<a
-							href='https://x.com/channellechayil/status/2005365753281921174?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E2005365753281921174%7Ctwgr%5E612724389a382219a93f8b838613fd48e9742593%7Ctwcon%5Es1_c10&ref_url=https%3A%2F%2Flinktr.ee%2Fchannellechayil'
-							target='_blank'
-							className='hover:text-gray-600 transition'>
-							<FaXTwitter />
-						</a>
-					</div>
 				</motion.div>
+
+				{upcomingEvents.map((event, index) => (
+					<motion.div
+						key={index}
+						initial={{ opacity: 0, y: 20 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						transition={{ delay: index * 0.1 }}
+						viewport={{ once: true }}
+						className='max-w-6xl mx-auto flex flex-col md:flex-row gap-8 items-center mb-16 border rounded-2xl p-8 hover:shadow-lg transition bg-white'>
+						{/* FLYER IMAGE */}
+						<div className='flex-shrink-0 w-full md:w-1/2'>
+							<img
+								src={event.flyer}
+								alt={`${event.title} Flyer`}
+								className='w-full h-full object-cover rounded-2xl shadow-md'
+							/>
+						</div>
+
+						{/* EVENT TEXT */}
+						<div className='flex-1 text-center md:text-left'>
+							<h3 className='text-3xl font-bold mb-4'>{event.title}</h3>
+							<p className='text-gray-800 mb-2'>{event.date}</p>
+							<p className='text-gray-800 mb-2'>{event.location}</p>
+							<p className='text-gray-700  mb-4 whitespace-pre-line'>
+								{event.description}
+							</p>
+							<a
+								href={event.registrationLink}
+								target='_blank'
+								className='inline-block px-8 py-3 bg-indigo-600 text-white rounded-full hover:bg-indigo-500 transition font-medium'>
+								Register Now
+							</a>
+						</div>
+					</motion.div>
+				))}
 			</section>
 
 			{/* ================= CTA ================= */}
@@ -155,7 +177,7 @@ const MediaResources = () => {
 					</h3>
 
 					<a
-						href='https://linktr.ee/channellechayil?utm_source=linktree_profile_share&ltsid=260f301a-8b8e-4f8d-8c87-0eeed8c02291.'
+						href='https://linktr.ee/channellechayil'
 						target='_blank'
 						className='inline-block px-10 py-4 bg-black text-white rounded-full hover:bg-gray-800 transition'>
 						Follow Channelle

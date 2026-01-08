@@ -10,6 +10,7 @@ import Speaking from "./pages/Speaking";
 import MediaResources from "./pages/MediaResources";
 import Footer from "./components/Footer";
 import NotFound from "./pages/NotFound";
+import Testimonials from "./pages/Testimonials";
 const App = () => {
 	return (
 		<div>
@@ -23,6 +24,8 @@ const App = () => {
 						<Route path='/missions' element={<Mission />} />
 						<Route path='/chayil-daughters' element={<ChayilDaughters />} />
 						<Route path='/leadership' element={<LeadershipMentorship />} />
+						<Route path='/testimonials' element={<Testimonials />} />
+
 						<Route path='/invite' element={<Speaking />} />
 						<Route path='/media' element={<MediaResources />} />
 						<Route path='*' element={<NotFound />} />

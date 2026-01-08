@@ -9,6 +9,7 @@ import {
 import { FaPeopleGroup, FaWhatsapp } from "react-icons/fa6";
 
 import backgroundPic from "../images/IMG-20260106-WA0081.jpg";
+import { Link } from "react-router-dom";
 
 // Activities
 const activities = [
@@ -60,16 +61,6 @@ const testimonials = [
 	{
 		name: "Nanlop",
 		text: "Sis Channelle is a devoted minister whose life truly reflects the heart of God, her service in ministry has been marked by humility, excellence, and a deep passion for souls. As a leader of God's Chayil Daughters, she has empowered many young people, children, and women to grow in faith, purpose, prayer, and strength. Her commitment, grace, and unwavering love for God continue to inspire everyone around her.",
-		img: "",
-	},
-	{
-		name: "Miriam",
-		text: "Channelle is a dedicated leader with a deep heart for women. She is passionate about seeing women grow and step into their powerful, God-given purpose. As an open book, she shares her own experiences honestly, creating a space where others can relate and feel seen. Through her story, she consistently points women to the God who transformed her life—the same God who still moves, still heals, and still does the impossible.",
-		img: "",
-	},
-	{
-		name: "Mrs Phoebe Caleb Manabe",
-		text: "Channelle, the founder of Chayil Daughters, has been a true source of inspiration to me. Through her obedience and willingness to yield fully to the Lord, God has used this platform to transform lives—mine included. Being part of Chayil Daughters has greatly increased my prayer life and deepened my walk with God. Her surrender to God’s leading is evident in the impact this community continues to make. I am grateful for her obedience and for the spiritual growth I have experienced through this platform.",
 		img: "",
 	},
 ];
@@ -188,6 +179,14 @@ const ChayilDaughters = () => {
 								<p className='font-semibold text-right'>- {item.name}</p>
 							</motion.div>
 						))}
+					</div>
+					{/* view more testimonies button */}
+					<div className='mt-10 text-center'>
+						<Link
+							to='/testimonials'
+							className='inline-block px-8 py-3 border bg-black text-white font-semibold rounded-full hover:bg-white hover:text-black transition-all duration-300'>
+							View More Testimonies
+						</Link>
 					</div>
 				</div>
 			</section>

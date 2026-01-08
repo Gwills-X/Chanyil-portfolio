@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import {
 	FaUserGraduate,
 	FaChalkboardTeacher,
@@ -307,6 +308,14 @@ const LeadershipMentorship = () => {
 							</div>
 						))}
 					</div>
+				</div>
+				{/* view more testimonies button */}
+				<div className='mt-10 text-center'>
+					<Link
+						to='/testimonials'
+						className='inline-block px-8 py-3 border bg-black text-white font-semibold rounded-full hover:bg-white hover:text-black transition-all duration-300'>
+						View More Testimonies
+					</Link>
 				</div>
 			</section>
 
