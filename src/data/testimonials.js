@@ -1,5 +1,10 @@
 export const testimonials = [
 	{
+		name: "Dr. Stephen Aderinto",
+		role: "Husband",
+		text: "Channelle is my wife and a devoted mother, a strong pillar of support for our family, and a woman whose love and affection are deeply felt in our home. She has selflessly upheld the home front with unwavering dedication, consistently prioritising the wellbeing of our family. She has truly been a blessing to our home. Both within and beyond our household, Channelle is a woman of genuine faith, humility, and prayer. Her life reflects a deep commitment to obeying God and serving others, a truth evident in the many good works for which she is often commended. I am fully aware of her missionary outreach efforts, and they are nothing short of admirable. In a world that frequently promotes self-focus, her heart for people shines brightly through her ministry, Chayil Daughters, as well as her work with widows and orphans and her mission efforts across Africa, where she is always eager to serve those in need. From close observation, what truly sets her apart is her selfless passion to see others succeed, especially women. She is deeply committed to helping women grow, walk confidently in their God-given purpose, and live it out fully. Channelle is a strong and trustworthy leader, and the faithfulness she demonstrates today points to an even greater impact ahead. She is truly a blessing to the world.",
+	},
+	{
 		name: "Prophetess Dhiann Claxton",
 		role: "Prophetess",
 		text: "Whenever I think of Channelle, I see a woman of great faith whose heart and eyes are steadfastly fixed on Jesus Christ and the things that concern Him. She trusts, honors, and loves Him deeply, and this devotion reflects clearly in her life and ministry. I truly admire and commend her for this and for the many other beautiful qualities she embodies.",
@@ -41,10 +46,5 @@ export const testimonials = [
 		name: "Lady Pastor Magdalene Seidu",
 		role: "",
 		text: " The life of Woman of God Channelle Chayil has taught me to trust God in every situation. Her journey from divorce to a beautifully restored marriage is a powerful testimony of God’s faithfulness. I deeply admire her heart for women across the globe, widows, and children without parents. As a woman of God, wife, mother, leader, and mentor, she leads with grace and purpose. Her mentorship is truly unmatched, yet she remains a loving mother to Levi and a blessed wife to her husband. Her life continually inspires faith, hope, and unwavering trust in God. ",
-	},
-	{
-		name: "Dr. Stephen Aderinto",
-		role: "Husband",
-		text: "Channelle is my wife and a devoted mother, a strong pillar of support for our family, and a woman whose love and affection are deeply felt in our home. She has selflessly upheld the home front with unwavering dedication, consistently prioritising the wellbeing of our family. She has truly been a blessing to our home. Both within and beyond our household, Channelle is a woman of genuine faith, humility, and prayer. Her life reflects a deep commitment to obeying God and serving others, a truth evident in the many good works for which she is often commended. I am fully aware of her missionary outreach efforts, and they are nothing short of admirable. In a world that frequently promotes self-focus, her heart for people shines brightly through her ministry, Chayil Daughters, as well as her work with widows and orphans and her mission efforts across Africa, where she is always eager to serve those in need. From close observation, what truly sets her apart is her selfless passion to see others succeed, especially women. She is deeply committed to helping women grow, walk confidently in their God-given purpose, and live it out fully. Channelle is a strong and trustworthy leader, and the faithfulness she demonstrates today points to an even greater impact ahead. She is truly a blessing to the world.",
 	},
 ];
