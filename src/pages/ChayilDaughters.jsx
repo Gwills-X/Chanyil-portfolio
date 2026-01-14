@@ -13,7 +13,7 @@ import backgroundPic from "../images/IMG-20260106-WA0081.jpg";
 
 // Charity images
 import charity1 from "../images/47b226c1-abcb-450d-983b-f1bfa8d36526.jpg";
-// import charity2 from "../images/IMG_6401.PNG";
+import charity2 from "../images/IMG-20260114-WA0038.jpg";
 import charity3 from "../images/IMG-20260114-WA0029.jpg";
 import charity4 from "../images/IMG-20260114-WA0033.jpg";
 import charity5 from "../images/IMG-20260114-WA0034.jpg";
@@ -74,7 +74,7 @@ const testimonials = [
 const ChayilDaughters = () => {
 	const whatsappGroupLink = "https://chat.whatsapp.com/YourGroupInviteLink";
 
-	const charityImages = [charity1,  charity3, charity4, charity5, charity6];
+	const charityImages = [charity1,charity2,  charity3, charity4, charity5, charity6];
 
 	return (
 		<main className="bg-white">
