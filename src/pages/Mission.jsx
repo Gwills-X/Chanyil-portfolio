@@ -1,9 +1,9 @@
-// ================= IMPORTS =================
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Helmet } from "react-helmet-async";
 
 import mentorship3 from "../images/a5edebd0-6cd5-40c0-a285-c4e8effa862d.jpg";
+
 import {
   FaPrayingHands,
   FaBullseye,
@@ -20,7 +20,7 @@ const coreValues = [
   { title: "Generational Impact", icon: <FaGlobeAmericas /> },
 ];
 
-const Missions = () => {
+const Mission = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -30,9 +30,13 @@ const Missions = () => {
   });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (e) => {
+  const whatsappNumber = "447380923100";
+  const whatsappMessage = encodeURIComponent(
+    "Hello! I just submitted the partnership form and would like to connect."
+  );
+
+  const handleChange = (e) =>
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -44,37 +48,23 @@ const Missions = () => {
     data.append("_replyto", formData.email);
     data.append(
       "_autoresponse",
-      `Hello ${formData.name},
-
-Thank you for partnering with Channelle Chayil Ministry.
-
-Bank: XYZ Bank
-Account Name: Channelle Chayil
-Account Number: 1234567890
-
-Blessings,
-Channelle Chayil Ministry`
+      `Hello ${formData.name},\n\nThank you for partnering with Channelle Chayil Ministry.\n\nBank: XYZ Bank\nAccount Name: Channelle Chayil\nAccount Number: 1234567890\n\nBlessings, Channelle Chayil Ministry`
     );
+    data.append("_autoresponse_subject", "Thank you for partnering with us");
 
     try {
-      const response = await fetch("https://formsubmit.co/partner@channellechayil.com", {
-        method: "POST",
-        body: data,
-        headers: { Accept: "application/json" },
-      });
-
+      const response = await fetch(
+        "https://formsubmit.co/partner@channellechayil.com",
+        { method: "POST", body: data, headers: { Accept: "application/json" } }
+      );
       if (response.ok) {
         setSubmitted(true);
         setFormData({ name: "", email: "", phone: "", amount: "", message: "" });
-
-        // Redirect to WhatsApp after submission
-        setTimeout(() => {
-          const whatsappNumber = "447380923100";
-          const whatsappMessage = encodeURIComponent(
-            "Hello! I just submitted the partnership form and would like to connect."
-          );
-          window.location.href = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
-        }, 3000);
+        setTimeout(
+          () =>
+            (window.location.href = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`),
+          3000
+        );
       } else alert("Submission failed. Please try again.");
     } catch (error) {
       console.error(error);
@@ -85,15 +75,14 @@ Channelle Chayil Ministry`
   return (
     <main className="bg-white">
       <Helmet>
-        <title>Missions & Values | Channelle Chayil Ministry</title>
+        <title>Mission – Channelle Chayil Ministry</title>
         <meta
           name="description"
-          content="Learn about Channelle Chayil Ministry's mission, vision, and core values. Partner with us to make an impact."
+          content="Partner with Channelle Chayil Ministry and learn about our mission, vision, and values."
         />
-        <link rel="canonical" href="https://channellechayil.com/missions" />
       </Helmet>
 
-      {/* ================= HEADER ================= */}
+      {/* Header */}
       <section className="py-24 px-6 bg-gradient-to-r from-gray-500 via-gray-600 to-gray-500 relative h-dvh flex items-center justify-center">
         <img
           src={mentorship3}
@@ -116,29 +105,28 @@ Channelle Chayil Ministry`
         </motion.div>
       </section>
 
-      {/* ================= MISSION ================= */}
+      {/* Mission & Vision */}
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto text-center space-y-6">
           <h2 className="text-3xl font-serif">Mission</h2>
           <p className="text-xl text-gray-700">
-            To raise faith-filled, purpose-driven women grounded in identity,
-            obedience, and spiritual maturity — equipped to serve with love and impact.
+            To raise faith-filled, purpose-driven women grounded in identity, obedience,
+            and spiritual maturity — equipped to serve with love and impact.
           </p>
         </div>
       </section>
 
-      {/* ================= VISION ================= */}
       <section className="py-20 px-6 bg-gray-50">
         <div className="max-w-4xl mx-auto text-center space-y-6">
           <h2 className="text-3xl font-serif">Vision</h2>
           <p className="text-xl text-gray-700">
-            A global movement of women walking confidently in their God-given
-            calling, influencing families, communities, and nations.
+            A global movement of women walking confidently in their God-given calling,
+            influencing families, communities, and nations.
           </p>
         </div>
       </section>
 
-      {/* ================= CORE VALUES ================= */}
+      {/* Core Values */}
       <section className="py-24 px-6">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-serif mb-12 text-center">Core Values</h2>
@@ -156,11 +144,13 @@ Channelle Chayil Ministry`
         </div>
       </section>
 
-      {/* ================= PARTNER FORM ================= */}
+      {/* Partner Form */}
       <section id="partner" className="py-24 px-6 bg-purple-50">
         <div className="max-w-4xl mx-auto text-center space-y-6">
           <h2 className="text-3xl font-serif">Partner With Us</h2>
-          <p className="text-gray-700">Fill the form below. Account details will be sent to your email.</p>
+          <p className="text-gray-700">
+            Fill the form below. Account details will be sent to your email.
+          </p>
 
           {submitted && (
             <p className="text-green-600 font-semibold">
@@ -221,4 +211,4 @@ Channelle Chayil Ministry`
   );
 };
 
-export default Missions;
+export default Mission;
