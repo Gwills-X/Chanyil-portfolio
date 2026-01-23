@@ -1,9 +1,6 @@
 // ================= IMPORTS =================
-
-// Framer Motion for animations
+import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
-
-// Icons used in the Core Values section
 import {
 	FaPrayingHands,
 	FaBullseye,
@@ -11,16 +8,12 @@ import {
 	FaUsers,
 	FaGlobeAmericas,
 } from "react-icons/fa";
+import { useState } from "react";
 
 // Header background image
 import mentorship3 from "../images/a5edebd0-6cd5-40c0-a285-c4e8effa862d.jpg";
 
-// React state management
-import { useState } from "react";
-
 // ================= CORE VALUES DATA =================
-// This array holds the values displayed on the page
-// Each value has a title and an icon
 const coreValues = [
 	{ title: "Faith & Obedience", icon: <FaPrayingHands /> },
 	{ title: "Identity & Purpose", icon: <FaBullseye /> },
@@ -31,7 +24,6 @@ const coreValues = [
 
 const Mission = () => {
 	// ================= FORM STATE =================
-	// Stores all form input values
 	const [formData, setFormData] = useState({
 		name: "",
 		email: "",
@@ -40,11 +32,9 @@ const Mission = () => {
 		message: "",
 	});
 
-	// Tracks whether the form has been successfully submitted
 	const [submitted, setSubmitted] = useState(false);
 
-	// ================= HANDLE INPUT CHANGES =================
-	// Updates the form state as the user types
+	// ================= HANDLE INPUT =================
 	const handleChange = (e) => {
 		setFormData((prev) => ({
 			...prev,
@@ -53,46 +43,28 @@ const Mission = () => {
 	};
 
 	// ================= WHATSAPP CONFIG =================
-	// WhatsApp number to redirect users to after submission
 	const whatsappNumber = "447380923100";
-
-	// Pre-filled WhatsApp message
 	const whatsappMessage = encodeURIComponent(
 		"Hello! I just submitted the partnership form and would like to connect."
 	);
 
-	// ================= FORM SUBMISSION HANDLER =================
+	// ================= FORM SUBMIT =================
 	const handleSubmit = async (e) => {
-		e.preventDefault(); // Prevent page reload
+		e.preventDefault();
 
-		// Create FormData object for FormSubmit
 		const data = new FormData();
-
-		// Append user input fields
 		data.append("name", formData.name);
 		data.append("email", formData.email);
 		data.append("phone", formData.phone);
 		data.append("amount", formData.amount);
 		data.append("message", formData.message);
 
-		// ================= FORM SUBMIT CONFIG =================
-		// Subject of the email YOU receive
 		data.append("_subject", "New Partnership Request");
-
-		// Makes email format cleaner
 		data.append("_template", "table");
-
-		// Disable captcha
 		data.append("_captcha", "false");
-
-		// ================= AUTO-RESPONSE SETTINGS =================
-		// This ensures the reply goes to the user
 		data.append("_replyto", formData.email);
 
-		// Subject of the auto-reply email
 		data.append("_autoresponse_subject", "Thank you for partnering with us");
-
-		// Body of the auto-reply email sent to the user
 		data.append(
 			"_autoresponse",
 			`Hello ${formData.name},
@@ -105,15 +77,13 @@ Bank: XYZ Bank
 Account Name: Channelle Chayil
 Account Number: 1234567890
 
-We deeply appreciate your support and obedience.
+We deeply appreciate your support.
 
 Blessings,
 Channelle Chayil Ministry`
 		);
 
 		try {
-			// ================= SEND FORM TO FORMSUBMIT =================
-			// IMPORTANT: No /ajax/ so autoresponse works
 			const response = await fetch(
 				"https://formsubmit.co/partner@channellechayil.com",
 				{
@@ -124,10 +94,7 @@ Channelle Chayil Ministry`
 			);
 
 			if (response.ok) {
-				// Show success message
 				setSubmitted(true);
-
-				// Reset form inputs
 				setFormData({
 					name: "",
 					email: "",
@@ -136,7 +103,6 @@ Channelle Chayil Ministry`
 					message: "",
 				});
 
-				// Redirect user to WhatsApp after 3 seconds
 				setTimeout(() => {
 					window.location.href = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 				}, 3000);
@@ -151,11 +117,24 @@ Channelle Chayil Ministry`
 
 	return (
 		<main className='bg-white'>
-			{/* ================= HEADER SECTION ================= */}
+			{/* ================= SEO ================= */}
+			<Helmet>
+				<title>Mission & Vision | Channelle Chayil Ministry</title>
+				<meta
+					name='description'
+					content='Discover the mission, vision, and core values of Channelle Chayil Ministry — raising faith-filled, purpose-driven women across nations.'
+				/>
+				<link
+					rel='canonical'
+					href='https://channellechayil.com/mission'
+				/>
+			</Helmet>
+
+			{/* ================= HEADER ================= */}
 			<section className='py-24 px-6 bg-gradient-to-r from-gray-500 via-gray-600 to-gray-500 relative h-dvh flex items-center justify-center'>
 				<img
 					src={mentorship3}
-					alt='Mission header'
+					alt='Mission and vision of Channelle Chayil Ministry'
 					className='absolute inset-0 w-full h-full object-cover opacity-50'
 				/>
 
@@ -177,7 +156,7 @@ Channelle Chayil Ministry`
 			{/* ================= MISSION ================= */}
 			<section className='py-20 px-6'>
 				<div className='max-w-4xl mx-auto text-center space-y-6'>
-					<h2 className='text-3xl font-serif'> Mission</h2>
+					<h2 className='text-3xl font-serif'>Mission</h2>
 					<p className='text-xl text-gray-700'>
 						To raise faith-filled, purpose-driven women grounded in identity,
 						obedience, and spiritual maturity — equipped to serve with love and
@@ -189,7 +168,7 @@ Channelle Chayil Ministry`
 			{/* ================= VISION ================= */}
 			<section className='py-20 px-6 bg-gray-50'>
 				<div className='max-w-4xl mx-auto text-center space-y-6'>
-					<h2 className='text-3xl font-serif'> Vision</h2>
+					<h2 className='text-3xl font-serif'>Vision</h2>
 					<p className='text-xl text-gray-700'>
 						A global movement of women walking confidently in their God-given
 						calling, influencing families, communities, and nations.
@@ -200,7 +179,9 @@ Channelle Chayil Ministry`
 			{/* ================= CORE VALUES ================= */}
 			<section className='py-24 px-6'>
 				<div className='max-w-6xl mx-auto'>
-					<h2 className='text-3xl font-serif mb-12 text-center'>Core Values</h2>
+					<h2 className='text-3xl font-serif mb-12 text-center'>
+						Core Values
+					</h2>
 
 					<div className='grid gap-6 md:grid-cols-2 lg:grid-cols-3'>
 						{coreValues.map((value, index) => (
@@ -225,7 +206,6 @@ Channelle Chayil Ministry`
 						Fill the form below. Account details will be sent to your email.
 					</p>
 
-					{/* Success message */}
 					{submitted && (
 						<p className='text-green-600 font-semibold'>
 							Thank you! Check your email for partnership details. Redirecting
