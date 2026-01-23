@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Helmet } from "react-helmet-async";
+
 
 import mentorship3 from "../images/a5edebd0-6cd5-40c0-a285-c4e8effa862d.jpg";
 
@@ -74,13 +74,7 @@ const Mission = () => {
 
   return (
     <main className="bg-white">
-      <Helmet>
-        <title>Mission – Channelle Chayil Ministry</title>
-        <meta
-          name="description"
-          content="Partner with Channelle Chayil Ministry and learn about our mission, vision, and values."
-        />
-      </Helmet>
+      
 
       {/* Header */}
       <section className="py-24 px-6 bg-gradient-to-r from-gray-500 via-gray-600 to-gray-500 relative h-dvh flex items-center justify-center">

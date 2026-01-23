@@ -1,7 +1,7 @@
 // ================= IMPORTS =================
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Helmet } from "react-helmet-async";
+
 
 import profilePic from "../images/something.jpg";
 import one from "../images/61e5efdf-5d5d-4500-936c-e18e7209bed0.jpg";
@@ -91,14 +91,7 @@ const Speaking = () => {
 
   return (
     <main className="bg-white overflow-x-hidden">
-      <Helmet>
-        <title>Invite Channelle Chayil | Channelle Chayil Ministry</title>
-        <meta
-          name="description"
-          content="Request Channelle Chayil to lead worship, teach, or speak at your event. Fill the form to connect."
-        />
-        <link rel="canonical" href="https://channellechayil.com/invite" />
-      </Helmet>
+     
 
       {/* ================= HERO ================= */}
       <section className="py-24 px-6 bg-white pt-40">

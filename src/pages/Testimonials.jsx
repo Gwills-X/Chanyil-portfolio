@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Helmet } from "react-helmet-async";
+
 import TestimonialCard from "./TestimonialCard";
 import { testimonials } from "../data/testimonials";
 import profilePic from "../images/IMG_7540.JPG";
@@ -7,14 +7,7 @@ import profilePic from "../images/IMG_7540.JPG";
 const Testimonials = () => {
   return (
     <section className="relative py-15 px-6 overflow-hidden">
-      <Helmet>
-        <title>Testimonials | Channelle Chayil Ministry</title>
-        <meta
-          name="description"
-          content="Read stories of lives transformed through Channelle Chayil Ministry. Mentorship, leadership, and faith in action."
-        />
-        <link rel="canonical" href="https://channellechayil.com/testimonials" />
-      </Helmet>
+      
 
       <div
         className="absolute inset-0 bg-gradient-to-br 
