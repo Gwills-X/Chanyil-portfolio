@@ -1,3 +1,4 @@
+// ================= IMPORTS =================
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Helmet } from "react-helmet-async";
@@ -16,7 +17,7 @@ const topics = [
   "Obedience & Alignment",
   "Healing, Restoration & Calling",
   "Women, Legacy & Impact",
-  "Faith-based empowerment",
+  "Faith-based Empowerment",
 ];
 
 const ministrySlides = [one, two, three, four, five, six];
@@ -33,6 +34,7 @@ const Speaking = () => {
   });
   const [inviteSubmitted, setInviteSubmitted] = useState(false);
 
+  // Slide show effect
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrent((prev) => (prev + 1) % ministrySlides.length);
@@ -50,24 +52,34 @@ const Speaking = () => {
 
   const handleInviteSubmit = async (e) => {
     e.preventDefault();
+
     const formUrl = "https://formsubmit.co/ajax/invite@channellechayil.com";
-    const formData = new FormData();
+    const formDataObj = new FormData();
     Object.keys(inviteData).forEach((key) => {
-      formData.append(key, inviteData[key]);
+      formDataObj.append(key, inviteData[key]);
     });
-    formData.append("_subject", "New Invite Request");
-    formData.append("_template", "table");
-    formData.append("_captcha", "false");
+    formDataObj.append("_subject", "New Invite Request");
+    formDataObj.append("_template", "table");
+    formDataObj.append("_captcha", "false");
 
     try {
       const response = await fetch(formUrl, {
         method: "POST",
-        body: formData,
+        body: formDataObj,
         headers: { Accept: "application/json" },
       });
       if (response.ok) {
         setInviteSubmitted(true);
         setInviteData({ name: "", email: "", phone: "", event: "", message: "" });
+
+        // Redirect to WhatsApp only AFTER submission
+        setTimeout(() => {
+          const whatsappNumber = "447380923100";
+          const whatsappMessage = encodeURIComponent(
+            "Hello! I just submitted the invitation request and would like to connect."
+          );
+          window.location.href = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
+        }, 3000);
       } else {
         alert("Oops! Something went wrong. Please try again.");
       }
@@ -78,82 +90,83 @@ const Speaking = () => {
   };
 
   return (
-    <main className='bg-white overflow-x-hidden'>
-      {/* ================= SEO ================= */}
+    <main className="bg-white overflow-x-hidden">
       <Helmet>
-        <title>Invite Channelle Chayil | Worship & Speaking Ministry</title>
+        <title>Invite Channelle Chayil | Channelle Chayil Ministry</title>
         <meta
-          name='description'
-          content='Invite Channelle Chayil to lead worship, teach, or speak at your event. Faith-based ministry inspiring transformation and impact.'
+          name="description"
+          content="Request Channelle Chayil to lead worship, teach, or speak at your event. Fill the form to connect."
         />
-        <link rel='canonical' href='https://channellechayil.com/invite' />
+        <link rel="canonical" href="https://channellechayil.com/invite" />
       </Helmet>
 
       {/* ================= HERO ================= */}
-      <section className='py-24 px-6 bg-white pt-40'>
-        <div className='max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-14 items-center'>
-          <div className='flex justify-center'>
+      <section className="py-24 px-6 bg-white pt-40">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
+          <div className="flex justify-center">
             <img
               src={profilePic}
-              alt='Channelle Chayil'
-              className='w-full max-w-sm rounded-2xl shadow-xl object-cover grayscale'
+              alt="Channelle Chayil"
+              className="w-full max-w-sm rounded-2xl shadow-xl object-cover grayscale"
             />
           </div>
 
           <div>
-            <h2 className='text-3xl md:text-4xl font-serif mb-6'>
+            <h2 className="text-3xl md:text-4xl font-serif mb-6">
               Worship & Speaking Ministry
             </h2>
-            <p className='text-lg text-gray-700 leading-relaxed'>
-              Channelle ministers through worship and the spoken word, inspiring hearts to connect
-              with God and experience spiritual transformation. Her ministry blends music,
-              teaching, and speaking to encourage faith, obedience, and clarity.
+            <p className="text-lg text-gray-700 leading-relaxed">
+              Channelle ministers through worship and the spoken word, inspiring
+              hearts to connect with God and experience spiritual transformation.
+              Her ministry blends music, teaching, and speaking to encourage faith,
+              obedience, and clarity.
             </p>
-
-            <div className='flex flex-col sm:flex-row gap-4 mt-6'>
-              <a
-                href='#invite-form'
-                className='px-8 py-3 border bg-transparent text-black rounded-full hover:bg-black hover:text-white transition-all duration-300'>
-                Invite Channelle
-              </a>
-            </div>
+            <a
+              href="#invite-form"
+              className="mt-6 inline-block px-8 py-3 border bg-transparent text-black rounded-full hover:bg-black hover:text-white transition-all duration-300"
+            >
+              Invite Channelle
+            </a>
           </div>
         </div>
       </section>
 
       {/* ================= SLIDESHOW ================= */}
-      <section className='py-24 px-6 bg-gray-50'>
-        <div className='max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-14 items-center'>
+      <section className="py-24 px-6 bg-gray-50">
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-14 items-center">
           <div>
-            <h2 className='text-3xl md:text-4xl font-serif mb-6'>Ministry in Worship</h2>
-            <p className='text-lg text-gray-700 leading-relaxed'>
-              Through worship sessions, faith-based speaking and teaching, Channelle leads spaces
-              where God’s presence is felt, hearts are transformed, and faith is strengthened.
+            <h2 className="text-3xl md:text-4xl font-serif mb-6">Ministry in Worship</h2>
+            <p className="text-lg text-gray-700 leading-relaxed">
+              Through worship sessions, faith-based speaking and teaching, Channelle
+              leads spaces where God’s presence is felt, hearts are transformed, and
+              faith is strengthened.
             </p>
           </div>
 
-          <div className='relative w-full max-w-md mx-auto h-[420px] rounded-2xl overflow-hidden shadow-xl'>
-            <AnimatePresence mode='wait'>
+          <div className="relative w-full max-w-md mx-auto h-[420px] rounded-2xl overflow-hidden shadow-xl">
+            <AnimatePresence mode="wait">
               <motion.img
                 key={current}
                 src={ministrySlides[current]}
-                alt='Ministry moment'
+                alt="Ministry moment"
                 initial={{ opacity: 0, x: 80 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -80 }}
-                transition={{ duration: 0.7, ease: 'easeInOut' }}
-                className='absolute inset-0 w-full h-full object-cover'
+                transition={{ duration: 0.7, ease: "easeInOut" }}
+                className="absolute inset-0 w-full h-full object-cover"
               />
             </AnimatePresence>
 
             <button
               onClick={prev}
-              className='absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white w-9 h-9 rounded-full'>
+              className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 text-white w-9 h-9 rounded-full"
+            >
               ‹
             </button>
             <button
               onClick={next}
-              className='absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white w-9 h-9 rounded-full'>
+              className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 text-white w-9 h-9 rounded-full"
+            >
               ›
             </button>
           </div>
@@ -161,16 +174,16 @@ const Speaking = () => {
       </section>
 
       {/* ============ TOPICS ============ */}
-      <section className='py-24 px-6 bg-white'>
+      <section className="py-24 px-6 bg-white">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className='max-w-5xl mx-auto'>
-          <h2 className='text-3xl font-serif mb-12 text-center'>Ministry Topics Include</h2>
-
-          <div className='grid gap-6 md:grid-cols-2'>
+          className="max-w-5xl mx-auto"
+        >
+          <h2 className="text-3xl font-serif mb-12 text-center">Ministry Topics Include</h2>
+          <div className="grid gap-6 md:grid-cols-2">
             {topics.map((topic, index) => (
               <motion.div
                 key={index}
@@ -178,7 +191,8 @@ const Speaking = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className='border rounded-xl p-6 text-lg text-gray-700'>
+                className="border rounded-xl p-6 text-lg text-gray-700"
+              >
                 {topic}
               </motion.div>
             ))}
@@ -187,72 +201,77 @@ const Speaking = () => {
       </section>
 
       {/* ============ INVITATION FORM ============ */}
-      <section id='invite-form' className='py-24 px-6 bg-purple-50'>
+      <section id="invite-form" className="py-24 px-6 bg-purple-50">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className='max-w-4xl mx-auto text-center space-y-6'>
-          <h2 className='text-3xl font-serif mb-4'>Invite Channelle Chayil</h2>
-          <p className='text-gray-700 text-lg'>
+          className="max-w-4xl mx-auto text-center space-y-6"
+        >
+          <h2 className="text-3xl font-serif mb-4">Invite Channelle Chayil</h2>
+          <p className="text-gray-700 text-lg">
             Fill the form below to request Channelle to lead worship, teach, or speak at your event.
           </p>
 
           {inviteSubmitted && (
-            <p className='text-green-600 font-semibold'>
+            <p className="text-green-600 font-semibold">
               Thank you! Your invitation request has been received.
             </p>
           )}
 
-          <form onSubmit={handleInviteSubmit} className='mt-8 grid gap-4 grid-cols-1'>
+          <form
+            onSubmit={handleInviteSubmit}
+            className="mt-8 grid gap-4 grid-cols-1"
+          >
             <input
-              type='text'
-              name='name'
-              placeholder='Full Name'
+              type="text"
+              name="name"
+              placeholder="Full Name"
               value={inviteData.name}
               onChange={handleInviteChange}
               required
-              className='p-3 rounded-lg border border-gray-300'
+              className="p-3 rounded-lg border border-gray-300"
             />
             <input
-              type='email'
-              name='email'
-              placeholder='Email'
+              type="email"
+              name="email"
+              placeholder="Email"
               value={inviteData.email}
               onChange={handleInviteChange}
               required
-              className='p-3 rounded-lg border border-gray-300'
+              className="p-3 rounded-lg border border-gray-300"
             />
             <input
-              type='tel'
-              name='phone'
-              placeholder='Phone Number'
+              type="tel"
+              name="phone"
+              placeholder="Phone Number"
               value={inviteData.phone}
               onChange={handleInviteChange}
               required
-              className='p-3 rounded-lg border border-gray-300'
+              className="p-3 rounded-lg border border-gray-300"
             />
             <input
-              type='text'
-              name='event'
-              placeholder='Event Name / Details'
+              type="text"
+              name="event"
+              placeholder="Event Name / Details"
               value={inviteData.event}
               onChange={handleInviteChange}
               required
-              className='p-3 rounded-lg border border-gray-300'
+              className="p-3 rounded-lg border border-gray-300"
             />
             <textarea
-              name='message'
-              placeholder='Any additional message'
+              name="message"
+              placeholder="Any additional message"
               value={inviteData.message}
               onChange={handleInviteChange}
-              className='p-3 rounded-lg border border-gray-300'
+              className="p-3 rounded-lg border border-gray-300"
             />
 
             <button
-              type='submit'
-              className='py-3 bg-black text-white rounded-full hover:bg-gray-800 transition'>
+              type="submit"
+              className="py-3 bg-black text-white rounded-full hover:bg-gray-800 transition"
+            >
               Send Invitation Request
             </button>
           </form>
