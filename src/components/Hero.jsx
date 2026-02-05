@@ -31,17 +31,27 @@ const Hero = () => {
 
 					{/* Buttons */}
 					<div className='flex flex-col sm:flex-row gap-4'>
-						<a
-							href='/invite'
-							className='px-8 py-4 bg-black text-white rounded-full hover:bg-transparent hover:text-black hover:border hover:border-black transition hover:-translate-y-2 duration-500'>
-							Work With Channelle
-						</a>
-						<a
-							href='/chayil-daughters'
-							className='px-8 py-4 border border-black rounded-full hover:bg-black hover:text-white transition hover:-translate-y-2 duration-500'>
-							Join the Community
-						</a>
-					</div>
+	<a
+		href='https://calendly.com/channellechayil/30min'
+		target='_blank'
+		rel='noopener noreferrer'
+		className='px-8 py-4 bg-black text-white rounded-full hover:bg-transparent hover:text-black hover:border hover:border-black transition hover:-translate-y-2 duration-500'>
+		Book a Prayer Call
+	</a>
+
+	<a
+		href='/services'
+		className='px-8 py-4 border border-black rounded-full hover:bg-black hover:text-white transition hover:-translate-y-2 duration-500'>
+		Work With Channelle
+	</a>
+
+	<a
+		href='/chayil-daughters'
+		className='px-8 py-4 text-black underline underline-offset-4 hover:opacity-70 transition'>
+		Join the Community
+	</a>
+</div>
+
 				</motion.div>
 
 				{/* Right Side: Image */}

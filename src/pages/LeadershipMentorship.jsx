@@ -8,6 +8,7 @@ import {
 	FaHandsHelping,
 } from "react-icons/fa";
 import profilePic from "../images/profilePic.png";
+import MentorshipPreview from "../components/MentorshipPreview";
 
 // Define mentorship pathways for the section
 const pathways = [
@@ -266,8 +267,9 @@ const LeadershipMentorship = () => {
 						))}
 					</div>
 
-					{/* ono on mentorship */}
-					<section className='bg-transparent my-4 mt-7 text-center rounded-2xl border border-black p-6 md:p-8 max-w-3xl mx-auto shadow-sm'>
+					<div className="flex gap-5">
+{/* ono on mentorship */}
+					<section className='bg-transparent my-4 mt-7 text-center rounded-2xl border border-black w-1/2 p-6 md:p-8 max-w-3xl mx-auto shadow-sm'>
 						<h3 className='text-2xl md:text-3xl font-semibold text-neutral-900 mb-4'>
 							Chayil Daughter Mentorship
 						</h3>
@@ -291,6 +293,9 @@ const LeadershipMentorship = () => {
 							Register for One-on-One Mentorship
 						</a>
 					</section>
+
+<MentorshipPreview/>
+</div>
 				</div>
 			</section>
 
@@ -318,6 +323,8 @@ const LeadershipMentorship = () => {
 					</Link>
 				</div>
 			</section>
+
+
 
 			{/* ================= APPLICATION FORM ================= */}
 			<section id='application' className='py-24 px-6 bg-green-50'>

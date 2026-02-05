@@ -2,11 +2,13 @@ import Hero from "../components/Hero";
 import Intro from "../components/Intro";
 import Highlights from "../components/Highlights";
 import HomeCTA from "../components/HomeCTA";
+import WaysToWork from "../components/WaysToWork";
 
 const Home = () => {
 	return (
 		<div>
 			<Hero />
+<WaysToWork/>
 			<Intro />
 			<Highlights />
 			<HomeCTA />
