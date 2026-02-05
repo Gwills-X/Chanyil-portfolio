@@ -36,8 +36,8 @@ const WaysToWork = () => {
 						</p>
 
 						<a
-							href='https://calendly.com/channellechayil/30min'
-							target='_blank'
+								href='https://calendly.com/channellechayil/prayer-call'
+		target='_blank'
 							rel='noopener noreferrer'
 							className='inline-block px-6 py-3 bg-black text-white rounded-full hover:bg-transparent hover:text-black hover:border hover:border-black transition'>
 							Book a Prayer Call
@@ -69,7 +69,7 @@ const WaysToWork = () => {
 						</ul>
 
 						<a
-							href='https://calendly.com/channellechayil/30min'
+							href='https://calendly.com/channellechayil/prayer-alignment-session'
 							target='_blank'
 							className='inline-block px-6 py-3 border border-black rounded-full hover:bg-black hover:text-white transition'>
 							Book Your Spiritual Guidance Series

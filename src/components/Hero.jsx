@@ -32,7 +32,7 @@ const Hero = () => {
 					{/* Buttons */}
 					<div className='flex flex-col sm:flex-row gap-4'>
 	<a
-		href='https://calendly.com/channellechayil/30min'
+		href='https://calendly.com/channellechayil/prayer-call'
 		target='_blank'
 		rel='noopener noreferrer'
 		className='px-8 py-4 bg-black text-white rounded-full hover:bg-transparent hover:text-black hover:border hover:border-black transition hover:-translate-y-2 duration-500 text-center'>
