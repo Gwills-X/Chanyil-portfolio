@@ -44,7 +44,7 @@ const MediaResources = () => {
 	const upcomingEvents = [
 		{
 			title: "BOND & BUILD | Chayil Fellowships 🤍✨",
-			date: "Friday 30th January, 6–9PM",
+			date: "Last Friday Of Every Month, 6–9PM",
 			location: "Croydon (exact location revealed upon registration)",
 			description: `
 A night to connect, be refreshed, and be strengthened in sisterhood. Come as you are. Leave built.

@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 
 import TestimonialCard from "./TestimonialCard";
 import { testimonials } from "../data/testimonials";
-import profilePic from "../images/IMG_7540.JPG";
+import profilePic from "../images/IMG-20260204-WA0025.jpg";
 
 const Testimonials = () => {
   return (

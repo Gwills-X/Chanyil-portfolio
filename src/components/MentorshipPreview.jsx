@@ -29,7 +29,7 @@ const MentorshipPreview = () => {
 				</p>
 
 				<a
-					href='https://tr.ee/hGklTxXd4V'
+					href='https://calendly.com/channellechayil/free-consultation-call'
 							target='_blank'
 					className='inline-block px-10 py-4 bg-black text-white rounded-full hover:bg-transparent hover:text-black hover:border hover:border-black transition'>
 					Register for Mentorship
