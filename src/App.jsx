@@ -12,31 +12,33 @@ import MediaResources from "./pages/MediaResources";
 import Footer from "./components/Footer";
 import NotFound from "./pages/NotFound";
 import Testimonials from "./pages/Testimonials";
+import KingdomVentures from "./pages/KingdomVentures";
 const App = () => {
-	return (
-		<div>
-			<Router>
-				<Navbar />
+  return (
+    <div>
+      <Router>
+        <Navbar />
 
-				<div className=''>
-					<Routes>
-						<Route path='/' element={<Home />} />
-						<Route path='/about' element={<About />} />
-						<Route path='/missions' element={<Mission />} />
-						<Route path='/chayil-daughters' element={<ChayilDaughters />} />
-						<Route path='/leadership' element={<LeadershipMentorship />} />
-						<Route path='/testimonials' element={<Testimonials />} />
+        <div className=''>
+          <Routes>
+            <Route path='/' element={<Home />} />
+            <Route path='/about' element={<About />} />
+            <Route path='/missions' element={<Mission />} />
+            <Route path='/chayil-daughters' element={<ChayilDaughters />} />
+            <Route path='/leadership' element={<LeadershipMentorship />} />
+            <Route path='/testimonials' element={<Testimonials />} />
+            <Route path='/kingdom-ventures' element={<KingdomVentures />} />
 
-						<Route path='/invite' element={<Speaking />} />
-						<Route path='/media' element={<MediaResources />} />
-						<Route path='*' element={<NotFound />} />
-					</Routes>
-				</div>
-				<Footer />
-			</Router>
-			<Analytics/>
-		</div>
-	);
+            <Route path='/invite' element={<Speaking />} />
+            <Route path='/media' element={<MediaResources />} />
+            <Route path='*' element={<NotFound />} />
+          </Routes>
+        </div>
+        <Footer />
+      </Router>
+      <Analytics />
+    </div>
+  );
 };
 
 export default App;
