@@ -13,10 +13,12 @@ import Footer from "./components/Footer";
 import NotFound from "./pages/NotFound";
 import Testimonials from "./pages/Testimonials";
 import KingdomVentures from "./pages/KingdomVentures";
+import ScrollToTop from "./components/ScrollToTop";
 const App = () => {
   return (
     <div>
       <Router>
+        <ScrollToTop />
         <Navbar />
 
         <div className=''>
