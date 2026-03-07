@@ -6,7 +6,7 @@ import About from "./pages/About";
 import Navbar from "./components/Navbar";
 import Mission from "./pages/Mission";
 import ChayilDaughters from "./pages/ChayilDaughters";
-import LeadershipMentorship from "./pages/LeadershipMentorship";
+import CoursesPage from "./pages/CoursesPage";
 import Speaking from "./pages/Speaking";
 import MediaResources from "./pages/MediaResources";
 import Footer from "./components/Footer";
@@ -27,7 +27,7 @@ const App = () => {
             <Route path='/about' element={<About />} />
             <Route path='/missions' element={<Mission />} />
             <Route path='/chayil-daughters' element={<ChayilDaughters />} />
-            <Route path='/leadership' element={<LeadershipMentorship />} />
+            <Route path='/courses' element={<CoursesPage />} />
             <Route path='/testimonials' element={<Testimonials />} />
             <Route path='/kingdom-ventures' element={<KingdomVentures />} />
 

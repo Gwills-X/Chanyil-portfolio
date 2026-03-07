@@ -5,16 +5,29 @@ import logo from "../images/CC LOGO 1_033945.png";
 const Navbar = () => {
   const [scrollPoint, setScrollPoint] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
 
   const location = useLocation();
   const isKingdomPage = location.pathname === "/kingdom-ventures";
 
+  /* Detect screen size */
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 1024);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  /* Track scroll */
   useEffect(() => {
     const handleScroll = () => setScrollPoint(window.scrollY);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  /* Prevent body scroll when menu open */
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "auto";
     return () => {
@@ -32,11 +45,13 @@ const Navbar = () => {
   const navbarClasses = `
     fixed top-0 left-0 w-full z-50 transition-all duration-300
     ${
-      isScrolled
-        ? "bg-white/95 backdrop-blur-md shadow-sm text-black"
-        : isKingdomPage
-          ? "bg-transparent text-white pt-5"
-          : "bg-transparent text-black pt-5"
+      isMobile
+        ? "bg-white text-black shadow-sm" // ALWAYS WHITE ON MOBILE
+        : isScrolled
+          ? "bg-white/95 backdrop-blur-md shadow-sm text-black"
+          : isKingdomPage
+            ? "bg-transparent text-white pt-5"
+            : "bg-transparent text-black pt-5"
     }
   `;
 
@@ -51,7 +66,7 @@ const Navbar = () => {
             className='w-50 relative z-10 max-md:w-35 transition-transform duration-300'
             style={{
               filter:
-                !isScrolled && isKingdomPage
+                !isMobile && !isScrolled && isKingdomPage
                   ? "invert(0) brightness(2)"
                   : "invert(1)",
             }}
@@ -97,11 +112,7 @@ const navLinks = (closeMenu) => (
       label='Chayil Daughters'
       closeMenu={closeMenu}
     />
-    <NavItem
-      to='/leadership'
-      label='Leadership & Mentorship'
-      closeMenu={closeMenu}
-    />
+    <NavItem to='/courses' label='Courses' closeMenu={closeMenu} />
     <NavItem
       to='/kingdom-ventures'
       label='Kingdom Ventures'
