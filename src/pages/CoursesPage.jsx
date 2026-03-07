@@ -165,7 +165,7 @@ const CoursesPage = () => {
                     <h3 className='text-xl font-semibold mb-3'>
                       {course.title}
                     </h3>
-
+                    <p className='text-gray-700 mb-6'>{course.desc}</p>
                     {/* COURSE INFO */}
                     <p className='text-sm text-gray-600 mb-1'>
                       <strong>Duration:</strong> {course.duration}
@@ -174,8 +174,6 @@ const CoursesPage = () => {
                     <p className='text-sm text-gray-600 mb-4'>
                       <strong>Format:</strong> {course.format}
                     </p>
-
-                    <p className='text-gray-700 mb-6'>{course.desc}</p>
 
                     {/* PRICE BADGE */}
                     <div className='mb-6'>
