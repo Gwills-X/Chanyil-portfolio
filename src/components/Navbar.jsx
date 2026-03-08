@@ -119,8 +119,6 @@ const navLinks = (closeMenu) => (
       closeMenu={closeMenu}
     />
     <NavItem to='/testimonials' label='Testimonials' closeMenu={closeMenu} />
-    <NavItem to='/invite' label='Invite' closeMenu={closeMenu} />
-    <NavItem to='/media' label='Media Resources' closeMenu={closeMenu} />
   </>
 );
 

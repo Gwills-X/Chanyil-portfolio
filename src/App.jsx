@@ -8,7 +8,7 @@ import Mission from "./pages/Mission";
 import ChayilDaughters from "./pages/ChayilDaughters";
 import CoursesPage from "./pages/CoursesPage";
 import Speaking from "./pages/Speaking";
-import MediaResources from "./pages/MediaResources";
+
 import Footer from "./components/Footer";
 import NotFound from "./pages/NotFound";
 import Testimonials from "./pages/Testimonials";
@@ -32,7 +32,7 @@ const App = () => {
             <Route path='/kingdom-ventures' element={<KingdomVentures />} />
 
             <Route path='/invite' element={<Speaking />} />
-            <Route path='/media' element={<MediaResources />} />
+
             <Route path='*' element={<NotFound />} />
           </Routes>
         </div>

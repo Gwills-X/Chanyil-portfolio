@@ -16,17 +16,14 @@ const Hero = () => {
           </h1>
 
           <p className='text-xl md:text-2xl mb-4'>
-            Faith-Centered Leader | Speaker | Mentor | Worship Minister
+            Prophetic Worship Minister | Leader | Mentor
           </p>
 
           <p className='text-lg md:text-xl mb-6'>
-            Raising purpose-driven women to lead in love, faith, and
-            obedience—impacting lives, communities, and generations.
-          </p>
-
-          <p className='text-lg md:text-xl mb-8'>
-            Through her voice and ministry, Channelle inspires hearts with
-            worship, song, and faith-based teaching.
+            Through prophetic worship, Channelle lead hearts into surrender,
+            repentance, and deeper intimacy with the Father, ushering
+            breakthrough and releasing prophetic direction that encourages and
+            transforms lives.
           </p>
 
           {/* Buttons */}
