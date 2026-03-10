@@ -182,23 +182,21 @@ const CoursesPage = () => {
                     <h3 className='text-xl font-semibold mb-3'>
                       {course.title}
                     </h3>
-                    <p className='text-gray-700 mb-6'>{course.desc}</p>
+                    <p className='text-gray-700 mb-3'>{course.desc}</p>
                     {/* COURSE INFO */}
                     <p className='text-sm text-gray-600 mb-1'>
                       <strong>Duration:</strong> {course.duration}
                     </p>
 
-                    <p className='text-sm text-gray-600 mb-4'>
+                    <p className='text-sm text-gray-600 mb-1'>
                       <strong>Format:</strong> {course.format}
                     </p>
 
                     {/* PRICE BADGE */}
-                    <div className='mb-6 flex justify-start gap-3'>
-                      <strong>Investment:</strong>
-                      <span className='bg-black text-white px-4 py-1 rounded-full text-sm'>
-                        {course.price}
-                      </span>
-                    </div>
+                    <p className='text-sm text-gray-600 mb-4'>
+                      <strong>Investment: </strong>
+                      {course.price}
+                    </p>
 
                     {/* CTA BUTTON */}
                     <a
