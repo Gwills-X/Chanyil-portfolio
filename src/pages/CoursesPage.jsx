@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 
+import profile from "../images/profilePic.png";
+
 /*
 COURSES DATA
 All programmes are stored here.
@@ -124,24 +126,39 @@ const CoursesPage = () => {
   return (
     <main className='bg-white'>
       {/* ================= HERO ================= */}
-      <section className='py-32 bg-gradient-to-b from-gray-50 to-white text-center px-6'>
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className='max-w-4xl mx-auto'>
-          <h1 className='text-5xl font-serif mb-6'>Work With Channelle</h1>
+      <section className='pt-32 pb-10 bg-gradient-to-b from-gray-50 to-white px-6 '>
+        <div className='max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center'>
+          {/* TEXT SIDE */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}>
+            <h1 className='text-5xl font-serif mb-6'>Work With Channelle</h1>
 
-          <p className='text-lg text-gray-700 leading-relaxed'>
-            Mentorship, leadership development and strategic guidance designed
-            to equip women and leaders to grow in faith, purpose and impact.
-          </p>
+            <p className='text-lg text-gray-700 leading-relaxed'>
+              Mentorship, leadership development and strategic guidance designed
+              to equip women and leaders to grow in faith, purpose and impact.
+            </p>
 
-          <p className='italic mt-6 text-gray-600'>
-            “As iron sharpens iron, so one person sharpens another.” — Proverbs
-            27:17
-          </p>
-        </motion.div>
+            <p className='italic mt-6 text-gray-600'>
+              “As iron sharpens iron, so one person sharpens another.” —
+              Proverbs 27:17
+            </p>
+          </motion.div>
+
+          {/* IMAGE SIDE */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
+            className='relative'>
+            <img
+              src={profile}
+              alt='Chayil Courses'
+              className='rounded-2xl shadow-xl object-cover w-full h-[420px]'
+            />
+          </motion.div>
+        </div>
       </section>
 
       {/* ================= COURSES ================= */}

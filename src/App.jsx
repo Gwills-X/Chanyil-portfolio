@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import About from "./pages/About";
 import Navbar from "./components/Navbar";
-import Mission from "./pages/Mission";
+
 import ChayilDaughters from "./pages/ChayilDaughters";
 import CoursesPage from "./pages/CoursesPage";
 import Speaking from "./pages/Speaking";
@@ -14,6 +14,7 @@ import NotFound from "./pages/NotFound";
 import Testimonials from "./pages/Testimonials";
 import KingdomVentures from "./pages/KingdomVentures";
 import ScrollToTop from "./components/ScrollToTop";
+import Shop from "./pages/Shop";
 const App = () => {
   return (
     <div>
@@ -25,12 +26,12 @@ const App = () => {
           <Routes>
             <Route path='/' element={<Home />} />
             <Route path='/about' element={<About />} />
-            <Route path='/missions' element={<Mission />} />
+
             <Route path='/chayil-daughters' element={<ChayilDaughters />} />
             <Route path='/courses' element={<CoursesPage />} />
             <Route path='/testimonials' element={<Testimonials />} />
             <Route path='/kingdom-ventures' element={<KingdomVentures />} />
-
+            <Route path='/shop' element={<Shop />} />
             <Route path='/invite' element={<Speaking />} />
 
             <Route path='*' element={<NotFound />} />

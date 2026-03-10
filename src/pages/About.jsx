@@ -120,6 +120,25 @@ const About = () => {
           </div>
         </div>
       </section>
+      {/* ================= FAMILY SECTION ================= */}
+
+      <section className='py-32 px-6 bg-gray-50'>
+        <motion.div
+          initial='initial'
+          whileInView='animate'
+          viewport={{ once: true }}
+          variants={fadeUp}
+          transition={{ duration: 0.8 }}
+          className='max-w-4xl mx-auto text-center'>
+          <h3 className='text-3xl font-serif mb-6'>Family & Life</h3>
+
+          <p className='text-xl text-gray-700 leading-relaxed'>
+            Channelle lives in London with her husband and son. Family remains
+            central to her life and ministry, and she believes that faith, love,
+            and strong values begin in the home.
+          </p>
+        </motion.div>
+      </section>
 
       {/* ================= MINISTRY SECTION ================= */}
 
@@ -229,26 +248,6 @@ const About = () => {
             </p>
           </motion.div>
         </div>
-      </section>
-
-      {/* ================= FAMILY SECTION ================= */}
-
-      <section className='py-32 px-6 bg-gray-50'>
-        <motion.div
-          initial='initial'
-          whileInView='animate'
-          viewport={{ once: true }}
-          variants={fadeUp}
-          transition={{ duration: 0.8 }}
-          className='max-w-4xl mx-auto text-center'>
-          <h3 className='text-3xl font-serif mb-6'>Family & Life</h3>
-
-          <p className='text-xl text-gray-700 leading-relaxed'>
-            Channelle lives in London with her husband and son. Family remains
-            central to her life and ministry, and she believes that faith, love,
-            and strong values begin in the home.
-          </p>
-        </motion.div>
       </section>
     </main>
   );

@@ -20,6 +20,13 @@ const Hero = () => {
           </p>
 
           <p className='text-lg md:text-xl mb-6'>
+            Channelle Chayil is a prophetic worship minister, leader, and mentor
+            who equips and guides women into deeper intimacy with the Father,
+            raising women of faith, wisdom, and obedience while releasing
+            prophetic encouragement that brings clarity, breakthrough, and
+            transformation.
+          </p>
+          <p className='text-lg md:text-xl mb-6'>
             Through prophetic worship, Channelle lead hearts into surrender,
             repentance, and deeper intimacy with the Father, ushering
             breakthrough and releasing prophetic direction that encourages and
@@ -37,9 +44,9 @@ const Hero = () => {
             </a>
 
             <a
-              href='/services'
+              href='/courses'
               className='px-8 py-4 border border-black rounded-full hover:bg-black hover:text-white transition hover:-translate-y-2 duration-500 text-center'>
-              Work With Channelle
+              View Our Courses
             </a>
 
             <a
