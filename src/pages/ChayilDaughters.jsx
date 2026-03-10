@@ -123,15 +123,19 @@ const ChayilDaughters = () => {
       </section>
 
       <section className='py-24 px-6'>
-        <div className='max-w-6xl mx-auto flex justify-center  2 gap-16 items-center  px-10'>
+        <div className='max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center'>
           {/* TEXT */}
           <motion.div
             initial='initial'
             whileInView='whileInView'
             viewport={{ once: true }}
             variants={fadeUp}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className='text-gray-700 text-lg space-y-6 leading-relaxed '>
+            transition={{ duration: 0.7 }}
+            className='text-gray-700 text-lg leading-relaxed space-y-6'>
+            <h2 className='text-3xl md:text-4xl font-serif text-black mb-4'>
+              A Global Sisterhood
+            </h2>
+
             <p>
               God’s Chayil Daughters is a global community of women from
               different nations who gather for prayer, Bible study, mentorship,
@@ -151,16 +155,16 @@ const ChayilDaughters = () => {
             whileInView='whileInView'
             viewport={{ once: true }}
             variants={fadeUp}
-            transition={{ duration: 0.7 }}
-            className='w-3/4'>
+            transition={{ duration: 0.7, delay: 0.1 }}
+            className='w-full'>
             <div className='relative'>
-              {/* subtle frame */}
+              {/* decorative frame */}
               <div className='absolute -top-4 -left-4 w-full h-full border border-black/20'></div>
 
               <img
                 src={communityImage}
                 alt="God's Chayil Daughters Community"
-                className='relative z-10 w-full h-80  rounded-sm'
+                className='relative z-10 w-full h-auto object-cover rounded-sm'
               />
             </div>
           </motion.div>

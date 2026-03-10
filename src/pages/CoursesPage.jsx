@@ -193,7 +193,8 @@ const CoursesPage = () => {
                     </p>
 
                     {/* PRICE BADGE */}
-                    <div className='mb-6'>
+                    <div className='mb-6 flex justify-start gap-3'>
+                      <strong>Investment:</strong>
                       <span className='bg-black text-white px-4 py-1 rounded-full text-sm'>
                         {course.price}
                       </span>

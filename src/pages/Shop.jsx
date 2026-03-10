@@ -11,9 +11,10 @@ const fadeUp = {
 
 const resources = [
   {
-    title: "Becoming a Woman of Prayer",
+    title:
+      "Grace for the Journey: A Prayer Guide for Mothers Raising SEN Children",
     description:
-      "A faith-building guide designed to help women grow in prayer, intimacy with God, and spiritual discipline.",
+      "Raising a child with autism or special educational needs can feel overwhelming at times. As a mother of an autistic child myself, prayer has been my greatest source of strength. This guide contains heartfelt prayers to bring you peace, wisdom, and grace as you cover your child in faith and walk this journey with God. You are not alone — God is with you every step of the way.",
     link: "https://payhip.com/b/72H06",
     images: [book1, book2, book3],
   },

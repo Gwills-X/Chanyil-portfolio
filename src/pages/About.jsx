@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import profilePic3 from "../images/WhatsApp Image 2026-03-01 at 8.34.09 AM.jpeg";
+import profilePic3 from "../images/WhatsApp Image 2026-03-01 at 8.34.09 AM (1).jpeg";
 import familyPic from "../images/familyPic.png";
 
 const fadeUp = {
