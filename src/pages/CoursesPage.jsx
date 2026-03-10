@@ -126,7 +126,7 @@ const CoursesPage = () => {
   return (
     <main className='bg-white'>
       {/* ================= HERO ================= */}
-      <section className='pt-32 pb-10 bg-gradient-to-b from-gray-50 to-white px-6 '>
+      <section className='pt-32 pb-10 bg-gradient-to-b from-gray-50 to-white px-20 '>
         <div className='max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center'>
           {/* TEXT SIDE */}
           <motion.div
