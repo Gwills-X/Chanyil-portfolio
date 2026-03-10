@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 
-import profile from "../images/profilePic.png";
+import profile from "../images/WhatsApp Image 2026-03-10 at 11.52.35 AM.jpeg";
 
 /*
 COURSES DATA
@@ -155,7 +155,7 @@ const CoursesPage = () => {
             <img
               src={profile}
               alt='Chayil Courses'
-              className='rounded-2xl shadow-xl object-cover w-full h-[420px]'
+              className='rounded-2xl shadow-xl  w-full h-[550px]'
             />
           </motion.div>
         </div>

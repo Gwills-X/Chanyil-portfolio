@@ -35,18 +35,6 @@ const Shop = () => {
             Resources for Faith & Growth
           </h1>
 
-          <p className='text-lg text-gray-700 leading-relaxed'>
-            Welcome to the Channelle Chayil Shop — a collection of faith-filled
-            resources created to equip, encourage, and strengthen others on
-            their journey with God.
-          </p>
-
-          <p className='text-lg text-gray-700 leading-relaxed mt-6'>
-            Every book, guide, and resource here has been prayerfully created
-            from real life experience, personal testimony, and years of
-            ministry, leadership, and discipleship.
-          </p>
-
           <p className='text-lg text-gray-700 leading-relaxed mt-6'>
             Whether you are seeking spiritual encouragement, practical guidance,
             or deeper intimacy with God, these resources are here to support

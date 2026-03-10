@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import profilePic3 from "../images/IMG_7547.JPG";
+import profilePic3 from "../images/WhatsApp Image 2026-03-01 at 8.34.09 AM.jpeg";
 import familyPic from "../images/familyPic.png";
 
 const fadeUp = {
@@ -48,7 +48,7 @@ const About = () => {
 
       {/* ================= MAIN BIO SECTION ================= */}
 
-      <section className='py-28 px-6'>
+      <section className='py-20 px-6'>
         <div className='max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center'>
           {/* IMAGE */}
           <motion.div
@@ -64,24 +64,13 @@ const About = () => {
               <img
                 src={profilePic3}
                 alt='Channelle Chayil'
-                className='relative z-10 w-full h-auto object-cover rounded-sm'
+                className='relative z-10 w-full h-150  rounded-sm'
               />
             </div>
           </motion.div>
 
           {/* TEXT CONTENT */}
           <div className='space-y-8 text-lg leading-relaxed text-gray-700'>
-            <motion.p
-              initial='initial'
-              whileInView='animate'
-              viewport={{ once: true }}
-              variants={fadeUp}
-              transition={{ duration: 0.7 }}>
-              Channelle Chayil is a prophetic worshipper, mentor, and ministry
-              leader devoted to helping people encounter God, grow in faith, and
-              walk boldly in their God-given purpose.
-            </motion.p>
-
             <motion.p
               initial='initial'
               whileInView='animate'

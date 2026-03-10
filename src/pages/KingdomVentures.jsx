@@ -31,13 +31,6 @@ const KingdomVentures = () => {
           <p className='text-xl md:text-2xl mb-6'>
             Faith-Driven Stewardship • Sustainable Wealth • Generational Impact
           </p>
-
-          {/* Logo under heading */}
-          <img
-            src={logo}
-            alt='Chayil Lands Logo'
-            className='mx-auto mt-6 w-40 md:w-56 bg-white p-3 rounded'
-          />
         </motion.div>
       </section>
 
