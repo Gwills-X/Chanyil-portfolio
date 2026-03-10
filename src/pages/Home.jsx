@@ -1,19 +1,21 @@
 import Hero from "../components/Hero";
 import Intro from "../components/Intro";
-import Highlights from "../components/Highlights";
+
 import HomeCTA from "../components/HomeCTA";
 import WaysToWork from "../components/WaysToWork";
+import MinistryFocus from "../components/MinistryFocus";
 
 const Home = () => {
-	return (
-		<div>
-			<Hero />
-<WaysToWork/>
-			<Intro />
-			<Highlights />
-			<HomeCTA />
-		</div>
-	);
+  return (
+    <div>
+      <Hero />
+      <Intro />
+      <MinistryFocus />
+      <WaysToWork />
+
+      <HomeCTA />
+    </div>
+  );
 };
 
 export default Home;

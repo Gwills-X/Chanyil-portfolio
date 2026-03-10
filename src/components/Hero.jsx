@@ -26,12 +26,6 @@ const Hero = () => {
             prophetic encouragement that brings clarity, breakthrough, and
             transformation.
           </p>
-          <p className='text-lg md:text-xl mb-6'>
-            Through prophetic worship, Channelle lead hearts into surrender,
-            repentance, and deeper intimacy with the Father, ushering
-            breakthrough and releasing prophetic direction that encourages and
-            transforms lives.
-          </p>
 
           {/* Buttons */}
           <div className='flex flex-col sm:flex-row gap-4'>
@@ -46,7 +40,7 @@ const Hero = () => {
             <a
               href='/courses'
               className='px-8 py-4 border border-black rounded-full hover:bg-black hover:text-white transition hover:-translate-y-2 duration-500 text-center'>
-              View Our Courses
+              View Courses
             </a>
 
             <a
