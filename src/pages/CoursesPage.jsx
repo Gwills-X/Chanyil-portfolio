@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 
 import profile from "../images/WhatsApp Image 2026-03-10 at 11.52.35 AM.jpeg";
+import CoursesFAQ from "../components/Courses/CoursesFaq";
 
 /*
 COURSES DATA
@@ -126,8 +127,8 @@ const CoursesPage = () => {
   return (
     <main className='bg-white'>
       {/* ================= HERO ================= */}
-      <section className='pt-32 pb-10 bg-gradient-to-b from-gray-50 to-white px-20 '>
-        <div className='max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center'>
+      <section className='pt-32 pb-10 bg-gradient-to-b from-gray-50 to-white px-20 max-lg:px-6'>
+        <div className='max-w-7xl mx-auto  grid md:grid-cols-2 gap-16 items-center'>
           {/* TEXT SIDE */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
@@ -236,6 +237,7 @@ const CoursesPage = () => {
           </a>
         </div>
       </section>
+      <CoursesFAQ />
     </main>
   );
 };
