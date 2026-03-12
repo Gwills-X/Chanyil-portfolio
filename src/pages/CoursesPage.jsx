@@ -127,21 +127,25 @@ const CoursesPage = () => {
   return (
     <main className='bg-white'>
       {/* ================= HERO ================= */}
-      <section className='pt-32 pb-10 bg-gradient-to-b from-gray-50 to-white px-20 max-lg:px-6'>
-        <div className='max-w-7xl mx-auto  grid md:grid-cols-2 gap-16 items-center'>
+      <section className='pt-32 pb-16 bg-gradient-to-b from-gray-50 to-white px-6 lg:px-20'>
+        <div className='max-w-7xl mx-auto grid md:grid-cols-2 gap-16 items-center'>
           {/* TEXT SIDE */}
           <motion.div
             initial={{ opacity: 0, x: -40 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}>
-            <h1 className='text-5xl font-serif mb-6'>Work With Channelle</h1>
+            transition={{ duration: 0.8 }}
+            className='space-y-6'>
+            <h1 className='text-5xl md:text-6xl font-serif font-semibold mb-4 text-gray-900'>
+              Work With Channelle
+            </h1>
 
-            <p className='text-lg text-gray-700 leading-relaxed'>
-              Mentorship, leadership development and strategic guidance designed
-              to equip women and leaders to grow in faith, purpose and impact.
+            <p className='text-lg md:text-xl text-gray-700 leading-relaxed'>
+              Mentorship, leadership development, and strategic guidance
+              designed to equip women and leaders to grow in faith, purpose, and
+              impact.
             </p>
 
-            <p className='italic mt-6 text-gray-600'>
+            <p className='italic mt-4 md:mt-6 text-gray-600 text-lg'>
               “As iron sharpens iron, so one person sharpens another.” —
               Proverbs 27:17
             </p>
@@ -151,12 +155,16 @@ const CoursesPage = () => {
           <motion.div
             initial={{ opacity: 0, x: 40 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
-            className='relative'>
+            transition={{ duration: 0.8 }}
+            className='relative group'>
+            {/* Background shape / accent */}
+            <div className='absolute -top-6 -left-6 w-full h-full bg-gradient-to-tr from-pink-100 to-purple-200 rounded-3xl blur-3xl opacity-40 transition-all duration-500 group-hover:opacity-60'></div>
+
+            {/* Main Image */}
             <img
               src={profile}
               alt='Chayil Courses'
-              className='rounded-2xl shadow-xl  w-full h-[550px]'
+              className='relative rounded-2xl shadow-2xl w-full h-[500px] md:h-[550px] object-cover transition-transform duration-500 group-hover:scale-105'
             />
           </motion.div>
         </div>
