@@ -12,7 +12,7 @@ import Speaking from "./pages/Speaking";
 import Footer from "./components/Footer";
 import NotFound from "./pages/NotFound";
 import Testimonials from "./pages/Testimonials";
-import KingdomVentures from "./pages/KingdomVentures";
+import Proverbs31Land from "./pages/KingdomVentures";
 import ScrollToTop from "./components/ScrollToTop";
 import Shop from "./pages/Shop";
 const App = () => {
@@ -30,7 +30,7 @@ const App = () => {
             <Route path='/chayil-daughters' element={<ChayilDaughters />} />
             <Route path='/courses' element={<CoursesPage />} />
             <Route path='/testimonials' element={<Testimonials />} />
-            <Route path='/kingdom-ventures' element={<KingdomVentures />} />
+            <Route path='/kingdom-ventures' element={<Proverbs31Land />} />
             <Route path='/shop' element={<Shop />} />
             <Route path='/invite' element={<Speaking />} />
 
