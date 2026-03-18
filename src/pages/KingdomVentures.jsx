@@ -32,7 +32,8 @@ const Proverbs31Land = () => {
           </p>
 
           <a
-            href='/masterclass'
+            href='https://docs.google.com/forms/d/e/1FAIpQLSfney6AGMAjNux0LGlGfv0TOzsLBatxNbuNZKWEC-WcSiMIOQ/viewform'
+            target='__blank'
             className='px-8 py-4 bg-white text-black rounded-full hover:bg-gray-200 transition'>
             Join the Free Masterclass
           </a>
@@ -193,13 +194,15 @@ const Proverbs31Land = () => {
 
           <div className='flex flex-col sm:flex-row justify-center gap-6'>
             <a
-              href='/masterclass'
+              href='https://docs.google.com/forms/d/e/1FAIpQLSfney6AGMAjNux0LGlGfv0TOzsLBatxNbuNZKWEC-WcSiMIOQ/viewform'
+              target='__blank'
               className='px-8 py-4 bg-black text-white rounded-full'>
               Register for Masterclass
             </a>
 
             <a
-              href='/investor-interest'
+              href='https://docs.google.com/forms/d/e/1FAIpQLSf2Ftc18AQmyk8Sm5ygRlG_5Z6uRC3nFY1D-GWF5bU1qG7y-Q/viewform'
+              target='__blank'
               className='px-8 py-4 border border-black rounded-full hover:bg-black hover:text-white transition'>
               Investor Interest Form
             </a>
