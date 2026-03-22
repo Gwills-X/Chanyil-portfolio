@@ -3,6 +3,7 @@ import { useState } from "react";
 
 import profile from "../images/WhatsApp Image 2026-03-10 at 11.52.35 AM.jpeg";
 import CoursesFAQ from "../components/Courses/CoursesFaq";
+import schoolOfLeadership from "../videos/Chayil School of leadership.mp4";
 import mothers from "../videos/mothers.mp4";
 import Restoration from "../videos/Restoration.mp4";
 import chayilMinistryPresence from "../videos/chayilministrypresence.mp4";
@@ -22,7 +23,7 @@ const courses = [
         desc: "A transformational programme for women called to lead from intimacy with Christ, rooted in love and established in wisdom, faith and obedience.",
         link: "https://docs.google.com/forms/d/e/1FAIpQLSfGWWbHqYWpoHRIHUhJkUIkbR2e98UY59LOwDmSD5m2E_Prag/viewform",
         cta: "Join the School of Leadership",
-        video: "/videos/leadership.mp4",
+        video: schoolOfLeadership,
       },
 
       {
