@@ -117,7 +117,7 @@ const navLinks = (closeMenu) => (
       label='Kingdom Ventures'
       closeMenu={closeMenu}
     />
-    <NavItem to='/missionsTrip' label='Mission Trip' closeMenu={closeMenu} />
+    <NavItem to='/missionstrip' label='Mission Trip' closeMenu={closeMenu} />
     <NavItem to='/shop' label='Shop' closeMenu={closeMenu} />
 
     <NavItem to='/testimonials' label='Testimonials' closeMenu={closeMenu} />

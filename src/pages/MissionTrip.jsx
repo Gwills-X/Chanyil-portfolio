@@ -4,12 +4,12 @@ import missionsPdf from "../assets/CHAYIL Ministries Mission Kit.pdf";
 import bgImage from "../images/WhatsApp Image 2026-03-24 at 10.14.59 AM.jpeg";
 export default function MissionTrip() {
   return (
-    <div className='w-full min-h-screen bg-gray-50 text-gray-900'>
+    <div className='w-full min-h-screen bg-gray-50 text-gray-900 max-lg:pt-25'>
       {/* Hero / Flyer Section */}
-      <section className='w-full h-[500px] flex flex-col md:flex-row items-center bg-gray-100'>
+      <section className='w-full h-170 max-lg:h-150 flex flex-col md:flex-row items-center bg-gray-100'>
         {/* Text on the left */}
         <motion.div
-          className='md:w-1/2 px-6 md:px-16 text-center md:text-left'
+          className='md:w-1/2 px-6 md:px-16 text-center md:text-left w-full '
           initial={{ x: -50, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.8 }}>
@@ -19,23 +19,60 @@ export default function MissionTrip() {
           <p className='text-xl md:text-2xl text-yellow-600 font-semibold mb-6'>
             “Arise, shine; for your light has come.” – Isaiah 60:1
           </p>
-          <a
-            href='https://docs.google.com/forms/d/e/1FAIpQLSdJpfYuO_por-xtmrxvnwJWQIIuajySDn9T7HrIU738RfLsFQ/viewform'
-            target='__blank'
-            className='bg-yellow-400 text-black font-semibold px-6 py-3 rounded-lg hover:bg-yellow-500 transition'>
-            Join the Mission
-          </a>
+          {/* PDF Download */}
+          <motion.div
+            initial={{ x: -50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}>
+            <h2 className='text-2xl font-bold mb-4'>Mission Guide</h2>
+            <p className='mb-4'>
+              Download the PDF guide for schedules, preparation tips, and
+              essential information for the mission trip.
+            </p>
+          </motion.div>
+          <div className='flex justify-left gap-5'>
+            <motion.a
+              href={missionsPdf}
+              download={true}
+              initial={{ x: -50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className='bg-yellow-400 text-black font-semibold px-6 py-3 rounded-lg hover:bg-yellow-500 transition'>
+              Download PDF
+            </motion.a>
+            <a
+              href='https://docs.google.com/forms/d/e/1FAIpQLSdJpfYuO_por-xtmrxvnwJWQIIuajySDn9T7HrIU738RfLsFQ/viewform'
+              target='__blank'
+              className='bg-yellow-400 text-black font-semibold px-6 py-3 rounded-lg hover:bg-yellow-500 transition'>
+              Join the Mission
+            </a>
+          </div>
         </motion.div>
 
-        {/* Image on the right */}
-        <div className='md:w-1/2 h-full'>
-          <img
-            src={bgImage}
-            alt='Chayil Missions Flyer'
-            className='w-full h-full object-cover rounded-l-lg'
-          />
-        </div>
+        {/* Video */}
+        <motion.div
+          initial={{ x: 50, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className=' w-1/2 max-lg:w-full px-5 mt-5 pt-2'>
+          <h2 className='text-2xl font-bold mb-4'>Mission Video</h2>
+          <div className='aspect-video w-full rounded-lg overflow-hidden shadow-lg border'>
+            <iframe
+              src={missionsVideo}
+              title='Chayil Mission 2026'
+              frameBorder='0'
+              allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+              allowFullScreen
+              className='w-full h-full'></iframe>
+          </div>
+        </motion.div>
       </section>
+
+      {/* PDF Guide & Video Section */}
+      <section className='max-w-6xl mx-auto py-16 px-4 grid md:grid-cols-2 gap-10 items-center'></section>
 
       {/* Mission Overview */}
       <section className='max-w-6xl mx-auto py-16 px-4 space-y-8'>
@@ -112,46 +149,6 @@ export default function MissionTrip() {
         </div>
       </section>
 
-      {/* PDF Guide & Video Section */}
-      <section className='max-w-6xl mx-auto py-16 px-4 grid md:grid-cols-2 gap-10 items-center'>
-        {/* PDF Download */}
-        <motion.div
-          initial={{ x: -50, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}>
-          <h2 className='text-2xl font-bold mb-4'>Mission Guide</h2>
-          <p className='mb-4'>
-            Download the PDF guide for schedules, preparation tips, and
-            essential information for the mission trip.
-          </p>
-          <a
-            href={missionsPdf}
-            download={true}
-            className='bg-yellow-400 text-black font-semibold px-6 py-3 rounded-lg hover:bg-yellow-500 transition'>
-            Download PDF
-          </a>
-        </motion.div>
-
-        {/* Video */}
-        <motion.div
-          initial={{ x: 50, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}>
-          <h2 className='text-2xl font-bold mb-4'>Mission Video</h2>
-          <div className='aspect-video w-full rounded-lg overflow-hidden shadow-lg'>
-            <iframe
-              src={missionsVideo}
-              title='Chayil Mission 2026'
-              frameBorder='0'
-              allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
-              allowFullScreen
-              className='w-full h-full'></iframe>
-          </div>
-        </motion.div>
-      </section>
-
       {/* Join / Support Section */}
       <section
         id='join'
@@ -175,7 +172,8 @@ export default function MissionTrip() {
             Support the Mission
           </a>
           <a
-            href='/forms/prayer'
+            href='https://chat.whatsapp.com/FoGIS6uPbK04ypYuD2irOb?mode=gi_t'
+            target='__blank'
             className='bg-blue-500 text-white font-semibold px-6 py-3 rounded-lg hover:bg-blue-600 transition'>
             Prayer Team Sign-up
           </a>
