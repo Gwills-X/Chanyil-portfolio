@@ -15,6 +15,7 @@ import Testimonials from "./pages/Testimonials";
 import Proverbs31Land from "./pages/KingdomVentures";
 import ScrollToTop from "./components/ScrollToTop";
 import Shop from "./pages/Shop";
+import MissionTrip from "./pages/MissionTrip";
 const App = () => {
   return (
     <div>
@@ -30,6 +31,7 @@ const App = () => {
             <Route path='/chayil-daughters' element={<ChayilDaughters />} />
             <Route path='/courses' element={<CoursesPage />} />
             <Route path='/testimonials' element={<Testimonials />} />
+            <Route path='/missionsTrip' element={<MissionTrip />} />
             <Route path='/kingdom-ventures' element={<Proverbs31Land />} />
             <Route path='/shop' element={<Shop />} />
             <Route path='/invite' element={<Speaking />} />
