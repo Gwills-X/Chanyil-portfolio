@@ -4,188 +4,150 @@ import heroBg from "../images/kindomVentures.jpeg";
 const Proverbs31Land = () => {
   return (
     <main className='bg-white overflow-x-hidden'>
-      {/* ================= HERO SECTION ================= */}
-      <section className='relative h-[100vh] flex items-center justify-center text-white'>
+      {/* ================= KINGDOM IMPACT HERO ================= */}
+      <section className='relative h-[90vh] flex items-center justify-center text-white'>
         <img
           src={heroBg}
-          alt='Proverbs 31 Land Initiative'
+          alt='Chayil Kingdom Impact'
           className='absolute inset-0 w-full h-full object-cover'
         />
-
         <div className='absolute inset-0 bg-black/60'></div>
 
         <motion.div
-          className='relative z-10 max-w-4xl mx-auto text-center px-6 pt-20'
+          className='relative z-10 max-w-4xl mx-auto text-center px-6'
           initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}>
+          animate={{ opacity: 1, y: 0 }}>
           <h1 className='text-4xl md:text-6xl font-serif font-bold mb-6'>
-            The Proverbs 31 Land Initiative
+            Chayil Kingdom Impact
           </h1>
 
-          <p className='text-xl md:text-2xl mb-4'>
-            Helping women in the diaspora safely own land in Nigeria.
+          <p className='text-xl md:text-2xl mb-6'>
+            Empowering communities, advancing missions, and creating
+            kingdom-centred opportunities across Africa.
           </p>
 
-          <p className='italic mb-8'>
-            "She considers a field and buys it." — Proverbs 31:16
-          </p>
+          <div className='flex flex-col sm:flex-row gap-4 justify-center'>
+            <a
+              href='#'
+              className='px-6 py-3 bg-white text-black rounded-full hover:bg-gray-200 transition'>
+              Download Brief
+            </a>
 
-          <a
-            href='https://docs.google.com/forms/d/e/1FAIpQLSfney6AGMAjNux0LGlGfv0TOzsLBatxNbuNZKWEC-WcSiMIOQ/viewform'
-            target='__blank'
-            className='px-8 py-4 bg-white text-black rounded-full hover:bg-gray-200 transition'>
-            Join the Free Masterclass
-          </a>
+            <a
+              href='#'
+              className='px-6 py-3 border border-white rounded-full hover:bg-white hover:text-black transition'>
+              Register Interest
+            </a>
+
+            <a
+              href='https://docs.google.com/forms/d/e/1FAIpQLSeNDsJf3dgVUf2p1ewvJwBqlJ9jTiE7eH4MU6LV9r7nHAyK8w/viewform'
+              target='__blank'
+              className='px-6 py-3 border border-white rounded-full hover:bg-white hover:text-black transition'>
+              Partner With Us
+            </a>
+          </div>
         </motion.div>
       </section>
 
-      {/* ================= VISION ================= */}
-      <section className='py-20 px-6'>
-        <div className='max-w-5xl mx-auto space-y-6'>
-          <h2 className='text-3xl font-serif font-semibold'>Our Vision</h2>
-
-          <p className='text-lg text-gray-700'>
-            Inspired by Proverbs 31:16, this initiative empowers women to build
-            legacy through wise land ownership and stewardship.
-          </p>
-
-          <p className='text-lg text-gray-700'>
-            The Proverbs 31 Land Initiative exists to help women in the diaspora
-            access trusted land opportunities in Nigeria for:
-          </p>
-
-          <ul className='list-disc pl-6 text-gray-700'>
-            <li>Land ownership</li>
-            <li>Farmland investment</li>
-            <li>Generational wealth building</li>
-          </ul>
-        </div>
-      </section>
-
-      {/* ================= ABOUT ================= */}
+      {/* ================= KINGDOM IMPACT DETAILS ================= */}
       <section className='py-20 px-6 bg-gray-50'>
-        <div className='max-w-5xl mx-auto space-y-6'>
+        <div className='max-w-5xl mx-auto text-center space-y-6'>
           <h2 className='text-3xl font-serif font-semibold'>
-            Chayil Lands, Farms & Properties
+            A Vision for Lasting Impact
           </h2>
 
           <p className='text-lg text-gray-700'>
-            This initiative is powered by Chayil Lands, Farms & Properties — a
-            family-led venture connecting diaspora buyers to trusted land
-            opportunities across Southwestern Nigeria.
+            Chayil Kingdom Impact is a faith-driven initiative bringing together
+            missions, empowerment, partnerships, and purpose-driven investment
+            to create lasting transformation.
           </p>
 
           <p className='text-lg text-gray-700'>
-            We work closely with verified landowners and realtors to ensure
-            transparency, trust, and proper documentation.
+            Through strategic collaboration, we are building systems that create
+            spiritual, social, and economic impact across communities in Africa.
           </p>
         </div>
       </section>
 
-      {/* ================= SERVICES ================= */}
+      {/* ================= PROVERBS 31 INTRO ================= */}
       <section className='py-20 px-6'>
-        <div className='max-w-6xl mx-auto'>
-          <h2 className='text-3xl font-serif font-semibold text-center mb-12'>
-            What We Offer
+        <div className='max-w-5xl mx-auto text-center space-y-6'>
+          <h2 className='text-3xl font-serif font-semibold'>
+            The Proverbs 31 Land Initiative
           </h2>
 
-          <div className='grid md:grid-cols-3 gap-8'>
-            <div>
-              <h3 className='font-semibold text-xl mb-3'>Land Acquisition</h3>
-              <p className='text-gray-600'>
-                Connecting clients to verified land opportunities.
-              </p>
-            </div>
+          <p className='text-lg text-gray-700'>
+            Helping women in the diaspora safely own land in Nigeria and build
+            generational wealth through wise stewardship.
+          </p>
 
-            <div>
-              <h3 className='font-semibold text-xl mb-3'>Title Processing</h3>
-              <p className='text-gray-600'>
-                Assistance with survey plans, deeds, and documentation.
-              </p>
-            </div>
+          <p className='italic'>
+            "She considers a field and buys it." — Proverbs 31:16
+          </p>
+        </div>
+      </section>
 
-            <div>
-              <h3 className='font-semibold text-xl mb-3'>
-                Security & Management
-              </h3>
-              <p className='text-gray-600'>
-                Optional services like clearing, fencing, and monitoring.
-              </p>
-            </div>
+      {/* ================= VISION + OFFER ================= */}
+      <section className='py-20 px-6 bg-gray-50'>
+        <div className='max-w-6xl mx-auto grid md:grid-cols-2 gap-12'>
+          <div className='space-y-4'>
+            <h3 className='text-2xl font-semibold'>Our Vision</h3>
+            <p className='text-gray-700'>
+              Inspired by Proverbs 31:16, this initiative empowers women to
+              build legacy through land ownership and strategic investment.
+            </p>
+
+            <ul className='list-disc pl-6 text-gray-700'>
+              <li>Land ownership</li>
+              <li>Farmland investment</li>
+              <li>Generational wealth building</li>
+            </ul>
+          </div>
+
+          <div className='space-y-4'>
+            <h3 className='text-2xl font-semibold'>What We Offer</h3>
+            <ul className='space-y-3 text-gray-700'>
+              <li>
+                <strong>Land Acquisition:</strong> Verified opportunities
+              </li>
+              <li>
+                <strong>Title Processing:</strong> Secure documentation
+              </li>
+              <li>
+                <strong>Land Management:</strong> Clearing & monitoring
+              </li>
+            </ul>
           </div>
         </div>
       </section>
 
-      {/* ================= INVESTMENT AREAS ================= */}
-      <section className='py-20 px-6 bg-gray-50'>
-        <div className='max-w-5xl mx-auto text-center'>
-          <h2 className='text-3xl font-serif font-semibold mb-6'>
-            Investment Areas
-          </h2>
-
-          <p className='text-gray-700 text-lg'>
-            Oyo • Ogun • Osun • Ondo • Ekiti
-          </p>
-        </div>
-      </section>
-
-      {/* ================= PROCESS ================= */}
+      {/* ================= PROCESS + LOCATION ================= */}
       <section className='py-20 px-6'>
-        <div className='max-w-5xl mx-auto space-y-6'>
-          <h2 className='text-3xl font-serif font-semibold'>How It Works</h2>
+        <div className='max-w-6xl mx-auto grid md:grid-cols-2 gap-12'>
+          <div className='space-y-4'>
+            <h3 className='text-2xl font-semibold'>How It Works</h3>
+            <ol className='list-decimal pl-6 text-gray-700 space-y-2'>
+              <li>Attend the Free Masterclass</li>
+              <li>Submit Interest Form</li>
+              <li>Review Opportunities</li>
+              <li>Secure Land & Documentation</li>
+            </ol>
+          </div>
 
-          <ol className='list-decimal pl-6 text-gray-700 space-y-2'>
-            <li>Attend the Free Masterclass</li>
-            <li>Submit Investor Interest Form</li>
-            <li>Review Available Opportunities</li>
-            <li>Secure Land & Documentation</li>
-          </ol>
+          <div className='space-y-4'>
+            <h3 className='text-2xl font-semibold'>Investment Areas</h3>
+            <p className='text-gray-700'>Oyo • Ogun • Osun • Ondo • Ekiti</p>
+
+            <h3 className='text-2xl font-semibold mt-6'>Powered By</h3>
+            <p className='text-gray-700'>
+              Chayil Lands, Farms & Properties — connecting diaspora buyers to
+              trusted land opportunities across Nigeria.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* ================= MASTERCLASS ================= */}
-      <section className='py-20 px-6 bg-gray-50'>
-        <div className='max-w-5xl mx-auto space-y-6'>
-          <h2 className='text-3xl font-serif font-semibold'>
-            Free Masterclass
-          </h2>
-
-          <p className='text-gray-700'>
-            Learn how land investment works in Nigeria, avoid costly mistakes,
-            and understand how the Proverbs 31 Land Initiative supports your
-            journey.
-          </p>
-        </div>
-      </section>
-
-      {/* ================= ABOUT CHANNELL ================= */}
-      <section className='py-20 px-6'>
-        <div className='max-w-5xl mx-auto space-y-6'>
-          <h2 className='text-3xl font-serif font-semibold'>
-            About Channelle Chayil
-          </h2>
-
-          <p className='text-gray-700'>
-            Channelle Chayil is the visionary behind God's Chayil Daughters,
-            passionate about equipping women to build legacy, walk in purpose,
-            and steward wealth with wisdom.
-          </p>
-        </div>
-      </section>
-
-      {/* ================= DISCLAIMER ================= */}
-      <section className='py-16 px-6 bg-gray-100'>
-        <div className='max-w-5xl mx-auto text-sm text-gray-600'>
-          <p>
-            Chayil Lands & Farms acts as a facilitator connecting buyers to land
-            sellers. Buyers are encouraged to conduct independent due diligence
-            before completing purchases.
-          </p>
-        </div>
-      </section>
-
-      {/* ================= CTA ================= */}
+      {/* ================= FINAL CTA ================= */}
       <section className='py-20 px-6 text-center'>
         <div className='space-y-6'>
           <h2 className='text-3xl font-serif font-semibold'>
@@ -204,7 +166,7 @@ const Proverbs31Land = () => {
               href='https://docs.google.com/forms/d/e/1FAIpQLSf2Ftc18AQmyk8Sm5ygRlG_5Z6uRC3nFY1D-GWF5bU1qG7y-Q/viewform'
               target='__blank'
               className='px-8 py-4 border border-black rounded-full hover:bg-black hover:text-white transition'>
-              Investor Interest Form
+              Investor Interest
             </a>
           </div>
         </div>
