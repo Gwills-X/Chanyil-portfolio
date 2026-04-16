@@ -28,18 +28,6 @@ const Proverbs31Land = () => {
 
           <div className='flex flex-col sm:flex-row gap-4 justify-center'>
             <a
-              href='#'
-              className='px-6 py-3 bg-white text-black rounded-full hover:bg-gray-200 transition'>
-              Download Brief
-            </a>
-
-            <a
-              href='#'
-              className='px-6 py-3 border border-white rounded-full hover:bg-white hover:text-black transition'>
-              Register Interest
-            </a>
-
-            <a
               href='https://docs.google.com/forms/d/e/1FAIpQLSeNDsJf3dgVUf2p1ewvJwBqlJ9jTiE7eH4MU6LV9r7nHAyK8w/viewform'
               target='__blank'
               className='px-6 py-3 border border-white rounded-full hover:bg-white hover:text-black transition'>
