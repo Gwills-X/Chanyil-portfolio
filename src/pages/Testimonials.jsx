@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 
 import TestimonialCard from "./TestimonialCard";
 import { testimonials } from "../data/testimonials";
+import Talks from "../components/Talks";
 
 const Testimonials = () => {
   return (
@@ -46,6 +47,7 @@ const Testimonials = () => {
           ))}
         </div>
       </div>
+      <Talks />
     </section>
   );
 };
