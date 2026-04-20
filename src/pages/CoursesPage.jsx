@@ -6,6 +6,7 @@ import CoursesFAQ from "../components/Courses/CoursesFaq";
 import schoolOfLeadership from "../videos/Chayil School of leadership.mp4";
 import mothers from "../videos/mothers.mp4";
 import Restoration from "../videos/Restoration.mp4";
+import Esther from "../videos/eschet video.mov";
 import chayilMinistryPresence from "../videos/chayilministrypresence.mp4";
 import shepherdcareblueprint from "../videos/shepherdcareblueprint.mp4";
 import chayilMentorship from "../videos/Chayil Daughter Mentorship (1).mp4";
@@ -14,6 +15,16 @@ const courses = [
   {
     category: "Leadership & Ministry Development",
     items: [
+      {
+        title: "The Eshet Chayil Formation School",
+        duration: " 8 weeks",
+        format: "Weekly Live Zoom Sessions + Bi-Weekly One-to-One’s",
+        price: "£150",
+        desc: "A transformational journey equipping women to become Proverbs 31 women—formed as the Bride of Christ, refined in character, and prepared to walk in purpose, leadership, and Kingdom alignment.",
+        link: "https://docs.google.com/forms/d/e/1FAIpQLSeLgRc8h-5BoUPyNIKvcTAcSZAAsMvRrG1tkmH6VUGNnIxBZA/viewform",
+        cta: "Join the Eshet Chayil Formation School",
+        video: Esther,
+      },
       {
         title: "School of Leadership",
         duration: "12 Weeks",

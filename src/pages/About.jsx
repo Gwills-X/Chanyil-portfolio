@@ -197,8 +197,8 @@ const About = () => {
             <h3 className='text-2xl font-serif'>Prophetic Worship</h3>
 
             <p className='text-gray-700 leading-relaxed'>
-              As a prophetic worshipper, Channelle carries a ministry that draws
-              people into deeper intimacy with God through worship.
+              As a worshipping evangelist, Channelle carries a ministry that
+              draws people into deeper intimacy with God through worship.
             </p>
 
             <p className='text-gray-700 leading-relaxed'>

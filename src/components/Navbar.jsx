@@ -1,14 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import logo from "../images/CC LOGO 1_033945.png";
 
 const Navbar = () => {
   const [scrollPoint, setScrollPoint] = useState(0);
   const [menuOpen, setMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth < 1024);
-
-  const location = useLocation();
-  const isKingdomPage = location.pathname === "/kingdom-ventures";
 
   /* Detect screen size */
   useEffect(() => {
@@ -40,7 +37,7 @@ const Navbar = () => {
 
   /* -------- Navbar Style Logic -------- */
 
-  const isScrolled = isKingdomPage ? scrollPoint > 70 : scrollPoint > 50;
+  const isScrolled = scrollPoint > 50;
 
   const navbarClasses = `
     fixed top-0 left-0 w-full z-50 transition-all duration-300
@@ -49,9 +46,7 @@ const Navbar = () => {
         ? "bg-white text-black shadow-sm" // ALWAYS WHITE ON MOBILE
         : isScrolled
           ? "bg-white/95 backdrop-blur-md shadow-sm text-black"
-          : isKingdomPage
-            ? "bg-transparent text-white pt-5"
-            : "bg-transparent text-black pt-5"
+          : "bg-transparent text-black pt-5"
     }
   `;
 
@@ -65,10 +60,7 @@ const Navbar = () => {
             alt='Logo'
             className='w-50 relative z-10 max-md:w-35 transition-transform duration-300'
             style={{
-              filter:
-                !isMobile && !isScrolled && isKingdomPage
-                  ? "invert(0) brightness(2)"
-                  : "invert(1)",
+              filter: !isMobile && !isScrolled ? "invert(1)" : "invert(1)",
             }}
           />
         </div>

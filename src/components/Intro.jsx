@@ -24,9 +24,10 @@ const Intro = () => {
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.4, duration: 0.6 }}>
-          Channelle Chayil is a prophetic worshipper, mentor, and founder of the
-          global community God’s Chayil Daughters — a movement of women
-          committed to prayer, spiritual growth, leadership, and impact.
+          Channelle Chayil Aderinto is a worshipping evangelist, apostolic
+          kingdom builder, prophet, and award-winning leader, and the visionary
+          behind God’s Chayil Daughters — a global movement of women devoted to
+          prayer, spiritual growth, leadership, and kingdom impact
         </motion.p>
 
         {/* Paragraph 2 */}
@@ -35,9 +36,11 @@ const Intro = () => {
           initial={{ opacity: 0, x: 20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.6, duration: 0.6 }}>
-          Through worship, mentorship, teachings, and resources, she equips
-          women to grow in faith, discover their purpose, and walk boldly in the
-          calling God has placed on their lives.
+          Through prophetic ministry, worship, mentorship, and teaching, she
+          equips and raises women to walk in faith, alignment, and purpose. With
+          a heart for transformation, she is also committed to reaching and
+          restoring the overlooked and vulnerable —bringing hope, healing, and
+          the light of Christ to those in need.
         </motion.p>
       </motion.div>
     </section>

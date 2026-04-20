@@ -11,30 +11,32 @@ const Hero = () => {
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}>
-          <h1 className='text-5xl md:text-6xl font-serif font-bold mb-6'>
-            Channelle Chayil
+          <h1 className='text-5xl md:text-5xl font-serif font-bold mb-6'>
+            Channelle Chayil Aderinto
           </h1>
 
           <p className='text-xl md:text-2xl mb-4'>
-            Prophetic Worship Minister | Leader | Mentor
+            Worshipping Evangelist | Apostolic Kingdom Builder | Award Winning
+            Leader
           </p>
 
           <p className='text-lg md:text-xl mb-6'>
-            Channelle Chayil is a prophetic worship minister, leader, and mentor
-            who equips and guides women into deeper intimacy with the Father,
-            raising women of faith, wisdom, and obedience while releasing
-            prophetic encouragement that brings clarity, breakthrough, and
-            transformation.
+            Channelle Chayil Aderinto is a worshipping evangelist, an apostolic
+            kingdom builder, and an award-winning leader, passionately guiding
+            people into deeper intimacy with God. She empowers others to walk in
+            faith, obedience, and purpose, offering prophetic insight and
+            practical wisdom to transform lives, build legacy, and advance
+            kingdom impact globally.
           </p>
 
           {/* Buttons */}
           <div className='flex flex-col sm:flex-row gap-4'>
             <a
-              href='https://calendly.com/channellechayil/prayer-call'
+              href='https://docs.google.com/forms/d/e/1FAIpQLSfkJPwKHWD8LKWUi46auwcdL-3c5_3CLrHcvxiKdRDkxw2AZw/viewform'
               target='_blank'
               rel='noopener noreferrer'
               className='px-8 py-4 bg-black text-white rounded-full hover:bg-transparent hover:text-black hover:border hover:border-black transition hover:-translate-y-2 duration-500 text-center'>
-              Book a Prayer Call
+              Submit Your Prayer Request
             </a>
 
             <a
