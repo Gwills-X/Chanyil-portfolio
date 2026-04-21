@@ -31,7 +31,7 @@ const ChayilKingdomGlobal = () => {
           <div className='mb-12'>
             <h1
               className={`text-4xl md:text-6xl font-serif font-bold ${deepText} uppercase tracking-tight leading-tight mb-4`}>
-              Chayil Kingdom
+              Chayil Kingdom Impact
             </h1>
             <h2
               className={`text-lg md:text-xl ${goldText} font-medium tracking-[0.15em] uppercase mb-6`}>
