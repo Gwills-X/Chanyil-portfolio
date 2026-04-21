@@ -194,7 +194,7 @@ const About = () => {
             variants={fadeUp}
             transition={{ duration: 0.7 }}
             className='space-y-6'>
-            <h3 className='text-2xl font-serif'>Prophetic Worship</h3>
+            <h3 className='text-2xl font-serif'>Worshipping Evangelist</h3>
 
             <p className='text-gray-700 leading-relaxed'>
               As a worshipping evangelist, Channelle carries a ministry that
